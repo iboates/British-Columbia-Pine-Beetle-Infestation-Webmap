@@ -1,0 +1,107 @@
+body {
+
+}
+
+#map {
+    height: 100vh;
+    width: 100%;
+}
+
+.item-container {
+    background-color: #d9f1ff;
+    border: solid 2px #badaff;
+    border-radius: 15px;
+    margin-top: 0.5vh;
+}
+
+.map-control-checkbox {
+    margin: 10px !important;
+}
+
+#time-slider-bar {
+    width: 90%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#title-container {
+    height: 15vh;
+}
+
+#controls-container {
+    height: 10vh;
+}
+
+.legend-item-container {
+    height: 29vh;
+}
+
+#left-pyramid-container {
+    height: 30vh;
+    background-color: #b2dba1;
+}
+
+#right-pyramid-container {
+    height: 30vh;
+    background-color: #f8efc0;
+}
+
+#sources-container {
+    height: 12vh;
+}
+
+#legend-marker-checkbox {
+    float: left;
+    margin-left: 10px;
+}
+
+#legend-threshold-checkbox {
+    float: left;
+    margin-left: 10px;
+}
+
+#legend-marker-title-text {
+    float: left;
+    margin-left: 10px;
+    font-size: 16pt;
+}
+
+#legend-threshold-title-text {
+    float: left;
+    margin-left: 10px;
+    font-size: 16pt;
+}
+
+#legend-marker-img {
+    display: block;
+    margin: 0 auto;
+}
+
+#legend-marker-img-text {
+    text-align: center;
+    margin-top: 5px;
+}
+
+#legend-marker-nonpine-text {
+    float: right;
+}
+
+#legend-marker-pine-text {
+    float: left;
+}
+
+#legend-marker-description-text-container {
+    height: 100%;
+}
+
+#legend-marker-description-text {
+    text-align: center;
+}
+
+.threshold-patch {
+    margin-left: 5%;
+    margin-top: 20px;
+    height: 100%;
+    background-color: #9d223c;
+}

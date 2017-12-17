@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"
+          integrity="sha512-wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw=="
+          crossorigin=""/>
+
+    <!-- jquery -->
+    <script src="lib/jquery/jquery-3.2.1.min.js"></script>
+
+    <!-- jquery ui -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.css">
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+
+    <!-- d3 -->
+    <!--<script src="lib/d3/d3.js"></script>-->
+
+    <!-- leaflet -->
+    <script src="lib/leaflet/leaflet.js"></script>
+
+    <!-- proj4leaflet -->
+    <script src="lib/Proj4Leaflet-master/Proj4Leaflet-master/lib/proj4.js"></script>
+    <script src="lib/Proj4Leaflet-master/Proj4Leaflet-master/src/proj4leaflet.js"></script>
+
+    <!-- svg-shape-markers -->
+    <!--<script src="lib/package/dist/leaflet-svg-shape-markers.min.js"></script>-->
+
+    <!-- resources -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="data/british_columbia_polys.js"></script>
+    <script src="data/british_columbia_points.js"></script>
+    <script src="svg/icon_dimensions.js"></script>
+
+
+    <script src="js/main.js"></script>
+    <!--<script src="js/threshold.js"></script>-->
+
+</head>
+<body>
+
+    <div class="col-sm-6">
+        <div id="map"></div>
+    </div>
+
+    <div class="col-sm-6">
+
+        <div class="container-fluid">
+            <div class="row item-container" id="title-container">
+                <h1>Pine Beetle Infestation in British Columbia, 1999-2015</h1>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row" id="legend-container">
+                <div class="container-fluid">
+                    <div class="row item-container" id="controls-container">
+                        <div id="time-slider-bar"></div>
+                        <button id="autoplay-button">Play</button>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <!--<div class="container-fluid">-->
+                        <div class="row item-container legend-item-container">
+                            <div class="container-fluid">
+                                <div class="row" id="legend-marker-checkbox-container">
+                                    <input id="legend-marker-checkbox" type="checkbox"/>
+                                    <p id="legend-marker-title-text">Forest Proportion Markers</p>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <div class="col-sm-6">
+                                    <div class="row" id="legend-marker-marker-container">
+                                        <div class="col-sm-6">
+                                            <p id="legend-marker-nonpine-text">Nonpine</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p id="legend-marker-pine-text">Pine</p>
+                                        </div>
+                                        <img id="legend-marker-img" src="svg/meta/sizerbox_2.svg">
+                                    </div>
+                                    <p id="legend-marker-img-text">Red square = 25 million cubic metres</p>
+                                </div>
+                                <div class="col-sm-6" id="legend-marker-description-text-container">
+                                    <br><br>
+                                    <p id="legend-marker-description-text">The height of the pine bar indicates the remaining productive pine forest in the current year, in relation to the amount in 1999.</p>
+                                </div>
+                            </div>
+                        </div>
+                    <!--</div>-->
+                </div>
+                <div class="col-sm-6">
+                    <!--<div class="container-fluid">-->
+                        <div class="row item-container legend-item-container">
+                            <div class="container-fluid">
+                                <div class="row" id="legend-threshold-checkbox-container">
+                                    <input id="legend-threshold-checkbox" type="checkbox" defaultChecked="false"/>
+                                    <p id="legend-threshold-title-text">Percentage Forest Loss</p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="row">
+                                    <div class="threshold-patch" id="threshold-patch-0">.</div>
+                                </div>
+                                <div class="row">
+                                    <div class="threshold-patch" id="threshold-patch-1">.</div>
+                                </div>
+                                <div class="row">
+                                    <div class="threshold-patch" id="threshold-patch-2">.</div>
+                                </div>
+                                <div class="row">
+                                    <div class="threshold-patch" id="threshold-patch-3">.</div>
+                                </div>
+                                <div class="row">
+                                    <div class="threshold-patch" id="threshold-patch-4">.</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                blah
+                            </div>
+                        </div>
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row" id="pyramid-container">
+                <div class="container-fluid">
+                </div>
+                <div class="col-sm-6">
+                    <div class="container-fluid">
+                        <div class="row" id="left-pyramid-container">
+                            <h2>LEFT PYRAMID</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="container-fluid">
+                        <div class="row" id="right-pyramid-container">
+                            <h2>RIGHT PYRAMID</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row item-container" id="sources-container">
+                <h2>SOURCES</h2>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
