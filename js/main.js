@@ -33,6 +33,7 @@ $(document).ready(function() {
     });
 
     // add polygons to map
+
     L.geoJSON(britishColumbiaPolys, {
 
         fillColor: "#ffffff",
