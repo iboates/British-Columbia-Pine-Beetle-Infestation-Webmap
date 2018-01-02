@@ -4,6 +4,17 @@
 
 $(document).ready(function() {
 
+    autoplay = true;
+    ticks = [1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014];
+
+    // =================================================================================================================
+    // MAP
+    // =================================================================================================================
+
+    // Check the marker radio button by default.
+    $("#legend-marker-checkbox").prop('checked', true);
+
+    // Set CRS
     var crs = new L.Proj.CRS('EPSG:3005',
         '+proj=aea +lat_1=50 +lat_2=58.5 +lat_0=45 +lon_0=-126 +x_0=1000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs ',
         {
@@ -13,7 +24,7 @@ $(document).ready(function() {
             origin: [0, 0]
         });
 
-    // initialize the map
+    // Initialize the map.
     map = L.map('map', {
         crs: crs,
         zoom: 3,
@@ -21,16 +32,11 @@ $(document).ready(function() {
         maxZoom: 4,
         maxBounds: L.latLngBounds(L.latLng(42.197765, -150.514677), L.latLng(61.746849, -100.952647)),
         maxBoundsViscosity: 1.0
-    }).fitBounds([[47.197765, -139.514677], [61.746849, -114.952647]]);
+    }).fitBounds([[47.197765, -139.514677], [61.746849, -114.952647]]).setView([55.033333, -124.966667], 2);
 
-    map.setView([55.033333, -124.966667], 2);
-
-    $( "#time-slider-bar" ).slider({
-        value: 1999,
-        min: 1999,
-        max: 2014,
-        step: 1
-    });
+    L.control.scale({
+        imperial: false
+    }).addTo(map);
 
     // =================================================================================================================
     // MARKERS
@@ -76,11 +82,11 @@ $(document).ready(function() {
     markerLayer = L.geoJSON(britishColumbiaPoints, {
 
         pointToLayer: function (feature, latlng) {
-            var iconScaleFactor = zoomScales[3] / zoomScales[map.getZoom()];
+            iconScaleFactor = zoomScales[3] / zoomScales[map.getZoom()];
             featureName = feature.properties.name;
             var marker = L.marker(latlng, {
                 icon: L.icon({
-                    iconUrl: 'svg/1999/' + feature.properties.name + '.svg',
+                    iconUrl: 'svg/1998/' + feature.properties.name + '.svg',
                     iconSize: [iconScaleFactor * iconDimensions[featureName], iconScaleFactor * iconDimensions[featureName]],
                     iconAnchor: [iconScaleFactor * iconDimensions[featureName] / 2, iconScaleFactor * iconDimensions[featureName] / 2]
                 })

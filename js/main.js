@@ -4,35 +4,35 @@
 
 $(document).ready(function() {
 
-    $("#legend-marker-checkbox").prop('checked', true);
-
     // =================================================================================================================
-    // EVENT HANDLING
+    // LAYER TOGGLING
     // =================================================================================================================
 
-    // Toggle markers
-    $("#legend-marker-checkbox").change(function() {
-        if (this.checked) {
+    $("input[name=display]").on("click", function() {
+
+        // If the marker radio button is selected, add the marker layers & remove threshold layer.
+        if ($("input[name=display]:checked").val() === "marker") {
+
             for (var i=0; i<markerLayerArray.length; i++) {
                 map.addLayer(markerLayerArray[i]);
             }
+            map.removeLayer(thresholdLayer);
+
+        // Otherwise, remove marker layers & add threshold layer.
         } else {
-            for (var i=0; i<markerLayerArray.length; i++) {
+
+            map.addLayer(thresholdLayer);
+            for (var i=0;i <markerLayerArray.length; i++) {
                 map.removeLayer(markerLayerArray[i]);
             }
+
         }
     });
 
-    // Toggle threshold
-    $("#legend-threshold-checkbox").change(function() {
-        if (this.checked) {
-            thresholdLayer.addTo(map)
-        } else {
-            map.removeLayer(thresholdLayer);
-        }
-    });
+    // =================================================================================================================
+    // ZOOM CONTROL
+    // =================================================================================================================
 
-    // Resize markers when zooming
     map.on("zoomend", function() {
 
         var zoomLevel = map.getZoom();
@@ -51,12 +51,18 @@ $(document).ready(function() {
     // Change svg to appropriate year/TSA when slider changes
     // Also change threshold layer symbolization when slider changes
     // This one is necessary to see the change if the user does not let go of the mouse button.
-    $( "#time-slider-bar" ).on("slidechange", function() {
+    $("#time-slider-bar").on("slidechange", function() {
+
+        var zoomLevel = map.getZoom();
+        var iconScaleFactor = zoomScales[3]/zoomScales[zoomLevel];
 
         // Change markers
         markerLayer.eachLayer(function (layer) {
+            featureName = layer.feature.properties.name;
             return layer.setIcon(L.icon({
-                iconUrl: 'svg/' + $("#time-slider-bar").slider("option", "value") + '/' + layer.feature.properties.name + '.svg'
+                iconUrl: 'svg/' + $("#time-slider-bar").slider("option", "value") + '/' + layer.feature.properties.name + '.svg',
+                iconSize: [iconScaleFactor * iconDimensions[featureName], iconScaleFactor * iconDimensions[featureName]],
+                iconAnchor: [iconScaleFactor * iconDimensions[featureName]/2, iconScaleFactor * iconDimensions[featureName]/2]
             }))
         });
 
@@ -81,10 +87,16 @@ $(document).ready(function() {
     // this one is necessary for the programmatic changes from the autoplay button.
     $( "#time-slider-bar" ).on("slide", function() {
 
+        var zoomLevel = map.getZoom();
+        var iconScaleFactor = zoomScales[3]/zoomScales[zoomLevel];
+
         // Change markers
         markerLayer.eachLayer(function (layer) {
+            featureName = layer.feature.properties.name;
             return layer.setIcon(L.icon({
-                iconUrl: 'svg/' + $("#time-slider-bar").slider("option", "value") + '/' + layer.feature.properties.name + '.svg'
+                iconUrl: 'svg/' + $("#time-slider-bar").slider("option", "value") + '/' + layer.feature.properties.name + '.svg',
+                iconSize: [iconScaleFactor * iconDimensions[featureName], iconScaleFactor * iconDimensions[featureName]],
+                iconAnchor: [iconScaleFactor * iconDimensions[featureName]/2, iconScaleFactor * iconDimensions[featureName]/2]
             }))
         });
 
@@ -110,22 +122,51 @@ $(document).ready(function() {
     // SLIDER BAR
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    var slideValue = $("#time-slider-bar").slider({
+        min: 1998,
+        max: 2014,
+        value: 1998,
+        start: function(event, ui) {
+            event.originalEvent.type == "mousedown" && $(this).addClass("ui-slider-mousesliding");
+        },
+    });
+
+
+    $(ticks).each(function(i) {
+        var tick = $('<div class="tick ui-widget-content">' + this + '</div>').appendTo(slideValue);
+        tick.css({
+            left: (100 / ticks.length * i) + '%',
+            width: (100 / ticks.length) + '%'
+        });
+    });
+
+    slideValue.find(".tick:first").css("border-left", "none");
+
     function scrollSlider() {
+
         var slideValue;
         slideValue = $("#time-slider-bar").slider("value");
-        if (slideValue >= 0) {
-            if (slideValue == 2013) {
-                slideValue = -1;
+
+        if (autoplay) {
+            if (slideValue >= 0) {
+                if (slideValue == 2014) {
+                    slideValue = -1;
+                }
+                $("#time-slider-bar").slider("value", slideValue + 1);
+                autoplay = setTimeout(scrollSlider, 500);
             }
-            $("#time-slider-bar").slider("value", slideValue + 1);
-            console.log($("#time-slider-bar").slider("value"));
-            setTimeout(scrollSlider, 500);
         }
     }
 
     // Make slider auto-seek when the user clicks on the autoplay button.
     $('#autoplay-button').click(function() {
+        autoplay = true;
         scrollSlider();
+    });
+
+    // Make slider stop when user clicks on the stop button.
+    $('#stop-button').click(function() {
+        autoplay = false;
     });
 
 });
