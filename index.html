@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"
-          integrity="sha512-wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw=="
-          crossorigin=""/>
+    <link rel="stylesheet" href="lib/leaflet/leaflet.css"/>
 
     <!-- jquery -->
     <script src="lib/jquery/jquery-3.2.1.min.js"></script>
 
     <!-- jquery ui -->
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="lib/jquery-ui/jquery-ui.js"></script>
+    <link rel="stylesheet" href="lib/jquery-ui/jquery-ui.css">
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
@@ -30,9 +28,6 @@
     <script src="lib/Proj4Leaflet-master/Proj4Leaflet-master/lib/proj4.js"></script>
     <script src="lib/Proj4Leaflet-master/Proj4Leaflet-master/src/proj4leaflet.js"></script>
 
-    <!-- svg-shape-markers -->
-    <!--<script src="lib/package/dist/leaflet-svg-shape-markers.min.js"></script>-->
-
     <!-- resources -->
     <link rel="stylesheet" href="css/style.css">
     <script src="data/british_columbia_polys.js"></script>
@@ -41,7 +36,6 @@
 
     <script src="js/init.js"></script>
     <script src="js/main.js"></script>
-    <!--<script src="js/threshold.js"></script>-->
 
 </head>
 <body>
@@ -62,8 +56,11 @@
             <div class="row" id="legend-container">
                 <div class="container-fluid">
                     <div class="row item-container" id="controls-container">
+                        <div id="time-slider-button-panel">
+                            <button id="autoplay-button">Play</button>
+                            <button id="stop-button">Stop</button>
+                        </div>
                         <div id="time-slider-bar"></div>
-                        <button id="autoplay-button">Play</button>
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -71,8 +68,8 @@
                         <div class="row item-container legend-item-container">
                             <div class="container-fluid">
                                 <div class="row" id="legend-marker-checkbox-container">
-                                    <input id="legend-marker-checkbox" type="checkbox"/>
-                                    <p id="legend-marker-title-text">Forest Proportion Markers</p>
+                                    <input id="legend-marker-checkbox" name="display" type="radio" value="marker"/>
+                                    <p id="legend-marker-title-text">Forest Proportions</p>
                                 </div>
                             </div>
                             <div class="container-fluid">
@@ -90,7 +87,7 @@
                                 </div>
                                 <div class="col-sm-6" id="legend-marker-description-text-container">
                                     <br><br>
-                                    <p id="legend-marker-description-text">The height of the pine bar indicates the remaining productive pine forest in the current year, in relation to the amount in 1999.</p>
+                                    <p id="legend-marker-description-text">The height of the pine bar indicates the remaining productive pine forest in the current year, in relation to the amount at the start of 1999.</p>
                                 </div>
                             </div>
                         </div>
@@ -101,8 +98,8 @@
                         <div class="row item-container legend-item-container">
                             <div class="container-fluid">
                                 <div class="row" id="legend-threshold-checkbox-container">
-                                    <input id="legend-threshold-checkbox" type="checkbox" defaultChecked="false"/>
-                                    <p id="legend-threshold-title-text">Percentage Forest Loss</p>
+                                    <input id="legend-threshold-checkbox" name="display" type="radio" value="threshold"/>
+                                    <p id="legend-threshold-title-text">Percent Forest Loss</p>
                                 </div>
                             </div>
 
@@ -128,27 +125,27 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="row">
-                                    <div class="threshold-patch-label" id="threshold-patch-label-0">18.95% - 21.00%</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-0">1.00% - 4.99%</div>
                                 </div>
                                 <div class="row">
-                                    <div class="threshold-patch-label" id="threshold-patch-label-1">21.01% - 50.00%</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-1">5.00% - 9.99%</div>
                                 </div>
                                 <div class="row">
-                                    <div class="threshold-patch-label" id="threshold-patch-label-2">50.01% - 75.00%</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-2">10.00% - 24.99%</div>
                                 </div>
                                 <div class="row">
-                                    <div class="threshold-patch-label" id="threshold-patch-label-3">75.01% - 90.00%</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-3">25.00% - 49.99%</div>
                                 </div>
                                 <div class="row">
-                                    <div class="threshold-patch-label" id="threshold-patch-label-4">90.01% - 95.00%</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-4">50.00% - 78.99%</div>
                                 </div>
                                 <div class="row">
-                                    <div class="threshold-patch-label" id="threshold-patch-label-5">95.01% - 99.00%</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-5">79.00% - 81.05%</div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <br><br>
-                                <p id="legend-threshold-description-text">The colour indicates the percentage of productive forest still remaining in the current year, in relation to the amount in 1999.</p>
+                                <p id="legend-threshold-description-text">The colour indicates the percentage of productive forest still remaining in the current year, in relation to the amount at the start of 1999.</p>
                             </div>
                         </div>
                     <!--</div>-->
@@ -177,7 +174,11 @@
         </div>
         <div class="container-fluid">
             <div class="row item-container" id="sources-container">
-                <h2>SOURCES</h2>
+                Source Data: <b>Government of B.C.</b> <i>"Mountain Pine Beetle Projections - Summary of Kills".</i> Excel Spreadsheet. <a href="https://www2.gov.bc.ca/gov/content/industry/forestry/managing-our-forest-resources/forest-health/forest-pests/bark-beetles/mountain-pine-beetle/responding-to-the-1999-2015-outbreak">Website</a>. <a href="https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/forest-health/mountain-pine-beetle/bcmpbv12summaryofvolumekilledthlblumpedtflsfordistribution.xlsx">Direct Link</a>.
+                <br>
+                Timber Supply Area Boundaries ca. 1999 received from Mr. Adrian Walton in ESRI Shapefile format.
+                <br><br>
+                <b>Note:</b> "Ft. St. James Forest District", "Prince George Forest District" & "Vanderhoof Forest District" are a breakdown of "Prince George Timber Supply Area".
             </div>
         </div>
 
