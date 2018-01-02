@@ -100,8 +100,55 @@ body {
 }
 
 .threshold-patch {
-    margin-left: 5%;
-    margin-top: 20px;
+    font-size: 10pt;
+    margin-left: 20%;
+    margin-top: 12px;
     height: 100%;
     background-color: #9d223c;
+}
+
+#threshold-patch-0 {
+    color: #ffdddd;
+    background-color: #ffdddd;
+}
+
+#threshold-patch-1 {
+    color: #ff9999;
+    background-color: #ff9999;
+}
+
+#threshold-patch-2 {
+    color: #ff5555;
+    background-color: #ff5555;
+}
+
+#threshold-patch-3 {
+    color: #dd0000;
+    background-color: #dd0000;
+}
+
+#threshold-patch-4 {
+    color: #aa0000;
+    background-color: #aa0000;
+}
+
+#threshold-patch-5 {
+    color: #770000;
+    background-color: #770000;
+}
+
+.threshold-patch-label {
+    font-size: 10pt;
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 12px;
+    height: 100%;
+}
+
+#legend-threshold-description-text-container {
+    height: 100%;
+}
+
+#legend-threshold-description-text {
+    text-align: center;
 }
