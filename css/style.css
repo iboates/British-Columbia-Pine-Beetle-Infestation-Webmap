@@ -56,12 +56,12 @@ body {
 
 #left-pyramid-container {
     height: 30vh;
-    background-color: #b2dba1;
+    background-color: #4444aa;
 }
 
 #right-pyramid-container {
     height: 30vh;
-    background-color: #f8efc0;
+    background-color: #aa4444;
 }
 
 #sources-container {

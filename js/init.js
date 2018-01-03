@@ -7,6 +7,9 @@ $(document).ready(function() {
     autoplay = true;
     ticks = [1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014];
 
+    leftPyramidPolys = [];
+    rightPyramidPolys = [];
+
     // =================================================================================================================
     // MAP
     // =================================================================================================================
@@ -42,6 +45,77 @@ $(document).ready(function() {
     // MARKERS
     // =================================================================================================================
 
+    function addPyramidData(e, layer, targetData, otherData, targetPolygonTracker, otherPolygonTracker) {
+
+        // get the name of the selected polygon
+        var polygonName = e.target.feature.properties.name;
+
+        // colour the polygon
+        if (targetData === leftData) {
+            e.target.bringToFront();
+            layer.setStyle({
+                fillColor: '#9999dd',
+                color: '#0000ff',
+                weight: 2
+            });
+        } else {
+            e.target.bringToFront();
+            layer.setStyle({
+                fillColor: '#dd9999',
+                color: '#ff0000',
+                weight: 2
+            });
+        }
+
+        // add the polygon to the left tracker array
+        targetPolygonTracker.push(polygonName);
+
+        // add the data to the left pyramid
+        for (var i = 0; i < targetData.length; i++) {
+            targetData[i].pine_vol = targetData[i].pine_vol + e.target.feature.properties["_yr" + (1999 + i)];
+        }
+
+        // check if the name is already in the right tracker array
+        if (otherPolygonTracker.indexOf(polygonName) !== -1) {
+
+            // remove the data from the right tracker array
+            otherPolygonTracker.splice(otherPolygonTracker.indexOf(polygonName), 1);
+
+            // remove the data from the right pyramid
+            for (var i = 0; i < otherData.length; i++) {
+                otherData[i].pine_vol = otherData[i].pine_vol - e.target.feature.properties["_yr" + (1999 + i)];
+            }
+
+        }
+    }
+
+    function removePyramidData(e, layer, targetData, targetPolygonTracker) {
+
+        // get the name of the selected polygon
+        var polygonName = e.target.feature.properties.name;
+
+        // reset the polygon back to white
+        layer.setStyle({
+            fillColor: "#ffffff",
+            stroke: true,
+            color: "#000000",
+            weight: 1,
+            fillOpacity: 1,
+            riseOnHover: true
+        });
+
+        // remove the polygon from the right tracker array
+        targetPolygonTracker.splice(targetPolygonTracker.indexOf(polygonName), 1);
+
+        for (var i=0; i<rightData.length; i++) {
+
+            // remove the data from the pyramid
+            targetData[i].pine_vol = targetData[i].pine_vol - e.target.feature.properties["_yr"+(1999+i)];
+
+        }
+
+    }
+    
     // Poylgon Layer
     markerPolygonLayer = L.geoJSON(britishColumbiaPolys, {
 
@@ -59,23 +133,33 @@ $(document).ready(function() {
                 // get the currently selected radio button from the pyramid control panel
                 var pyramidActionCode = $("input[name=pyramid]:checked").val();
 
+                // get the name of the selected polygon
+                var polygonName = e.target.feature.properties.name;
+
                 // grab the data to replace or add to the selected bar chart
-                if (pyramidActionCode === "replace-left-pyramid") {
-                    for (var i=0; i<leftData.length; i++) {
-                        leftData[i].pine_vol = e.target.feature.properties["_yr"+(1999+i)];
+
+                // if the user has selected a polygon to add to the left pyramid...
+                if (pyramidActionCode === "add-left-pyramid") {
+                    
+                    // if the polygon is not already in the left tracker array...
+                    if (leftPyramidPolys.indexOf(polygonName) === -1) {
+                        addPyramidData(e, layer, leftData, rightData, leftPyramidPolys, rightPyramidPolys);
+                    // otherwise...
+                    } else {
+                        removePyramidData(e, layer, leftData, leftPyramidPolys);
                     }
-                } else if (pyramidActionCode === "replace-right-pyramid") {
-                    for (var i=0; i<rightData.length; i++) {
-                        rightData[i].pine_vol = e.target.feature.properties["_yr"+(1999+i)];
-                    }
-                } else if (pyramidActionCode === "add-left-pyramid") {
-                    for (var i=0; i<leftData.length; i++) {
-                        leftData[i].pine_vol = leftData[i].pine_vol + e.target.feature.properties["_yr"+(1999+i)];
-                    }
+                    
+                // if the user has selected a polygon to add to the right pyramid...
                 } else if (pyramidActionCode === "add-right-pyramid") {
-                    for (var i=0; i<rightData.length; i++) {
-                        rightData[i].pine_vol = rightData[i].pine_vol + e.target.feature.properties["_yr"+(1999+i)];
+
+                    // if the polygon is not already in the right tracker array...
+                    if (rightPyramidPolys.indexOf(polygonName) === -1) {
+                        addPyramidData(e, layer, rightData, leftData, rightPyramidPolys, leftPyramidPolys);
+                    // otherwise...
+                    } else {
+                        removePyramidData(e, layer, rightData, rightPyramidPolys);
                     }
+                    
                 }
 
                 // update the bar charts accordingly
@@ -83,22 +167,21 @@ $(document).ready(function() {
 
             });
 
-            layer.on('mouseover', function (e) {
-                e.target.bringToFront(); // lifts the current moused over feature so its edges aren't blocked
-                this.setStyle({
-                    fillColor: '#dd8888',
-                    color: '#ff0000',
-                    weight: 2
-                });
-            });
-
-            layer.on('mouseout', function () {
-                this.setStyle({
-                    fillColor: '#ffffff',
-                    color: '#000000',
-                    weight: 1
-                })
-            })
+            // layer.on('mouseover', function (e) {
+            //     e.target.bringToFront(); // lifts the current moused over feature so its edges aren't blocked
+            //     this.setStyle({
+            //         fillColor: '#dddddd',
+            //         weight: 2
+            //     });
+            // });
+            //
+            // layer.on('mouseout', function () {
+            //     this.setStyle({
+            //         fillColor: '#ffffff',
+            //         color: '#000000',
+            //         weight: 1
+            //     })
+            // })
         }
 
     });
@@ -347,6 +430,8 @@ $(document).ready(function() {
     // clearing pyramids
 
     $('#clear-left-pyramid').click(function() {
+
+        // reset left pyramid data
         leftData = [
             {"year": "_yr1999", "pine_vol": 0},
             {"year": "_yr2000", "pine_vol": 0},
@@ -365,7 +450,36 @@ $(document).ready(function() {
             {"year": "_yr2013", "pine_vol": 0},
             {"year": "_yr2014", "pine_vol": 0}
         ];
+
+        // reset styling except for currently selected red features
+        markerPolygonLayer.setStyle(function(feature) {
+            if (rightPyramidPolys.indexOf(feature.properties.name) === -1) {
+                return {
+                    fillColor: "#ffffff",
+                    stroke: true,
+                    color: "#000000",
+                    weight: 1,
+                    fillOpacity: 1,
+                    riseOnHover: true
+                }
+            } else {
+                return {
+                    fillColor: "#dd9999",
+                    stroke: true,
+                    color: "#ff0000",
+                    weight: 2,
+                    fillOpacity: 1,
+                    riseOnHover: true
+                }
+            }
+        });
+
+        // clear left tracking array
+        leftPyramidPolys = [];
+
+        // update data
         update(leftData, rightData);
+
     });
 
     $('#clear-right-pyramid').click(function() {
@@ -387,8 +501,32 @@ $(document).ready(function() {
             {"year": "_yr2013", "pine_vol": 0},
             {"year": "_yr2014", "pine_vol": 0}
         ];
+        markerPolygonLayer.setStyle(function(feature) {
+            if (leftPyramidPolys.indexOf(feature.properties.name) === -1) {
+                return {
+                    fillColor: "#ffffff",
+                    stroke: true,
+                    color: "#000000",
+                    weight: 1,
+                    fillOpacity: 1,
+                    riseOnHover: true
+                }
+            } else {
+                return {
+                    fillColor: "#9999dd",
+                    stroke: true,
+                    color: "#0000ff",
+                    weight: 2,
+                    fillOpacity: 1,
+                    riseOnHover: true
+                }
+            }
+        });
+
+        // clear left tracking array
+        rightPyramidPolys = [];
+
         update(leftData, rightData);
     });
-
 
 });
