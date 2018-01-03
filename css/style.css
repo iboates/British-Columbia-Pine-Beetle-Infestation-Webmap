@@ -42,7 +42,7 @@ body {
 }
 
 #title-container {
-    height: 15vh;
+    height: 8vh;
     text-align: center;
 }
 
@@ -190,4 +190,12 @@ body {
     border-left: 1px solid black;
     border-bottom: none;
     text-align: center;
+}
+
+.pyramid-controls-container-left {
+    float: right;
+}
+
+.pyramid-controls-container-right {
+    float: left;
 }
