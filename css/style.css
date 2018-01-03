@@ -191,3 +191,11 @@ body {
     border-bottom: none;
     text-align: center;
 }
+
+.pyramid-controls-container-left {
+    float: right;
+}
+
+.pyramid-controls-container-right {
+    float: left;
+}
