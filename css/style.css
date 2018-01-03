@@ -43,6 +43,7 @@ body {
 
 #title-container {
     height: 15vh;
+    text-align: center;
 }
 
 #controls-container {

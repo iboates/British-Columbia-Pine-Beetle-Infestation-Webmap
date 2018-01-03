@@ -88,7 +88,9 @@ $(document).ready(function() {
     $( "#time-slider-bar" ).on("slide", function() {
 
         var zoomLevel = map.getZoom();
-        var iconScaleFactor = zoomScales[3]/zoomScales[zoomLevel];
+        var iconScaleFactor = zoomScales[3] / zoomScales[zoomLevel];
+        var currentYear = $("#time-slider-bar").slider("option", "value");
+        console.log(currentYear);
 
         // Change markers
         markerLayer.eachLayer(function (layer) {
@@ -96,7 +98,7 @@ $(document).ready(function() {
             return layer.setIcon(L.icon({
                 iconUrl: 'svg/' + $("#time-slider-bar").slider("option", "value") + '/' + layer.feature.properties.name + '.svg',
                 iconSize: [iconScaleFactor * iconDimensions[featureName], iconScaleFactor * iconDimensions[featureName]],
-                iconAnchor: [iconScaleFactor * iconDimensions[featureName]/2, iconScaleFactor * iconDimensions[featureName]/2]
+                iconAnchor: [iconScaleFactor * iconDimensions[featureName] / 2, iconScaleFactor * iconDimensions[featureName] / 2]
             }))
         });
 
