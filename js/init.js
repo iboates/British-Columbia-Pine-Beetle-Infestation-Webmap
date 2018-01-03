@@ -56,6 +56,23 @@ $(document).ready(function() {
 
             layer.on('click', function (e) {
 
+                leftData[0].pine_vol = e.target.feature.properties._yr1999;
+                leftData[1].pine_vol = e.target.feature.properties._yr2000;
+                leftData[2].pine_vol = e.target.feature.properties._yr2001;
+                leftData[3].pine_vol = e.target.feature.properties._yr2002;
+                leftData[4].pine_vol = e.target.feature.properties._yr2003;
+                leftData[5].pine_vol = e.target.feature.properties._yr2004;
+                leftData[6].pine_vol = e.target.feature.properties._yr2005;
+                leftData[7].pine_vol = e.target.feature.properties._yr2006;
+                leftData[8].pine_vol = e.target.feature.properties._yr2007;
+                leftData[9].pine_vol = e.target.feature.properties._yr2008;
+                leftData[10].pine_vol = e.target.feature.properties._yr2009;
+                leftData[11].pine_vol = e.target.feature.properties._yr2010;
+                leftData[12].pine_vol = e.target.feature.properties._yr2011;
+                leftData[13].pine_vol = e.target.feature.properties._yr2012;
+                leftData[14].pine_vol = e.target.feature.properties._yr2013;
+                leftData[15].pine_vol = e.target.feature.properties._yr2014;
+                
                 rightData[0].pine_vol = e.target.feature.properties._yr1999;
                 rightData[1].pine_vol = e.target.feature.properties._yr2000;
                 rightData[2].pine_vol = e.target.feature.properties._yr2001;
@@ -72,7 +89,7 @@ $(document).ready(function() {
                 rightData[13].pine_vol = e.target.feature.properties._yr2012;
                 rightData[14].pine_vol = e.target.feature.properties._yr2013;
                 rightData[15].pine_vol = e.target.feature.properties._yr2014;
-                update(rightData);
+                update(leftData, rightData);
 
             });
 
@@ -139,6 +156,29 @@ $(document).ready(function() {
     // PYRAMIDS
     // =================================================================================================================
 
+    // irrelevant if these are from the left or right container since they are the same.
+    var containerWidth = $("#right-pyramid-container").width();
+    var containerHeight = $("#right-pyramid-container").height();
+
+    var leftData = [
+        {"year": "_yr1999", "pine_vol": 77616752},
+        {"year": "_yr2000", "pine_vol": 77038912},
+        {"year": "_yr2001", "pine_vol": 76370816},
+        {"year": "_yr2002", "pine_vol": 73590976},
+        {"year": "_yr2003", "pine_vol": 67868816},
+        {"year": "_yr2004", "pine_vol": 60651584},
+        {"year": "_yr2005", "pine_vol": 47836464},
+        {"year": "_yr2006", "pine_vol": 39659504},
+        {"year": "_yr2007", "pine_vol": 31413136},
+        {"year": "_yr2008", "pine_vol": 29010976},
+        {"year": "_yr2009", "pine_vol": 28837344},
+        {"year": "_yr2010", "pine_vol": 28734912},
+        {"year": "_yr2011", "pine_vol": 28718880},
+        {"year": "_yr2012", "pine_vol": 28705984},
+        {"year": "_yr2013", "pine_vol": 28705936},
+        {"year": "_yr2014", "pine_vol": 28703296}
+    ];
+
     var rightData = [
         {"year": "_yr1999", "pine_vol": 77616752},
         {"year": "_yr2000", "pine_vol": 77038912},
@@ -158,90 +198,156 @@ $(document).ready(function() {
         {"year": "_yr2014", "pine_vol": 28703296}
     ];
 
-    // right graph
-
-    var containerWidth = $("#right-pyramid-container").width();
-    var containerHeight = $("#right-pyramid-container").height();
+    // left graph
 
     // set the dimensions and margins of the graph
-    var margin = {top: 5, right: 10, bottom: 18, left: 12},
-        width = containerWidth - margin.left - margin.right,
-        height = containerHeight - margin.top - margin.bottom;
+    var leftMargin = {top: 5, right: 12, bottom: 18, left: 10},
+        leftWidth = containerWidth - leftMargin.left - leftMargin.right,
+        leftHeight = containerHeight - leftMargin.top - leftMargin.bottom;
 
     // set the ranges
-    var y = d3.scaleBand()
-        .range([height, 0])
+    var leftYScale = d3.scaleBand()
+        .range([leftHeight, 0])
         .padding(0.1);
 
-    var x = d3.scaleLinear()
-        .range([0, width]);
+    var leftXScale = d3.scaleLinear()
+        .range([leftWidth, 0]);
 
-    // append the svg object to the body of the page
-    // append a 'group' element to 'svg'
-    // moves the 'group' element to the top left margin
-    var svg = d3.select("#right-pyramid-container").append("svg")
+    // TODO: COMMENT
+    var leftSvg = d3.select("#left-pyramid-container").append("svg")
         .attr("preserveAspectRatio", "xMinYMin meet")
         .attr("viewBox", "0, 0 " + containerWidth + ", " + containerHeight)
         .append("g")
         .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
+            "translate(" + leftMargin.left + "," + leftMargin.top + ")");
 
-    // Scale the range of the rightData in the domains
-    x.domain([0, d3.max(rightData, function(d){ return d.pine_vol; })]);
-    y.domain(rightData.map(function(d) { return d.year; }));
+    // Scale the range of the leftData in the domains
+    leftXScale.domain([0, d3.max(leftData, function(d){ return d.pine_vol; })]);
+    leftYScale.domain(leftData.map(function(d) { return d.year; }));
 
     // append the rectangles for the bar chart
-    svg.selectAll(".bar")
-        .data(rightData)
+    leftSvg.selectAll(".bar")
+        .data(leftData)
         .enter().append("rect")
         .attr("class", "bar")
-        .attr("width", function(d) { return x(d.pine_vol); } )
-        .attr("y", function(d) { return y(d.year); })
-        .attr("height", y.bandwidth());
+        .attr("x", function(d) { return leftXScale(d.pine_vol) } )
+        .attr("width", function(d) { return leftWidth - leftXScale(d.pine_vol) })
+        .attr("y", function(d) { return leftYScale(d.year) })
+        .attr("height", leftYScale.bandwidth());
 
     // add the x Axis
-    var xAxis = svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x)
+    var leftXAxis = leftSvg.append("g")
+        .attr("transform", "translate(0," + leftHeight + ")")
+        .call(d3.axisBottom(leftXScale)
             .tickFormat(d3.formatPrefix(".2", 1e6)));
 
     // add the y Axis
-    var yAxis = svg.append("g")
+    var leftYAxis = leftSvg.append("g")
+        .attr("transform", "translate( " + 0 + ", 0 )");
+
+    // right graph
+
+    // set the dimensions and margins of the graph
+    var rightMargin = {top: 5, right: 10, bottom: 18, left: 12},
+        rightWidth = containerWidth - rightMargin.left - rightMargin.right,
+        rightHeight = containerHeight - rightMargin.top - rightMargin.bottom;
+
+    // set the ranges
+    var rightYScale = d3.scaleBand()
+        .range([rightHeight, 0])
+        .padding(0.1);
+
+    var rightXScale = d3.scaleLinear()
+        .range([0, rightWidth]);
+
+    // TODO: COMMENT
+    var rightSvg = d3.select("#right-pyramid-container").append("svg")
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", "0, 0 " + containerWidth + ", " + containerHeight)
+        .append("g")
+        .attr("transform",
+            "translate(" + rightMargin.left + "," + rightMargin.top + ")");
+
+    // Scale the range of the rightData in the domains
+    rightXScale.domain([0, d3.max(rightData, function(d){ return d.pine_vol; })]);
+    rightYScale.domain(rightData.map(function(d) { return d.year; }));
+
+    // append the rectangles for the bar chart
+    rightSvg.selectAll(".bar")
+        .data(rightData)
+        .enter().append("rect")
+        .attr("class", "bar")
+        .attr("width", function(d) { return rightXScale(d.pine_vol); } )
+        .attr("y", function(d) { return rightYScale(d.year); })
+        .attr("height", rightYScale.bandwidth());
+
+    // add the x Axis
+    var rightXAxis = rightSvg.append("g")
+        .attr("transform", "translate(0," + rightHeight + ")")
+        .call(d3.axisBottom(rightXScale)
+            .tickFormat(d3.formatPrefix(".2", 1e6)));
+
+    // add the y Axis
+    var rightYAxis = rightSvg.append("g")
         .attr("transform", "translate( " + 0 + ", 0 )");
 
 
 
 
 
-    function update(data) {
+    function update(newLeftData, newRightData) {
 
-        console.log("attempting update");
+        //console.log("attempting update");
 
-        x.domain([0, d3.max(data, function(d){ return (d.pine_vol); })]);
-        y.domain(data.map(function(d) { return d.year; }));
+        leftXScale.domain([0, d3.max(newLeftData, function(d){ return d.pine_vol; })]);
+        leftYScale.domain(newLeftData.map(function(d) { return d.year; }));
+        //leftXScale.domain([0, d3.max(newLeftData, function(d){ return (d.pine_vol); })]);
+        //leftYScale.domain(newLeftData.map(function(d) { return d.year; }));
 
-        console.log("domains defined, attempting to remove bars");
+        rightXScale.domain([0, d3.max(newRightData, function(d){ return (d.pine_vol); })]);
+        rightYScale.domain(newRightData.map(function(d) { return d.year; }));
 
-        var bars = svg.selectAll(".bar")
+        //console.log("domains defined, attempting to remove bars");
+
+        var leftBars = leftSvg.selectAll(".bar")
             .remove()
             .exit()
-            .data(data);
+            .data(newLeftData);
+        
+        var rightBars = rightSvg.selectAll(".bar")
+            .remove()
+            .exit()
+            .data(newRightData);
 
-        console.log("bars removed, attempting to add new bars");
+        //console.log("bars removed, attempting to add new bars");
 
-        bars.enter()
+        leftBars.enter()
             .append("rect")
             .attr("class", "bar")
-            .attr("width", function(d) {console.log(d); return x(d.pine_vol); })
-            .attr("y", function(d) {console.log(d); return y(d.year); })
-            .attr("height", y.bandwidth());
+            .attr("x", function(d) { return leftXScale(d.pine_vol) } )
+            .attr("width", function(d) { return leftWidth - leftXScale(d.pine_vol) })
+            .attr("y", function(d) { return leftYScale(d.year); })
+            .attr("height", leftYScale.bandwidth());
+        
+        rightBars.enter()
+            .append("rect")
+            .attr("class", "bar")
+            .attr("width", function(d) { return rightXScale(d.pine_vol); })
+            .attr("y", function(d) { return rightYScale(d.year); })
+            .attr("height", rightYScale.bandwidth());
 
-        console.log("new bars added, redrawing axes");
+        //console.log("new bars added, redrawing axes");
 
-        xAxis.remove();
-        xAxis = svg.append("g")
-            .attr("transform", "translate(0," + height + ")")
-            .call(d3.axisBottom(x)
+        leftXAxis.remove();
+        leftXAxis = leftSvg.append("g")
+            .attr("transform", "translate(0," + leftHeight + ")")
+            .call(d3.axisBottom(leftXScale)
+                .tickFormat(d3.formatPrefix(".2", 1e6)));
+        
+        rightXAxis.remove();
+        rightXAxis = rightSvg.append("g")
+            .attr("transform", "translate(0," + rightHeight + ")")
+            .call(d3.axisBottom(rightXScale)
                 .tickFormat(d3.formatPrefix(".2", 1e6)));
 
     }
