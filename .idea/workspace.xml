@@ -2,771 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49fe8fc8-81ab-44ee-97b9-59a928bd2075" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/british_columbia_points.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/british_columbia_polys.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/.gitignore" afterPath="$PROJECT_DIR$/lib/proj4js/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/.jshintrc" afterPath="$PROJECT_DIR$/lib/proj4js/.jshintrc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/.npmignore" afterPath="$PROJECT_DIR$/lib/proj4js/.npmignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/.travis.yml" afterPath="$PROJECT_DIR$/lib/proj4js/.travis.yml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/AUTHORS" afterPath="$PROJECT_DIR$/lib/proj4js/AUTHORS" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/Gruntfile.js" afterPath="$PROJECT_DIR$/lib/proj4js/Gruntfile.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/LICENSE.md" afterPath="$PROJECT_DIR$/lib/proj4js/LICENSE.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/PUBLISHING.md" afterPath="$PROJECT_DIR$/lib/proj4js/PUBLISHING.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/README.md" afterPath="$PROJECT_DIR$/lib/proj4js/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/REFERENCES.md" afterPath="$PROJECT_DIR$/lib/proj4js/REFERENCES.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/bower.json" afterPath="$PROJECT_DIR$/lib/proj4js/bower.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/changelog.md" afterPath="$PROJECT_DIR$/lib/proj4js/changelog.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/component.json" afterPath="$PROJECT_DIR$/lib/proj4js/component.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/Point.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/Point.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/Proj.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/Proj.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/adjust_axis.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/adjust_axis.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/acosh.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/acosh.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/adjust_lat.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/adjust_lat.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/adjust_lon.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/adjust_lon.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/adjust_zone.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/adjust_zone.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/asinh.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/asinh.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/asinhy.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/asinhy.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/asinz.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/asinz.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/atanh.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/atanh.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/clens.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/clens.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/clens_cmplx.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/clens_cmplx.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/cosh.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/cosh.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/e0fn.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/e0fn.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/e1fn.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/e1fn.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/e2fn.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/e2fn.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/e3fn.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/e3fn.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/fL.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/fL.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/gN.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/gN.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/gatg.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/gatg.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/hypot.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/hypot.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/imlfn.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/imlfn.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/inverseNadCvt.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/inverseNadCvt.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/invlatiso.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/invlatiso.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/iqsfnz.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/iqsfnz.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/latiso.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/latiso.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/log1py.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/log1py.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/mlfn.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/mlfn.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/msfnz.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/msfnz.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/nadInterBreakout.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/nadInterBreakout.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/nad_cvt.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/nad_cvt.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/nad_intr.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/nad_intr.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/phi2z.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/phi2z.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/pj_enfn.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/pj_enfn.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/pj_inv_mlfn.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/pj_inv_mlfn.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/pj_mlfn.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/pj_mlfn.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/qsfnz.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/qsfnz.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/sign.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/sign.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/sinh.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/sinh.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/srat.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/srat.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/tanh.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/tanh.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/toPoint.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/toPoint.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/common/tsfnz.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/common/tsfnz.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/constants/Datum.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/constants/Datum.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/constants/Ellipsoid.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/constants/Ellipsoid.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/constants/PrimeMeridian.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/constants/PrimeMeridian.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/constants/units.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/constants/units.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/constants/values.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/constants/values.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/core.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/core.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/datum.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/datum.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/datumUtils.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/datumUtils.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/datum_transform.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/datum_transform.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/defs.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/defs.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/deriveConstants.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/deriveConstants.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/extend.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/extend.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/global.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/global.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/includedProjections.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/includedProjections.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/index.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/index.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/match.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/match.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/parseCode.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/parseCode.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projString.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projString.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/aea.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/aea.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/aeqd.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/aeqd.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/cass.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/cass.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/cea.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/cea.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/eqc.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/eqc.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/eqdc.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/eqdc.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/equi.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/equi.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/etmerc.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/etmerc.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/gauss.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/gauss.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/gnom.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/gnom.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/gstmerc.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/gstmerc.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/krovak.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/krovak.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/laea.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/laea.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/lcc.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/lcc.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/longlat.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/longlat.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/merc.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/merc.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/mill.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/mill.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/moll.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/moll.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/nzmg.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/nzmg.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/omerc.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/omerc.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/ortho.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/ortho.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/poly.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/poly.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/sinu.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/sinu.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/somerc.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/somerc.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/stere.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/stere.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/sterea.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/sterea.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/tmerc.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/tmerc.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/utm.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/utm.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/projections/vandg.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/projections/vandg.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/transform.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/transform.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/lib/version.js" afterPath="$PROJECT_DIR$/lib/proj4js/lib/version.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/package.json" afterPath="$PROJECT_DIR$/lib/proj4js/package.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/publish.sh" afterPath="$PROJECT_DIR$/lib/proj4js/publish.sh" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/test/amd.html" afterPath="$PROJECT_DIR$/lib/proj4js/test/amd.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/test/opt.html" afterPath="$PROJECT_DIR$/lib/proj4js/test/opt.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/test/package.json.js" afterPath="$PROJECT_DIR$/lib/proj4js/test/package.json.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/test/test.js" afterPath="$PROJECT_DIR$/lib/proj4js/test/test.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/proj4js-2.4.3/test/testData.js" afterPath="$PROJECT_DIR$/lib/proj4js/test/testData.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/init.js" afterPath="$PROJECT_DIR$/js/init.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/100 Mile House TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/100 Mile House TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Arrow TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Arrow TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Arrowsmith TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Arrowsmith TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Boundary TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Boundary TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Bulkley TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Bulkley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Cassiar TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Cassiar TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Cranberry TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Cranberry TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Cranbrook TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Cranbrook TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Dawson Creek TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Dawson Creek TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Fort Nelson TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Fort Nelson TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Fraser TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Fraser TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Ft. St. James Forest District.svg" afterPath="$PROJECT_DIR$/svg/1999/Ft. St. James Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Ft. St. John TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Ft. St. John TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Golden TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Golden TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Invermere TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Invermere TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Kalum TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Kalum TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Kamloops TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Kamloops TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Kingcome TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Kingcome TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Kispiox TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Kispiox TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Kootenay Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Kootenay Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Lakes TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Lakes TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Legend Sample.svg" afterPath="$PROJECT_DIR$/svg/1999/Legend Sample.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Lillooet TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Lillooet TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Mackenzie TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Mackenzie TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Merritt TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Merritt TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Mid Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Mid Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Morice TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Morice TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Nass TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Nass TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/North Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/North Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Okanagan TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Okanagan TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Prince George Forest District.svg" afterPath="$PROJECT_DIR$/svg/1999/Prince George Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Queen Charlotte TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Queen Charlotte TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Quesnel TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Quesnel TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Revelstoke TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Revelstoke TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Robson Valley TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Robson Valley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Soo TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Soo TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Strathcona TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Strathcona TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Sunshine Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Sunshine Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Vanderhoof Forest District.svg" afterPath="$PROJECT_DIR$/svg/1999/Vanderhoof Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/1999/Williams Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/1999/Williams Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/100 Mile House TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/100 Mile House TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Arrow TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Arrow TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Arrowsmith TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Arrowsmith TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Boundary TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Boundary TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Bulkley TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Bulkley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Cassiar TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Cassiar TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Cranberry TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Cranberry TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Cranbrook TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Cranbrook TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Dawson Creek TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Dawson Creek TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Fort Nelson TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Fort Nelson TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Fraser TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Fraser TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Ft. St. James Forest District.svg" afterPath="$PROJECT_DIR$/svg/2000/Ft. St. James Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Ft. St. John TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Ft. St. John TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Golden TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Golden TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Invermere TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Invermere TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Kalum TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Kalum TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Kamloops TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Kamloops TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Kingcome TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Kingcome TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Kispiox TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Kispiox TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Kootenay Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Kootenay Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Lakes TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Lakes TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Legend Sample.svg" afterPath="$PROJECT_DIR$/svg/2000/Legend Sample.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Lillooet TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Lillooet TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Mackenzie TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Mackenzie TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Merritt TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Merritt TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Mid Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Mid Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Morice TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Morice TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Nass TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Nass TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/North Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/North Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Okanagan TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Okanagan TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Prince George Forest District.svg" afterPath="$PROJECT_DIR$/svg/2000/Prince George Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Queen Charlotte TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Queen Charlotte TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Quesnel TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Quesnel TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Revelstoke TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Revelstoke TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Robson Valley TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Robson Valley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Soo TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Soo TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Strathcona TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Strathcona TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Sunshine Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Sunshine Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Vanderhoof Forest District.svg" afterPath="$PROJECT_DIR$/svg/2000/Vanderhoof Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2000/Williams Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2000/Williams Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/100 Mile House TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/100 Mile House TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Arrow TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Arrow TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Arrowsmith TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Arrowsmith TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Boundary TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Boundary TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Bulkley TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Bulkley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Cassiar TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Cassiar TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Cranberry TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Cranberry TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Cranbrook TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Cranbrook TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Dawson Creek TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Dawson Creek TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Fort Nelson TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Fort Nelson TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Fraser TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Fraser TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Ft. St. James Forest District.svg" afterPath="$PROJECT_DIR$/svg/2001/Ft. St. James Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Ft. St. John TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Ft. St. John TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Golden TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Golden TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Invermere TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Invermere TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Kalum TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Kalum TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Kamloops TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Kamloops TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Kingcome TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Kingcome TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Kispiox TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Kispiox TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Kootenay Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Kootenay Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Lakes TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Lakes TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Legend Sample.svg" afterPath="$PROJECT_DIR$/svg/2001/Legend Sample.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Lillooet TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Lillooet TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Mackenzie TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Mackenzie TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Merritt TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Merritt TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Mid Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Mid Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Morice TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Morice TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Nass TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Nass TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/North Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/North Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Okanagan TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Okanagan TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Prince George Forest District.svg" afterPath="$PROJECT_DIR$/svg/2001/Prince George Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Queen Charlotte TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Queen Charlotte TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Quesnel TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Quesnel TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Revelstoke TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Revelstoke TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Robson Valley TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Robson Valley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Soo TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Soo TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Strathcona TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Strathcona TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Sunshine Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Sunshine Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Vanderhoof Forest District.svg" afterPath="$PROJECT_DIR$/svg/2001/Vanderhoof Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2001/Williams Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2001/Williams Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/100 Mile House TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/100 Mile House TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Arrow TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Arrow TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Arrowsmith TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Arrowsmith TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Boundary TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Boundary TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Bulkley TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Bulkley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Cassiar TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Cassiar TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Cranberry TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Cranberry TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Cranbrook TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Cranbrook TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Dawson Creek TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Dawson Creek TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Fort Nelson TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Fort Nelson TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Fraser TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Fraser TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Ft. St. James Forest District.svg" afterPath="$PROJECT_DIR$/svg/2002/Ft. St. James Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Ft. St. John TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Ft. St. John TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Golden TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Golden TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Invermere TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Invermere TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Kalum TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Kalum TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Kamloops TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Kamloops TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Kingcome TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Kingcome TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Kispiox TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Kispiox TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Kootenay Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Kootenay Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Lakes TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Lakes TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Legend Sample.svg" afterPath="$PROJECT_DIR$/svg/2002/Legend Sample.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Lillooet TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Lillooet TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Mackenzie TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Mackenzie TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Merritt TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Merritt TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Mid Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Mid Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Morice TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Morice TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Nass TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Nass TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/North Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/North Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Okanagan TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Okanagan TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Prince George Forest District.svg" afterPath="$PROJECT_DIR$/svg/2002/Prince George Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Queen Charlotte TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Queen Charlotte TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Quesnel TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Quesnel TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Revelstoke TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Revelstoke TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Robson Valley TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Robson Valley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Soo TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Soo TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Strathcona TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Strathcona TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Sunshine Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Sunshine Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Vanderhoof Forest District.svg" afterPath="$PROJECT_DIR$/svg/2002/Vanderhoof Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2002/Williams Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2002/Williams Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/100 Mile House TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/100 Mile House TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Arrow TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Arrow TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Arrowsmith TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Arrowsmith TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Boundary TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Boundary TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Bulkley TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Bulkley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Cassiar TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Cassiar TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Cranberry TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Cranberry TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Cranbrook TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Cranbrook TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Dawson Creek TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Dawson Creek TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Fort Nelson TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Fort Nelson TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Fraser TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Fraser TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Ft. St. James Forest District.svg" afterPath="$PROJECT_DIR$/svg/2003/Ft. St. James Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Ft. St. John TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Ft. St. John TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Golden TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Golden TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Invermere TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Invermere TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Kalum TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Kalum TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Kamloops TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Kamloops TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Kingcome TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Kingcome TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Kispiox TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Kispiox TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Kootenay Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Kootenay Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Lakes TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Lakes TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Legend Sample.svg" afterPath="$PROJECT_DIR$/svg/2003/Legend Sample.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Lillooet TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Lillooet TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Mackenzie TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Mackenzie TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Merritt TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Merritt TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Mid Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Mid Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Morice TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Morice TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Nass TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Nass TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/North Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/North Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Okanagan TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Okanagan TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Prince George Forest District.svg" afterPath="$PROJECT_DIR$/svg/2003/Prince George Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Queen Charlotte TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Queen Charlotte TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Quesnel TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Quesnel TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Revelstoke TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Revelstoke TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Robson Valley TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Robson Valley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Soo TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Soo TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Strathcona TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Strathcona TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Sunshine Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Sunshine Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Vanderhoof Forest District.svg" afterPath="$PROJECT_DIR$/svg/2003/Vanderhoof Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2003/Williams Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2003/Williams Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/100 Mile House TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/100 Mile House TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Arrow TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Arrow TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Arrowsmith TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Arrowsmith TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Boundary TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Boundary TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Bulkley TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Bulkley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Cassiar TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Cassiar TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Cranberry TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Cranberry TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Cranbrook TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Cranbrook TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Dawson Creek TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Dawson Creek TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Fort Nelson TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Fort Nelson TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Fraser TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Fraser TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Ft. St. James Forest District.svg" afterPath="$PROJECT_DIR$/svg/2004/Ft. St. James Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Ft. St. John TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Ft. St. John TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Golden TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Golden TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Invermere TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Invermere TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Kalum TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Kalum TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Kamloops TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Kamloops TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Kingcome TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Kingcome TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Kispiox TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Kispiox TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Kootenay Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Kootenay Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Lakes TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Lakes TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Legend Sample.svg" afterPath="$PROJECT_DIR$/svg/2004/Legend Sample.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Lillooet TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Lillooet TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Mackenzie TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Mackenzie TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Merritt TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Merritt TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Mid Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Mid Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Morice TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Morice TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Nass TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Nass TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/North Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/North Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Okanagan TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Okanagan TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Prince George Forest District.svg" afterPath="$PROJECT_DIR$/svg/2004/Prince George Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Queen Charlotte TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Queen Charlotte TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Quesnel TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Quesnel TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Revelstoke TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Revelstoke TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Robson Valley TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Robson Valley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Soo TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Soo TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Strathcona TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Strathcona TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Sunshine Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Sunshine Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Vanderhoof Forest District.svg" afterPath="$PROJECT_DIR$/svg/2004/Vanderhoof Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2004/Williams Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2004/Williams Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/100 Mile House TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/100 Mile House TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Arrow TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Arrow TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Arrowsmith TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Arrowsmith TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Boundary TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Boundary TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Bulkley TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Bulkley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Cassiar TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Cassiar TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Cranberry TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Cranberry TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Cranbrook TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Cranbrook TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Dawson Creek TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Dawson Creek TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Fort Nelson TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Fort Nelson TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Fraser TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Fraser TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Ft. St. James Forest District.svg" afterPath="$PROJECT_DIR$/svg/2005/Ft. St. James Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Ft. St. John TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Ft. St. John TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Golden TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Golden TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Invermere TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Invermere TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Kalum TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Kalum TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Kamloops TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Kamloops TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Kingcome TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Kingcome TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Kispiox TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Kispiox TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Kootenay Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Kootenay Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Lakes TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Lakes TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Legend Sample.svg" afterPath="$PROJECT_DIR$/svg/2005/Legend Sample.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Lillooet TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Lillooet TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Mackenzie TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Mackenzie TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Merritt TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Merritt TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Mid Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Mid Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Morice TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Morice TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Nass TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Nass TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/North Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/North Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Okanagan TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Okanagan TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Prince George Forest District.svg" afterPath="$PROJECT_DIR$/svg/2005/Prince George Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Queen Charlotte TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Queen Charlotte TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Quesnel TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Quesnel TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Revelstoke TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Revelstoke TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Robson Valley TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Robson Valley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Soo TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Soo TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Strathcona TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Strathcona TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Sunshine Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Sunshine Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Vanderhoof Forest District.svg" afterPath="$PROJECT_DIR$/svg/2005/Vanderhoof Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2005/Williams Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2005/Williams Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/100 Mile House TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/100 Mile House TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Arrow TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Arrow TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Arrowsmith TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Arrowsmith TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Boundary TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Boundary TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Bulkley TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Bulkley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Cassiar TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Cassiar TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Cranberry TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Cranberry TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Cranbrook TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Cranbrook TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Dawson Creek TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Dawson Creek TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Fort Nelson TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Fort Nelson TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Fraser TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Fraser TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Ft. St. James Forest District.svg" afterPath="$PROJECT_DIR$/svg/2006/Ft. St. James Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Ft. St. John TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Ft. St. John TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Golden TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Golden TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Invermere TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Invermere TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Kalum TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Kalum TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Kamloops TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Kamloops TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Kingcome TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Kingcome TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Kispiox TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Kispiox TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Kootenay Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Kootenay Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Lakes TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Lakes TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Legend Sample.svg" afterPath="$PROJECT_DIR$/svg/2006/Legend Sample.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Lillooet TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Lillooet TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Mackenzie TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Mackenzie TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Merritt TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Merritt TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Mid Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Mid Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Morice TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Morice TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Nass TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Nass TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/North Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/North Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Okanagan TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Okanagan TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Prince George Forest District.svg" afterPath="$PROJECT_DIR$/svg/2006/Prince George Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Queen Charlotte TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Queen Charlotte TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Quesnel TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Quesnel TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Revelstoke TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Revelstoke TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Robson Valley TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Robson Valley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Soo TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Soo TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Strathcona TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Strathcona TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Sunshine Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Sunshine Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Vanderhoof Forest District.svg" afterPath="$PROJECT_DIR$/svg/2006/Vanderhoof Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2006/Williams Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2006/Williams Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/100 Mile House TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/100 Mile House TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Arrow TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Arrow TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Arrowsmith TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Arrowsmith TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Boundary TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Boundary TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Bulkley TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Bulkley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Cassiar TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Cassiar TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Cranberry TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Cranberry TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Cranbrook TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Cranbrook TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Dawson Creek TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Dawson Creek TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Fort Nelson TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Fort Nelson TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Fraser TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Fraser TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Ft. St. James Forest District.svg" afterPath="$PROJECT_DIR$/svg/2007/Ft. St. James Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Ft. St. John TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Ft. St. John TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Golden TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Golden TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Invermere TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Invermere TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Kalum TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Kalum TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Kamloops TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Kamloops TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Kingcome TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Kingcome TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Kispiox TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Kispiox TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Kootenay Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Kootenay Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Lakes TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Lakes TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Legend Sample.svg" afterPath="$PROJECT_DIR$/svg/2007/Legend Sample.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Lillooet TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Lillooet TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Mackenzie TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Mackenzie TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Merritt TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Merritt TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Mid Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Mid Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Morice TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Morice TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Nass TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Nass TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/North Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/North Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Okanagan TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Okanagan TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Prince George Forest District.svg" afterPath="$PROJECT_DIR$/svg/2007/Prince George Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Queen Charlotte TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Queen Charlotte TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Quesnel TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Quesnel TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Revelstoke TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Revelstoke TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Robson Valley TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Robson Valley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Soo TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Soo TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Strathcona TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Strathcona TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Sunshine Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Sunshine Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Vanderhoof Forest District.svg" afterPath="$PROJECT_DIR$/svg/2007/Vanderhoof Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2007/Williams Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2007/Williams Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/100 Mile House TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/100 Mile House TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Arrow TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Arrow TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Arrowsmith TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Arrowsmith TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Boundary TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Boundary TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Bulkley TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Bulkley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Cassiar TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Cassiar TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Cranberry TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Cranberry TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Cranbrook TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Cranbrook TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Dawson Creek TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Dawson Creek TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Fort Nelson TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Fort Nelson TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Fraser TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Fraser TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Ft. St. James Forest District.svg" afterPath="$PROJECT_DIR$/svg/2008/Ft. St. James Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Ft. St. John TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Ft. St. John TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Golden TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Golden TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Invermere TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Invermere TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Kalum TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Kalum TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Kamloops TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Kamloops TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Kingcome TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Kingcome TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Kispiox TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Kispiox TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Kootenay Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Kootenay Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Lakes TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Lakes TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Legend Sample.svg" afterPath="$PROJECT_DIR$/svg/2008/Legend Sample.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Lillooet TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Lillooet TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Mackenzie TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Mackenzie TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Merritt TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Merritt TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Mid Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Mid Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Morice TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Morice TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Nass TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Nass TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/North Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/North Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Okanagan TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Okanagan TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Prince George Forest District.svg" afterPath="$PROJECT_DIR$/svg/2008/Prince George Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Queen Charlotte TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Queen Charlotte TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Quesnel TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Quesnel TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Revelstoke TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Revelstoke TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Robson Valley TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Robson Valley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Soo TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Soo TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Strathcona TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Strathcona TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Sunshine Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Sunshine Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Vanderhoof Forest District.svg" afterPath="$PROJECT_DIR$/svg/2008/Vanderhoof Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2008/Williams Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2008/Williams Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/100 Mile House TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/100 Mile House TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Arrow TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Arrow TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Arrowsmith TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Arrowsmith TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Boundary TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Boundary TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Bulkley TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Bulkley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Cassiar TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Cassiar TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Cranberry TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Cranberry TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Cranbrook TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Cranbrook TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Dawson Creek TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Dawson Creek TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Fort Nelson TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Fort Nelson TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Fraser TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Fraser TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Ft. St. James Forest District.svg" afterPath="$PROJECT_DIR$/svg/2009/Ft. St. James Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Ft. St. John TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Ft. St. John TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Golden TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Golden TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Invermere TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Invermere TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Kalum TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Kalum TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Kamloops TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Kamloops TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Kingcome TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Kingcome TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Kispiox TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Kispiox TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Kootenay Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Kootenay Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Lakes TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Lakes TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Legend Sample.svg" afterPath="$PROJECT_DIR$/svg/2009/Legend Sample.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Lillooet TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Lillooet TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Mackenzie TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Mackenzie TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Merritt TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Merritt TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Mid Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Mid Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Morice TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Morice TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Nass TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Nass TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/North Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/North Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Okanagan TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Okanagan TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Prince George Forest District.svg" afterPath="$PROJECT_DIR$/svg/2009/Prince George Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Queen Charlotte TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Queen Charlotte TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Quesnel TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Quesnel TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Revelstoke TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Revelstoke TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Robson Valley TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Robson Valley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Soo TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Soo TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Strathcona TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Strathcona TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Sunshine Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Sunshine Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Vanderhoof Forest District.svg" afterPath="$PROJECT_DIR$/svg/2009/Vanderhoof Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2009/Williams Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2009/Williams Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/100 Mile House TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/100 Mile House TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Arrow TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Arrow TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Arrowsmith TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Arrowsmith TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Boundary TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Boundary TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Bulkley TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Bulkley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Cassiar TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Cassiar TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Cranberry TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Cranberry TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Cranbrook TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Cranbrook TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Dawson Creek TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Dawson Creek TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Fort Nelson TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Fort Nelson TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Fraser TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Fraser TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Ft. St. James Forest District.svg" afterPath="$PROJECT_DIR$/svg/2010/Ft. St. James Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Ft. St. John TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Ft. St. John TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Golden TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Golden TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Invermere TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Invermere TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Kalum TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Kalum TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Kamloops TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Kamloops TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Kingcome TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Kingcome TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Kispiox TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Kispiox TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Kootenay Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Kootenay Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Lakes TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Lakes TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Legend Sample.svg" afterPath="$PROJECT_DIR$/svg/2010/Legend Sample.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Lillooet TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Lillooet TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Mackenzie TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Mackenzie TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Merritt TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Merritt TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Mid Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Mid Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Morice TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Morice TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Nass TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Nass TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/North Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/North Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Okanagan TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Okanagan TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Prince George Forest District.svg" afterPath="$PROJECT_DIR$/svg/2010/Prince George Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Queen Charlotte TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Queen Charlotte TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Quesnel TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Quesnel TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Revelstoke TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Revelstoke TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Robson Valley TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Robson Valley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Soo TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Soo TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Strathcona TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Strathcona TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Sunshine Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Sunshine Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Vanderhoof Forest District.svg" afterPath="$PROJECT_DIR$/svg/2010/Vanderhoof Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2010/Williams Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2010/Williams Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/100 Mile House TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/100 Mile House TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Arrow TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Arrow TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Arrowsmith TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Arrowsmith TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Boundary TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Boundary TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Bulkley TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Bulkley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Cassiar TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Cassiar TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Cranberry TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Cranberry TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Cranbrook TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Cranbrook TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Dawson Creek TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Dawson Creek TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Fort Nelson TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Fort Nelson TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Fraser TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Fraser TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Ft. St. James Forest District.svg" afterPath="$PROJECT_DIR$/svg/2011/Ft. St. James Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Ft. St. John TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Ft. St. John TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Golden TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Golden TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Invermere TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Invermere TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Kalum TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Kalum TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Kamloops TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Kamloops TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Kingcome TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Kingcome TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Kispiox TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Kispiox TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Kootenay Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Kootenay Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Lakes TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Lakes TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Legend Sample.svg" afterPath="$PROJECT_DIR$/svg/2011/Legend Sample.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Lillooet TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Lillooet TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Mackenzie TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Mackenzie TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Merritt TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Merritt TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Mid Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Mid Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Morice TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Morice TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Nass TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Nass TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/North Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/North Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Okanagan TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Okanagan TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Prince George Forest District.svg" afterPath="$PROJECT_DIR$/svg/2011/Prince George Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Queen Charlotte TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Queen Charlotte TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Quesnel TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Quesnel TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Revelstoke TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Revelstoke TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Robson Valley TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Robson Valley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Soo TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Soo TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Strathcona TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Strathcona TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Sunshine Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Sunshine Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Vanderhoof Forest District.svg" afterPath="$PROJECT_DIR$/svg/2011/Vanderhoof Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2011/Williams Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2011/Williams Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/100 Mile House TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/100 Mile House TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Arrow TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Arrow TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Arrowsmith TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Arrowsmith TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Boundary TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Boundary TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Bulkley TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Bulkley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Cassiar TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Cassiar TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Cranberry TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Cranberry TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Cranbrook TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Cranbrook TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Dawson Creek TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Dawson Creek TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Fort Nelson TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Fort Nelson TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Fraser TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Fraser TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Ft. St. James Forest District.svg" afterPath="$PROJECT_DIR$/svg/2012/Ft. St. James Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Ft. St. John TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Ft. St. John TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Golden TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Golden TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Invermere TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Invermere TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Kalum TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Kalum TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Kamloops TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Kamloops TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Kingcome TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Kingcome TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Kispiox TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Kispiox TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Kootenay Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Kootenay Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Lakes TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Lakes TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Legend Sample.svg" afterPath="$PROJECT_DIR$/svg/2012/Legend Sample.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Lillooet TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Lillooet TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Mackenzie TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Mackenzie TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Merritt TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Merritt TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Mid Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Mid Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Morice TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Morice TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Nass TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Nass TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/North Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/North Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Okanagan TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Okanagan TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Prince George Forest District.svg" afterPath="$PROJECT_DIR$/svg/2012/Prince George Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Queen Charlotte TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Queen Charlotte TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Quesnel TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Quesnel TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Revelstoke TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Revelstoke TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Robson Valley TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Robson Valley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Soo TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Soo TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Strathcona TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Strathcona TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Sunshine Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Sunshine Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Vanderhoof Forest District.svg" afterPath="$PROJECT_DIR$/svg/2012/Vanderhoof Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2012/Williams Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2012/Williams Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/100 Mile House TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/100 Mile House TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Arrow TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Arrow TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Arrowsmith TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Arrowsmith TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Boundary TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Boundary TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Bulkley TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Bulkley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Cassiar TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Cassiar TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Cranberry TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Cranberry TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Cranbrook TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Cranbrook TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Dawson Creek TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Dawson Creek TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Fort Nelson TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Fort Nelson TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Fraser TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Fraser TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Ft. St. James Forest District.svg" afterPath="$PROJECT_DIR$/svg/2013/Ft. St. James Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Ft. St. John TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Ft. St. John TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Golden TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Golden TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Invermere TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Invermere TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Kalum TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Kalum TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Kamloops TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Kamloops TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Kingcome TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Kingcome TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Kispiox TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Kispiox TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Kootenay Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Kootenay Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Lakes TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Lakes TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Legend Sample.svg" afterPath="$PROJECT_DIR$/svg/2013/Legend Sample.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Lillooet TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Lillooet TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Mackenzie TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Mackenzie TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Merritt TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Merritt TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Mid Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Mid Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Morice TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Morice TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Nass TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Nass TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/North Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/North Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Okanagan TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Okanagan TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Prince George Forest District.svg" afterPath="$PROJECT_DIR$/svg/2013/Prince George Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Queen Charlotte TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Queen Charlotte TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Quesnel TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Quesnel TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Revelstoke TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Revelstoke TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Robson Valley TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Robson Valley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Soo TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Soo TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Strathcona TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Strathcona TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Sunshine Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Sunshine Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Vanderhoof Forest District.svg" afterPath="$PROJECT_DIR$/svg/2013/Vanderhoof Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2013/Williams Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2013/Williams Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/100 Mile House TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/100 Mile House TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Arrow TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Arrow TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Arrowsmith TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Arrowsmith TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Boundary TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Boundary TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Bulkley TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Bulkley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Cassiar TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Cassiar TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Cranberry TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Cranberry TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Cranbrook TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Cranbrook TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Dawson Creek TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Dawson Creek TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Fort Nelson TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Fort Nelson TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Fraser TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Fraser TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Ft. St. James Forest District.svg" afterPath="$PROJECT_DIR$/svg/2014/Ft. St. James Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Ft. St. John TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Ft. St. John TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Golden TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Golden TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Invermere TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Invermere TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Kalum TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Kalum TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Kamloops TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Kamloops TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Kingcome TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Kingcome TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Kispiox TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Kispiox TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Kootenay Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Kootenay Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Lakes TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Lakes TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Legend Sample.svg" afterPath="$PROJECT_DIR$/svg/2014/Legend Sample.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Lillooet TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Lillooet TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Mackenzie TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Mackenzie TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Merritt TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Merritt TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Mid Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Mid Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Morice TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Morice TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Nass TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Nass TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/North Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/North Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Okanagan TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Okanagan TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Prince George Forest District.svg" afterPath="$PROJECT_DIR$/svg/2014/Prince George Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Queen Charlotte TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Queen Charlotte TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Quesnel TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Quesnel TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Revelstoke TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Revelstoke TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Robson Valley TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Robson Valley TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Soo TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Soo TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Strathcona TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Strathcona TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Sunshine Coast TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Sunshine Coast TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Vanderhoof Forest District.svg" afterPath="$PROJECT_DIR$/svg/2014/Vanderhoof Forest District.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/2014/Williams Lake TSA.svg" afterPath="$PROJECT_DIR$/svg/2014/Williams Lake TSA.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/icon_dimensions.js" afterPath="$PROJECT_DIR$/svg/icon_dimensions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/meta/sizerbox_2.svg" afterPath="$PROJECT_DIR$/svg/meta/sizerbox_2.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/meta/sizerbox_3.svg" afterPath="$PROJECT_DIR$/svg/meta/sizerbox_3.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/svg/meta/sizerbox_4.svg" afterPath="$PROJECT_DIR$/svg/meta/sizerbox_4.svg" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -780,83 +19,98 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="142" column="100" lean-forward="true" selection-start-line="142" selection-start-column="100" selection-end-line="142" selection-end-column="100" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1692">
-              <caret line="94" column="56" lean-forward="false" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="init.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/init.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="60" column="11" lean-forward="true" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="british_columbia_points.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/british_columbia_points.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="45" column="2" lean-forward="false" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="british_columbia_polys.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/british_columbia_polys.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="icon_dimensions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/svg/icon_dimensions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="66" column="17" lean-forward="false" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.6270769">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="491">
+                  <caret line="165" column="70" lean-forward="false" selection-start-line="165" selection-start-column="70" selection-end-line="165" selection-end-column="70" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="init.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/init.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="612">
+                  <caret line="236" column="43" lean-forward="true" selection-start-line="236" selection-start-column="43" selection-end-line="236" selection-end-column="43" />
+                  <folding>
+                    <element signature="e#3261#3548#0" expanded="false" />
+                    <element signature="e#3597#3773#0" expanded="false" />
+                    <element signature="e#3877#4545#0" expanded="false" />
+                    <element signature="e#4730#4780#0" expanded="false" />
+                    <element signature="e#5096#5245#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/main.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="581">
+                  <caret line="102" column="11" lean-forward="false" selection-start-line="102" selection-start-column="11" selection-end-line="102" selection-end-column="11" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="british_columbia_polys.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/data/british_columbia_polys.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="18">
+                  <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/style.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="360">
+                  <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../Assignment/website_backup/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-324">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/../../Assignment/website_backup/js/main.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1183">
+                  <caret line="229" column="40" lean-forward="true" selection-start-line="229" selection-start-column="40" selection-end-line="229" selection-end-column="40" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -878,14 +132,17 @@
       <find>'</find>
       <find>,</find>
       <find>img</find>
+      <find>graph</find>
+      <find>leftData</find>
+      <find>year</find>
     </findStrings>
     <replaceStrings>
-      <replace>rightData</replace>
       <replace>&quot;_nonpine_vol&quot;</replace>
       <replace>iconScaleFactor</replace>
       <replace>time-slider-bar</replace>
       <replace>class=&quot;legend-item-container&quot;</replace>
       <replace>, \n</replace>
+      <replace>rightData</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -907,9 +164,11 @@
         <option value="$PROJECT_DIR$/data/british_columbia_polys.js" />
         <option value="$PROJECT_DIR$/svg/icon_dimensions.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/js/init.js" />
+        <option value="$PROJECT_DIR$/data/map_popup.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/../../Assignment/website_backup/js/main.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/init.js" />
       </list>
     </option>
   </component>
@@ -941,7 +200,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -965,38 +223,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="svg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="svg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="1999" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1015,8 +241,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="jquery" />
+              <option name="myItemId" value="d3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="d3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="d3.js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1063,13 +311,15 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Open_Source_Geo/pgr_nogo_Dijkstra" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Assignment/website_backup/index.html" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1189,11 +439,12 @@
       <workItem from="1513853704790" duration="608000" />
       <workItem from="1514889208250" duration="7010000" />
       <workItem from="1514901446573" duration="12877000" />
+      <workItem from="1514978003221" duration="9117000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118732000" />
+    <option name="totallyTimeSpent" value="128200000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="25" width="1926" height="1058" extended-state="6" />
@@ -1202,18 +453,18 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14947917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914045" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914045" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1248,43 +499,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/british_columbia_polys1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="28" lean-forward="true" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/british_columbia_points.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -1339,13 +553,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/british_columbia_polys1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/british_columbia_polys1.js" />
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -1480,22 +688,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/threshold.js" />
-    <entry file="file://$PROJECT_DIR$/data/british_columbia_polys1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/british_columbia_points.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="45" column="2" lean-forward="false" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/british_columbia_polys1.js" />
     <entry file="file://$PROJECT_DIR$/data/british_columbia_polys.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1504,18 +697,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/british_columbia_polys.js">
+    <entry file="file://$PROJECT_DIR$/data/british_columbia_points.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="66" column="17" lean-forward="false" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+        <state relative-caret-position="806">
+          <caret line="45" column="2" lean-forward="false" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -1523,32 +708,97 @@
     <entry file="file://$PROJECT_DIR$/svg/icon_dimensions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-          <folding />
+          <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+          <folding>
+            <marker date="1514916856083" expanded="true" signature="21:28" ph="{...}" />
+            <marker date="1514916856083" expanded="true" signature="2210:2212" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/init.js">
+    <entry file="file://$PROJECT_DIR$/data/map_popup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="60" column="11" lean-forward="true" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
+          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
+    <entry file="file://$PROJECT_DIR$/../../Assignment/website/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1692">
-          <caret line="94" column="56" lean-forward="false" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="56" />
+        <state relative-caret-position="-440">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/d3/d3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assignment/website_backup/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="142" column="100" lean-forward="true" selection-start-line="142" selection-start-column="100" selection-end-line="142" selection-end-column="100" />
+        <state relative-caret-position="491">
+          <caret line="165" column="70" lean-forward="false" selection-start-line="165" selection-start-column="70" selection-end-line="165" selection-end-column="70" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/british_columbia_polys.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="102" column="11" lean-forward="false" selection-start-line="102" selection-start-column="11" selection-end-line="102" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Assignment/website_backup/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1183">
+          <caret line="229" column="40" lean-forward="true" selection-start-line="229" selection-start-column="40" selection-end-line="229" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="236" column="43" lean-forward="true" selection-start-line="236" selection-start-column="43" selection-end-line="236" selection-end-column="43" />
+          <folding>
+            <element signature="e#3261#3548#0" expanded="false" />
+            <element signature="e#3597#3773#0" expanded="false" />
+            <element signature="e#3877#4545#0" expanded="false" />
+            <element signature="e#4730#4780#0" expanded="false" />
+            <element signature="e#5096#5245#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
