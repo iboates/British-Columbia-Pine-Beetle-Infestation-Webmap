@@ -56,48 +56,29 @@ $(document).ready(function() {
 
             layer.on('click', function (e) {
 
+                // get the currently selected radio button from the pyramid control panel
                 var pyramidActionCode = $("input[name=pyramid]:checked").val();
 
+                // grab the data to replace or add to the selected bar chart
                 if (pyramidActionCode === "replace-left-pyramid") {
-
-                    leftData[0].pine_vol = e.target.feature.properties._yr1999;
-                    leftData[1].pine_vol = e.target.feature.properties._yr2000;
-                    leftData[2].pine_vol = e.target.feature.properties._yr2001;
-                    leftData[3].pine_vol = e.target.feature.properties._yr2002;
-                    leftData[4].pine_vol = e.target.feature.properties._yr2003;
-                    leftData[5].pine_vol = e.target.feature.properties._yr2004;
-                    leftData[6].pine_vol = e.target.feature.properties._yr2005;
-                    leftData[7].pine_vol = e.target.feature.properties._yr2006;
-                    leftData[8].pine_vol = e.target.feature.properties._yr2007;
-                    leftData[9].pine_vol = e.target.feature.properties._yr2008;
-                    leftData[10].pine_vol = e.target.feature.properties._yr2009;
-                    leftData[11].pine_vol = e.target.feature.properties._yr2010;
-                    leftData[12].pine_vol = e.target.feature.properties._yr2011;
-                    leftData[13].pine_vol = e.target.feature.properties._yr2012;
-                    leftData[14].pine_vol = e.target.feature.properties._yr2013;
-                    leftData[15].pine_vol = e.target.feature.properties._yr2014;
-
+                    for (var i=0; i<leftData.length; i++) {
+                        leftData[i].pine_vol = e.target.feature.properties["_yr"+(1999+i)];
+                    }
                 } else if (pyramidActionCode === "replace-right-pyramid") {
-
-                    rightData[0].pine_vol = e.target.feature.properties._yr1999;
-                    rightData[1].pine_vol = e.target.feature.properties._yr2000;
-                    rightData[2].pine_vol = e.target.feature.properties._yr2001;
-                    rightData[3].pine_vol = e.target.feature.properties._yr2002;
-                    rightData[4].pine_vol = e.target.feature.properties._yr2003;
-                    rightData[5].pine_vol = e.target.feature.properties._yr2004;
-                    rightData[6].pine_vol = e.target.feature.properties._yr2005;
-                    rightData[7].pine_vol = e.target.feature.properties._yr2006;
-                    rightData[8].pine_vol = e.target.feature.properties._yr2007;
-                    rightData[9].pine_vol = e.target.feature.properties._yr2008;
-                    rightData[10].pine_vol = e.target.feature.properties._yr2009;
-                    rightData[11].pine_vol = e.target.feature.properties._yr2010;
-                    rightData[12].pine_vol = e.target.feature.properties._yr2011;
-                    rightData[13].pine_vol = e.target.feature.properties._yr2012;
-                    rightData[14].pine_vol = e.target.feature.properties._yr2013;
-                    rightData[15].pine_vol = e.target.feature.properties._yr2014;
-
+                    for (var i=0; i<rightData.length; i++) {
+                        rightData[i].pine_vol = e.target.feature.properties["_yr"+(1999+i)];
+                    }
+                } else if (pyramidActionCode === "add-left-pyramid") {
+                    for (var i=0; i<leftData.length; i++) {
+                        leftData[i].pine_vol = leftData[i].pine_vol + e.target.feature.properties["_yr"+(1999+i)];
+                    }
+                } else if (pyramidActionCode === "add-right-pyramid") {
+                    for (var i=0; i<rightData.length; i++) {
+                        rightData[i].pine_vol = rightData[i].pine_vol + e.target.feature.properties["_yr"+(1999+i)];
+                    }
                 }
 
+                // update the bar charts accordingly
                 update(leftData, rightData);
 
             });
@@ -170,41 +151,41 @@ $(document).ready(function() {
     var containerHeight = $("#right-pyramid-container").height();
 
     var leftData = [
-        {"year": "_yr1999", "pine_vol": 77616752},
-        {"year": "_yr2000", "pine_vol": 77038912},
-        {"year": "_yr2001", "pine_vol": 76370816},
-        {"year": "_yr2002", "pine_vol": 73590976},
-        {"year": "_yr2003", "pine_vol": 67868816},
-        {"year": "_yr2004", "pine_vol": 60651584},
-        {"year": "_yr2005", "pine_vol": 47836464},
-        {"year": "_yr2006", "pine_vol": 39659504},
-        {"year": "_yr2007", "pine_vol": 31413136},
-        {"year": "_yr2008", "pine_vol": 29010976},
-        {"year": "_yr2009", "pine_vol": 28837344},
-        {"year": "_yr2010", "pine_vol": 28734912},
-        {"year": "_yr2011", "pine_vol": 28718880},
-        {"year": "_yr2012", "pine_vol": 28705984},
-        {"year": "_yr2013", "pine_vol": 28705936},
-        {"year": "_yr2014", "pine_vol": 28703296}
+        {"year": "_yr1999", "pine_vol": 0},
+        {"year": "_yr2000", "pine_vol": 0},
+        {"year": "_yr2001", "pine_vol": 0},
+        {"year": "_yr2002", "pine_vol": 0},
+        {"year": "_yr2003", "pine_vol": 0},
+        {"year": "_yr2004", "pine_vol": 0},
+        {"year": "_yr2005", "pine_vol": 0},
+        {"year": "_yr2006", "pine_vol": 0},
+        {"year": "_yr2007", "pine_vol": 0},
+        {"year": "_yr2008", "pine_vol": 0},
+        {"year": "_yr2009", "pine_vol": 0},
+        {"year": "_yr2010", "pine_vol": 0},
+        {"year": "_yr2011", "pine_vol": 0},
+        {"year": "_yr2012", "pine_vol": 0},
+        {"year": "_yr2013", "pine_vol": 0},
+        {"year": "_yr2014", "pine_vol": 0}
     ];
 
     var rightData = [
-        {"year": "_yr1999", "pine_vol": 77616752},
-        {"year": "_yr2000", "pine_vol": 77038912},
-        {"year": "_yr2001", "pine_vol": 76370816},
-        {"year": "_yr2002", "pine_vol": 73590976},
-        {"year": "_yr2003", "pine_vol": 67868816},
-        {"year": "_yr2004", "pine_vol": 60651584},
-        {"year": "_yr2005", "pine_vol": 47836464},
-        {"year": "_yr2006", "pine_vol": 39659504},
-        {"year": "_yr2007", "pine_vol": 31413136},
-        {"year": "_yr2008", "pine_vol": 29010976},
-        {"year": "_yr2009", "pine_vol": 28837344},
-        {"year": "_yr2010", "pine_vol": 28734912},
-        {"year": "_yr2011", "pine_vol": 28718880},
-        {"year": "_yr2012", "pine_vol": 28705984},
-        {"year": "_yr2013", "pine_vol": 28705936},
-        {"year": "_yr2014", "pine_vol": 28703296}
+        {"year": "_yr1999", "pine_vol": 0},
+        {"year": "_yr2000", "pine_vol": 0},
+        {"year": "_yr2001", "pine_vol": 0},
+        {"year": "_yr2002", "pine_vol": 0},
+        {"year": "_yr2003", "pine_vol": 0},
+        {"year": "_yr2004", "pine_vol": 0},
+        {"year": "_yr2005", "pine_vol": 0},
+        {"year": "_yr2006", "pine_vol": 0},
+        {"year": "_yr2007", "pine_vol": 0},
+        {"year": "_yr2008", "pine_vol": 0},
+        {"year": "_yr2009", "pine_vol": 0},
+        {"year": "_yr2010", "pine_vol": 0},
+        {"year": "_yr2011", "pine_vol": 0},
+        {"year": "_yr2012", "pine_vol": 0},
+        {"year": "_yr2013", "pine_vol": 0},
+        {"year": "_yr2014", "pine_vol": 0}
     ];
 
     // left graph
@@ -362,5 +343,52 @@ $(document).ready(function() {
                 .ticks(5));
 
     }
+
+    // clearing pyramids
+
+    $('#clear-left-pyramid').click(function() {
+        leftData = [
+            {"year": "_yr1999", "pine_vol": 0},
+            {"year": "_yr2000", "pine_vol": 0},
+            {"year": "_yr2001", "pine_vol": 0},
+            {"year": "_yr2002", "pine_vol": 0},
+            {"year": "_yr2003", "pine_vol": 0},
+            {"year": "_yr2004", "pine_vol": 0},
+            {"year": "_yr2005", "pine_vol": 0},
+            {"year": "_yr2006", "pine_vol": 0},
+            {"year": "_yr2007", "pine_vol": 0},
+            {"year": "_yr2008", "pine_vol": 0},
+            {"year": "_yr2009", "pine_vol": 0},
+            {"year": "_yr2010", "pine_vol": 0},
+            {"year": "_yr2011", "pine_vol": 0},
+            {"year": "_yr2012", "pine_vol": 0},
+            {"year": "_yr2013", "pine_vol": 0},
+            {"year": "_yr2014", "pine_vol": 0}
+        ];
+        update(leftData, rightData);
+    });
+
+    $('#clear-right-pyramid').click(function() {
+        rightData = [
+            {"year": "_yr1999", "pine_vol": 0},
+            {"year": "_yr2000", "pine_vol": 0},
+            {"year": "_yr2001", "pine_vol": 0},
+            {"year": "_yr2002", "pine_vol": 0},
+            {"year": "_yr2003", "pine_vol": 0},
+            {"year": "_yr2004", "pine_vol": 0},
+            {"year": "_yr2005", "pine_vol": 0},
+            {"year": "_yr2006", "pine_vol": 0},
+            {"year": "_yr2007", "pine_vol": 0},
+            {"year": "_yr2008", "pine_vol": 0},
+            {"year": "_yr2009", "pine_vol": 0},
+            {"year": "_yr2010", "pine_vol": 0},
+            {"year": "_yr2011", "pine_vol": 0},
+            {"year": "_yr2012", "pine_vol": 0},
+            {"year": "_yr2013", "pine_vol": 0},
+            {"year": "_yr2014", "pine_vol": 0}
+        ];
+        update(leftData, rightData);
+    });
+
 
 });
