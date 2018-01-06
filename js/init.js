@@ -113,6 +113,42 @@ $(document).ready(function() {
         }
 
     }
+
+    function replacePyramidData(e, layer, targetData, otherData, targetPolygonTracker, otherPolygonTracker) {
+
+        // get the name of the selected polygon
+        var polygonName = e.target.feature.properties.name;
+
+        // add the polygon to the target tracker array
+        if ($("input[name=pyramid]:checked").val() === "replace-left-pyramid") {
+            leftPyramidPolys = [polygonName];
+        } else if ($("input[name=pyramid]:checked").val() === "replace-right-pyramid") {
+            rightPyramidPolys = [polygonName];
+        }
+
+
+        // add the data to the target pyramid
+        for (var i = 0; i < targetData.length; i++) {
+            targetData[i].pine_vol = e.target.feature.properties["_yr" + (1999 + i)];
+        }
+
+        // check if the name is already in the other tracker array
+        if (otherPolygonTracker.indexOf(polygonName) !== -1) {
+
+            // remove the data from the other tracker array
+            otherPolygonTracker.splice(otherPolygonTracker.indexOf(polygonName), 1);
+
+            // remove the data from the other pyramid
+            for (var i = 0; i < otherData.length; i++) {
+                otherData[i].pine_vol = otherData[i].pine_vol - e.target.feature.properties["_yr" + (1999 + i)];
+            }
+
+        }
+
+        // colour the polygons
+        selectorLayer.setStyle(selectorLayerStyle);
+
+    }
     
     // Poylgon Layer
     markerPolygonLayer = L.geoJSON(britishColumbiaPolys, {
@@ -129,12 +165,35 @@ $(document).ready(function() {
     });
 
     // selector layer
+    function selectorLayerStyle(feature, layer) {
+        var featureName = feature.properties.name;
+        if (leftPyramidPolys.indexOf(featureName) !== -1) {
+            return {
+                color: '#0000ff',
+                stroke: true,
+                weight: 10,
+                fillOpacity: 0
+            };
+        } else if (rightPyramidPolys.indexOf(featureName) !== -1) {
+            return {
+                color: '#ff0000',
+                stroke: true,
+                weight: 10,
+                fillOpacity: 0
+            };
+        } else {
+            return {
+                color: '#ffffff',
+                stroke: true,
+                weight: 0.1,
+                fillOpacity: 0
+            };
+        }
+    }
+
     selectorLayer = L.geoJSON(britishColumbiaSelectors, {
 
-        stroke: true,
-        weight: 0.5,
-        color: '#ffffff',
-        fillOpacity: 0,
+        style: selectorLayerStyle,
 
         onEachFeature: function (feature, layer) {
 
@@ -175,7 +234,16 @@ $(document).ready(function() {
                     }
 
                 // if the user has selected a polygon to replace the left pyramid...
+                } else if (pyramidActionCode === "replace-left-pyramid") {
+
+                    replacePyramidData(e, layer, leftData, rightData, leftPyramidPolys, rightPyramidPolys);
+
+                } else if (pyramidActionCode === "replace-right-pyramid") {
+
+                    replacePyramidData(e, layer, rightData, leftData, rightPyramidPolys, leftPyramidPolys);
+
                 }
+
 
                 // update the bar charts accordingly
                 update(leftData, rightData);
