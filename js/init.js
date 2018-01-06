@@ -67,21 +67,21 @@ $(document).ready(function() {
             });
         }
 
-        // add the polygon to the left tracker array
+        // add the polygon to the target tracker array
         targetPolygonTracker.push(polygonName);
 
-        // add the data to the left pyramid
+        // add the data to the target pyramid
         for (var i = 0; i < targetData.length; i++) {
             targetData[i].pine_vol = targetData[i].pine_vol + e.target.feature.properties["_yr" + (1999 + i)];
         }
 
-        // check if the name is already in the right tracker array
+        // check if the name is already in the other tracker array
         if (otherPolygonTracker.indexOf(polygonName) !== -1) {
 
-            // remove the data from the right tracker array
+            // remove the data from the other tracker array
             otherPolygonTracker.splice(otherPolygonTracker.indexOf(polygonName), 1);
 
-            // remove the data from the right pyramid
+            // remove the data from the other pyramid
             for (var i = 0; i < otherData.length; i++) {
                 otherData[i].pine_vol = otherData[i].pine_vol - e.target.feature.properties["_yr" + (1999 + i)];
             }
@@ -99,7 +99,7 @@ $(document).ready(function() {
             stroke: true,
             weight: 0.5,
             color: '#ffffff',
-            fillOpacity: 0,
+            fillOpacity: 0
         });
 
         // remove the polygon from the right tracker array
@@ -163,7 +163,7 @@ $(document).ready(function() {
                         removePyramidData(e, layer, leftData, leftPyramidPolys);
                     }
 
-                    // if the user has selected a polygon to add to the right pyramid...
+                // if the user has selected a polygon to add to the right pyramid...
                 } else if (pyramidActionCode === "add-right-pyramid") {
 
                     // if the polygon is not already in the right tracker array...
@@ -174,6 +174,7 @@ $(document).ready(function() {
                         removePyramidData(e, layer, rightData, rightPyramidPolys);
                     }
 
+                // if the user has selected a polygon to replace the left pyramid...
                 }
 
                 // update the bar charts accordingly
