@@ -131,31 +131,36 @@ body {
 }
 
 #threshold-patch-0 {
+    color: #ffffff;
+    background-color: #ffffff;
+}
+
+#threshold-patch-1 {
     color: #ffdddd;
     background-color: #ffdddd;
 }
 
-#threshold-patch-1 {
+#threshold-patch-2 {
     color: #ff9999;
     background-color: #ff9999;
 }
 
-#threshold-patch-2 {
+#threshold-patch-3 {
     color: #ff5555;
     background-color: #ff5555;
 }
 
-#threshold-patch-3 {
+#threshold-patch-4 {
     color: #dd0000;
     background-color: #dd0000;
 }
 
-#threshold-patch-4 {
+#threshold-patch-5 {
     color: #aa0000;
     background-color: #aa0000;
 }
 
-#threshold-patch-5 {
+#threshold-patch-6 {
     color: #770000;
     background-color: #770000;
 }

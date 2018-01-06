@@ -10,20 +10,27 @@ $(document).ready(function() {
 
     $("input[name=display]").on("click", function() {
 
-        // If the marker radio button is selected, add the marker layers & remove threshold layer.
+        // forest proportions radio button
         if ($("input[name=display]:checked").val() === "marker") {
+
+
+            for (var i=0; i<thresholdLayerArray.length; i++) {
+                map.removeLayer(thresholdLayerArray[i]);
+            }
 
             for (var i=0; i<markerLayerArray.length; i++) {
                 map.addLayer(markerLayerArray[i]);
             }
-            map.removeLayer(thresholdLayer);
 
         // Otherwise, remove marker layers & add threshold layer.
         } else {
 
-            map.addLayer(thresholdLayer);
             for (var i=0;i <markerLayerArray.length; i++) {
                 map.removeLayer(markerLayerArray[i]);
+            }
+
+            for (var i=0;i <thresholdLayerArray.length; i++) {
+                map.addLayer(thresholdLayerArray[i]);
             }
 
         }
