@@ -30,7 +30,9 @@
 
     <!-- resources -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pyramid_radio_buttons_style.css">
     <script src="data/british_columbia_polys.js"></script>
+    <script src="data/british_columbia_polys_selectors.js"></script>
     <script src="data/british_columbia_points.js"></script>
     <script src="svg/icon_dimensions.js"></script>
 
@@ -125,22 +127,25 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="row">
-                                    <div class="threshold-patch-label" id="threshold-patch-label-0">1.00% - 4.99%</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-0">0.00% - 0.99%</div>
                                 </div>
                                 <div class="row">
-                                    <div class="threshold-patch-label" id="threshold-patch-label-1">5.00% - 9.99%</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-1">1.00% - 4.99%</div>
                                 </div>
                                 <div class="row">
-                                    <div class="threshold-patch-label" id="threshold-patch-label-2">10.00% - 24.99%</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-2">5.00% - 9.99%</div>
                                 </div>
                                 <div class="row">
-                                    <div class="threshold-patch-label" id="threshold-patch-label-3">25.00% - 49.99%</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-3">10.00% - 24.99%</div>
                                 </div>
                                 <div class="row">
-                                    <div class="threshold-patch-label" id="threshold-patch-label-4">50.00% - 78.99%</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-4">25.00% - 49.99%</div>
                                 </div>
                                 <div class="row">
-                                    <div class="threshold-patch-label" id="threshold-patch-label-5">79.00% - 81.05%</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-5">50.00% - 78.99%</div>
+                                </div>
+                                <div class="row">
+                                    <div class="threshold-patch-label" id="threshold-patch-label-6">79.00% - 81.05%</div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -170,10 +175,10 @@
         <div class="container-fluid">
             <div class="row item-container" id="pyramid-controls-container">
                 <div class="col-sm-2">
-                    <!--<input class="pyramid-controls-container-left" name="pyramid" type="radio" value="replace-left-pyramid"/>-->
+                    <input class="pyramid-controls-container-left pyramid-replace-radio" name="pyramid" type="radio" value="replace-left-pyramid"/>
                 </div>
                 <div class="col-sm-2">
-                    <input class="pyramid-controls-container-left" name="pyramid" type="radio" value="add-left-pyramid"/>
+                    <input class="pyramid-controls-container-left pyramid-add-radio" name="pyramid" type="radio" value="add-left-pyramid"/>
                 </div>
                 <div class="col-sm-2">
                     <button class="pyramid-controls-container-left" id="clear-left-pyramid">Clear</button>
@@ -182,10 +187,10 @@
                     <button id="clear-right-pyramid">Clear</button>
                 </div>
                 <div class="col-sm-2 pyramid-controls-container-right">
-                    <input name="pyramid" type="radio" value="add-right-pyramid"/>
+                    <input class = "pyramid-add-radio" name="pyramid" type="radio" value="add-right-pyramid"/>
                 </div>
                 <div class="col-sm-2 pyramid-controls-container-right">
-                    <!--<input name="pyramid" type="radio" value="replace-right-pyramid"/>-->
+                    <input class="pyramid-replace-radio" name="pyramid" type="radio" value="replace-right-pyramid"/>
                 </div>
             </div>
         </div>

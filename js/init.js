@@ -54,16 +54,16 @@ $(document).ready(function() {
         if (targetData === leftData) {
             e.target.bringToFront();
             layer.setStyle({
-                fillColor: '#9999dd',
+                //fillColor: '#9999dd',
                 color: '#0000ff',
-                weight: 2
+                weight: 10
             });
         } else {
             e.target.bringToFront();
             layer.setStyle({
-                fillColor: '#dd9999',
+                //fillColor: '#dd9999',
                 color: '#ff0000',
-                weight: 2
+                weight: 10
             });
         }
 
@@ -96,12 +96,10 @@ $(document).ready(function() {
 
         // reset the polygon back to white
         layer.setStyle({
-            fillColor: "#ffffff",
             stroke: true,
-            color: "#000000",
-            weight: 1,
-            fillOpacity: 1,
-            riseOnHover: true
+            weight: 0.5,
+            color: '#ffffff',
+            fillOpacity: 0,
         });
 
         // remove the polygon from the right tracker array
@@ -126,7 +124,23 @@ $(document).ready(function() {
         fillOpacity: 1,
         riseOnHover: true,
 
+        onEachFeature: function (feature, layer) {}
+
+    });
+
+    // selector layer
+    selectorLayer = L.geoJSON(britishColumbiaSelectors, {
+
+        stroke: true,
+        weight: 0.5,
+        color: '#ffffff',
+        fillOpacity: 0,
+
         onEachFeature: function (feature, layer) {
+
+            layer.bindTooltip(feature.properties.name, {
+                sticky: true
+            });
 
             layer.on('click', function (e) {
 
@@ -140,26 +154,26 @@ $(document).ready(function() {
 
                 // if the user has selected a polygon to add to the left pyramid...
                 if (pyramidActionCode === "add-left-pyramid") {
-                    
+
                     // if the polygon is not already in the left tracker array...
                     if (leftPyramidPolys.indexOf(polygonName) === -1) {
                         addPyramidData(e, layer, leftData, rightData, leftPyramidPolys, rightPyramidPolys);
-                    // otherwise...
+                        // otherwise...
                     } else {
                         removePyramidData(e, layer, leftData, leftPyramidPolys);
                     }
-                    
-                // if the user has selected a polygon to add to the right pyramid...
+
+                    // if the user has selected a polygon to add to the right pyramid...
                 } else if (pyramidActionCode === "add-right-pyramid") {
 
                     // if the polygon is not already in the right tracker array...
                     if (rightPyramidPolys.indexOf(polygonName) === -1) {
                         addPyramidData(e, layer, rightData, leftData, rightPyramidPolys, leftPyramidPolys);
-                    // otherwise...
+                        // otherwise...
                     } else {
                         removePyramidData(e, layer, rightData, rightPyramidPolys);
                     }
-                    
+
                 }
 
                 // update the bar charts accordingly
@@ -167,27 +181,20 @@ $(document).ready(function() {
 
             });
 
-            // layer.on('mouseover', function (e) {
-            //     e.target.bringToFront(); // lifts the current moused over feature so its edges aren't blocked
-            //     this.setStyle({
-            //         fillColor: '#dddddd',
-            //         weight: 2
-            //     });
-            // });
-            //
-            // layer.on('mouseout', function () {
-            //     this.setStyle({
-            //         fillColor: '#ffffff',
-            //         color: '#000000',
-            //         weight: 1
-            //     })
-            // })
         }
 
     });
 
     // add marker layer to map
     markerLayer = L.geoJSON(britishColumbiaPoints, {
+
+        onEachFeature: function (feature, layer) {
+
+            layer.bindTooltip(feature.properties.name, {
+                sticky: true
+            });
+
+        },
 
         pointToLayer: function (feature, latlng) {
             iconScaleFactor = zoomScales[3] / zoomScales[map.getZoom()];
@@ -204,12 +211,6 @@ $(document).ready(function() {
 
     });
 
-    // Pack the marker layers into one array to toggle them en masse
-    markerLayerArray = [markerPolygonLayer, markerLayer];
-    for (var i = 0; i < markerLayerArray.length; i++) {
-        map.addLayer(markerLayerArray[i]);
-    }
-
     // =================================================================================================================
     // THRESHOLDS
     // =================================================================================================================
@@ -224,6 +225,14 @@ $(document).ready(function() {
         opacity: 1
 
     });
+
+    // Pack the layers into arrays to toggle them en masse
+    markerLayerArray = [markerPolygonLayer, selectorLayer, markerLayer];
+    for (var i = 0; i < markerLayerArray.length; i++) {
+        map.addLayer(markerLayerArray[i]);
+    }
+
+    thresholdLayerArray = [thresholdLayer, selectorLayer];
 
     // =================================================================================================================
     // PYRAMIDS
@@ -452,24 +461,18 @@ $(document).ready(function() {
         ];
 
         // reset styling except for currently selected red features
-        markerPolygonLayer.setStyle(function(feature) {
+        selectorLayer.setStyle(function(feature) {
             if (rightPyramidPolys.indexOf(feature.properties.name) === -1) {
                 return {
-                    fillColor: "#ffffff",
                     stroke: true,
-                    color: "#000000",
-                    weight: 1,
-                    fillOpacity: 1,
-                    riseOnHover: true
+                    weight: 0.5,
+                    color: '#ffffff',
+                    fillOpacity: 0,
                 }
             } else {
                 return {
-                    fillColor: "#dd9999",
-                    stroke: true,
-                    color: "#ff0000",
-                    weight: 2,
-                    fillOpacity: 1,
-                    riseOnHover: true
+                    color: '#ff0000',
+                    weight: 10
                 }
             }
         });
@@ -501,24 +504,18 @@ $(document).ready(function() {
             {"year": "_yr2013", "pine_vol": 0},
             {"year": "_yr2014", "pine_vol": 0}
         ];
-        markerPolygonLayer.setStyle(function(feature) {
+        selectorLayer.setStyle(function(feature) {
             if (leftPyramidPolys.indexOf(feature.properties.name) === -1) {
                 return {
-                    fillColor: "#ffffff",
                     stroke: true,
-                    color: "#000000",
-                    weight: 1,
-                    fillOpacity: 1,
-                    riseOnHover: true
+                    weight: 0.5,
+                    color: '#ffffff',
+                    fillOpacity: 0,
                 }
             } else {
                 return {
-                    fillColor: "#9999dd",
-                    stroke: true,
-                    color: "#0000ff",
-                    weight: 2,
-                    fillOpacity: 1,
-                    riseOnHover: true
+                    color: '#0000ff',
+                    weight: 10
                 }
             }
         });
