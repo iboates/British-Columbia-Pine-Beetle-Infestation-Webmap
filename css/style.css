@@ -64,12 +64,14 @@ body {
 
 #left-pyramid-container {
     height: 30vh;
-    background-color: #4444aa;
+    border: 2px solid rgba(102, 51, 153, 0.75);
+    background-color: rgba(113, 55, 168, 0.21);
 }
 
 #right-pyramid-container {
     height: 30vh;
-    background-color: #aa4444;
+    border: 2px solid rgba(227, 141, 19, 0.77);
+    background-color: rgba(227, 141, 19, 0.27);
 }
 
 #sources-container {
@@ -206,17 +208,31 @@ body {
     text-align: center;
 }
 
+.badge {
+    margin: 2px;
+}
+
 .badge:hover {
     cursor: pointer;
     text-decoration: line-through;
 }
 
+.badge-left {
+    background-color: rebeccapurple;
+}
+
+.badge-right {
+    background-color: #e38d13;
+}
+
 #left-pyramid-tracker-container {
     height: 8vh;
+    overflow-y: auto;
 }
 
 #right-pyramid-tracker-container {
     height: 8vh;
+    overflow-y: auto;
 }
 
 .pyramid-controls-container-left {
