@@ -14,40 +14,48 @@ body {
     margin-top: 0.5vh;
 }
 
-.map-control-checkbox {
-    margin: 10px !important;
-}
+/*.map-control-checkbox {*/
+    /*margin: 10px !important;*/
+/*}*/
 
 #time-slider-button-panel {
+    margin-left: 1%;
     float: left;
 }
 
 #autoplay-button {
-    margin-left: 10px;
+    width: 4vw;
+    float:left;
     margin-top: 5px;
-    display: block;
 }
 
 #stop-button {
-    margin-left: 10px;
+    width: 4vw;
+    float:left;
     margin-top: 5px;
 }
 
 #time-slider-bar {
-    width: 85%;
-    margin-top: 20px;
+    width: 37vw;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: 2%;
-    float: right;
 }
 
 #title-container {
-    height: 8vh;
+    height: 7vh;
     text-align: center;
 }
 
+#title-text {
+    font-size: 1.8vw;
+    font-weight: bold;
+    height: 100%;
+
+}
+
 #controls-container {
-    height: 10vh;
+    height: 6vh;
 }
 
 .legend-item-container {
@@ -66,8 +74,8 @@ body {
 
 #sources-container {
     padding: 5px;
-    font-size: 10pt;
-    height: 12vh;
+    font-size: 1.3vh;
+    height: 10vh;
 }
 
 #legend-marker-checkbox {
@@ -83,13 +91,13 @@ body {
 #legend-marker-title-text {
     float: left;
     margin-left: 10px;
-    font-size: 16pt;
+    font-size: 2.5vh;
 }
 
 #legend-threshold-title-text {
     float: left;
     margin-left: 10px;
-    font-size: 16pt;
+    font-size: 2.5vh;
 }
 
 #legend-marker-img {
@@ -98,16 +106,19 @@ body {
 }
 
 #legend-marker-img-text {
+    font-size: 1.5vh;
     text-align: center;
     margin-top: 5px;
 }
 
 #legend-marker-nonpine-text {
     float: right;
+    font-size: 1.5vh;
 }
 
 #legend-marker-pine-text {
     float: left;
+    font-size: 1.5vh;
 }
 
 #legend-marker-description-text-container {
@@ -116,6 +127,7 @@ body {
 
 #legend-marker-description-text {
     float: left;
+    font-size: 1.5vh;
 }
 
 .threshold-patch {
@@ -124,7 +136,7 @@ body {
     margin-left: 10%;
     margin-right: 5%;
     margin-top: 12px;
-    height: 100%;
+    height: 1.5vh;
     width: 20%;
     border: 1px solid black;
 }
@@ -165,13 +177,14 @@ body {
 }
 
 .threshold-patch-label {
-    font-size: 10pt;
+    font-size: 1.5vh;
     margin-left: 10px;
     margin-top: 12px;
     height: 100%;
 }
 
 #legend-threshold-description-text {
+    font-size: 1.5vh;
     text-align: center;
     width: 90%;
     margin-left: 4%;
@@ -185,12 +198,20 @@ body {
     margin-top: 20px;
     position: absolute;
     height: 100%;
-    font-size: 8pt;
+    font-size: 1vh;
     background: none;
     border-top: none;
     border-left: 1px solid black;
     border-bottom: none;
     text-align: center;
+}
+
+#left-pyramid-tracker-container {
+    height: 8vh;
+}
+
+#right-pyramid-tracker-container {
+    height: 8vh;
 }
 
 .pyramid-controls-container-left {
