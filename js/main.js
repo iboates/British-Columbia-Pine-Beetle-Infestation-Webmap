@@ -178,4 +178,55 @@ $(document).ready(function() {
         autoplay = false;
     });
 
+    // =================================================================================================================
+    // PYRAMID BADGE ACTIONS
+    // =================================================================================================================
+
+    // $(document).on('click', '.badge', function(e) {
+    //
+    //     var badgeId = $(e.target).attr('id');
+    //     var badgeSide = $(e.target).attr('class').split(' ')[2];
+    //
+    //     if (badgeSide === 'badge-left') {
+    //         removePyramidDataFromBadge(badgeId, selectorLayer, leftData, leftPyramidPolys);
+    //     } else {
+    //         removePyramidDataFromBadge(badgeId, selectorLayer, rightData, rightPyramidPolys);
+    //     }
+    //
+    //     this.remove();
+    //
+    // });
+
+    // function removePyramidDataFromBadge(badgeId, layer, targetData, targetPolygonTracker) {
+    //
+    //     // reset the polygon back to white
+    //     layer.setStyle({
+    //         stroke: true,
+    //         weight: 0.5,
+    //         color: '#ffffff',
+    //         fillOpacity: 0
+    //     });
+    //
+    //     // remove the polygon from the target tracker array
+    //     targetPolygonTracker.splice(targetPolygonTracker.indexOf(badgeId), 1);
+    //
+    //     // look up the data that the badge is referencing
+    //     var featureId = badgeId.split("-")[2];
+    //     var badgeData = britishColumbiaPolys.features;
+    //     console.log(badgeData);
+    //
+    //     for (var i = 0; i < badgeData.length; i++) {
+    //         if (badgeData[i].properties.Id === featureId) {
+    //             for (var j=0; j<rightData.length; j++) {
+    //                 // remove the data from the pyramid
+    //                 targetData[j].pine_vol = targetData[j].pine_vol - badgeData[i].properties["_yr"+(1999+i)];
+    //             }
+    //             break;
+    //         }
+    //     }
+    //
+    //     selectorLayer.setStyle(selectorLayerStyle);
+    //
+    // }
+
 });
