@@ -206,6 +206,11 @@ body {
     text-align: center;
 }
 
+.badge:hover {
+    cursor: pointer;
+    text-decoration: line-through;
+}
+
 #left-pyramid-tracker-container {
     height: 8vh;
 }
