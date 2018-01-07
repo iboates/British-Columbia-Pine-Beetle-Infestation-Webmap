@@ -55,14 +55,14 @@ $(document).ready(function() {
             e.target.bringToFront();
             layer.setStyle({
                 //fillColor: '#9999dd',
-                color: '#0000ff',
+                color: '#663399',
                 weight: 10
             });
         } else {
             e.target.bringToFront();
             layer.setStyle({
                 //fillColor: '#dd9999',
-                color: '#ff0000',
+                color: '#e38d13',
                 weight: 10
             });
         }
@@ -219,14 +219,14 @@ $(document).ready(function() {
         var featureId = feature.properties.Id;
         if (leftPyramidPolys.indexOf(featureId) !== -1) {
             return {
-                color: '#0000ff',
+                color: '#663399',
                 stroke: true,
                 weight: 10,
                 fillOpacity: 0
             };
         } else if (rightPyramidPolys.indexOf(featureId) !== -1) {
             return {
-                color: '#ff0000',
+                color: '#e38d13',
                 stroke: true,
                 weight: 10,
                 fillOpacity: 0
@@ -441,7 +441,7 @@ $(document).ready(function() {
     // left graph
 
     // set the dimensions and margins of the graph
-    var leftMargin = {top: 5, right: 12, bottom: 18, left: 10},
+    var leftMargin = {top: 5, right: 12, bottom: 35, left: 10},
         leftWidth = containerWidth - leftMargin.left - leftMargin.right,
         leftHeight = containerHeight - leftMargin.top - leftMargin.bottom;
 
@@ -470,6 +470,7 @@ $(document).ready(function() {
         .data(leftData)
         .enter().append("rect")
         .attr("class", "bar")
+        .attr("fill", "#4B9B4B")
         .attr("x", function(d) { return leftXScale(d.pine_vol) } )
         .attr("width", function(d) { return leftWidth - leftXScale(d.pine_vol) })
         .attr("y", function(d) { return leftYScale(d.year) })
@@ -479,17 +480,25 @@ $(document).ready(function() {
     var leftXAxis = leftSvg.append("g")
         .attr("transform", "translate(0," + leftHeight + ")")
         .call(d3.axisBottom(leftXScale)
-            .tickFormat(d3.formatPrefix(".2", 1e6))
+            .tickFormat(d3.formatPrefix(".0", 1e6))
             .ticks(5));
 
     // add the y Axis
     var leftYAxis = leftSvg.append("g")
         .attr("transform", "translate( " + 0 + ", 0 )");
 
+    // add x axis label
+    leftSvg.append("text")
+        .attr("transform",
+            "translate(" + (leftWidth/2) + " ," +
+            (leftHeight + leftMargin.top + 25) + ")")
+        .style("text-anchor", "middle")
+        .text("Productive Pine Forest (cubic meters)");
+
     // right graph
 
     // set the dimensions and margins of the graph
-    var rightMargin = {top: 5, right: 10, bottom: 18, left: 12},
+    var rightMargin = {top: 5, right: 10, bottom: 35, left: 12},
         rightWidth = containerWidth - rightMargin.left - rightMargin.right,
         rightHeight = containerHeight - rightMargin.top - rightMargin.bottom;
 
@@ -518,6 +527,7 @@ $(document).ready(function() {
         .data(rightData)
         .enter().append("rect")
         .attr("class", "bar")
+        .attr("fill", "#4B9B4B")
         .attr("width", function(d) { return rightXScale(d.pine_vol); } )
         .attr("y", function(d) { return rightYScale(d.year); })
         .attr("height", rightYScale.bandwidth());
@@ -526,12 +536,20 @@ $(document).ready(function() {
     var rightXAxis = rightSvg.append("g")
         .attr("transform", "translate(0," + rightHeight + ")")
         .call(d3.axisBottom(rightXScale)
-            .tickFormat(d3.formatPrefix(".2", 1e6))
+            .tickFormat(d3.formatPrefix(".0", 1e6))
             .ticks(5));
 
     // add the y Axis
     var rightYAxis = rightSvg.append("g")
         .attr("transform", "translate( " + 0 + ", 0 )");
+
+    // add x axis label
+    rightSvg.append("text")
+        .attr("transform",
+            "translate(" + (rightWidth/2) + " ," +
+            (rightHeight + rightMargin.top + 25) + ")")
+        .style("text-anchor", "middle")
+        .text("Productive Pine Forest (cubic meters)");
 
     // updating pyramids
 
@@ -564,6 +582,7 @@ $(document).ready(function() {
         leftBars.enter()
             .append("rect")
             .attr("class", "bar")
+            .attr("fill", "#4B9B4B")
             .attr("x", function(d) { return leftXScale(d.pine_vol) } )
             .attr("width", function(d) { return leftWidth - leftXScale(d.pine_vol) })
             .attr("y", function(d) { return leftYScale(d.year); })
@@ -572,6 +591,7 @@ $(document).ready(function() {
         rightBars.enter()
             .append("rect")
             .attr("class", "bar")
+            .attr("fill", "#4B9B4B")
             .attr("width", function(d) { return rightXScale(d.pine_vol); })
             .attr("y", function(d) { return rightYScale(d.year); })
             .attr("height", rightYScale.bandwidth());
@@ -582,14 +602,14 @@ $(document).ready(function() {
         leftXAxis = leftSvg.append("g")
             .attr("transform", "translate(0," + leftHeight + ")")
             .call(d3.axisBottom(leftXScale)
-                .tickFormat(d3.formatPrefix(".2", 1e6))
+                .tickFormat(d3.formatPrefix(".0", 1e6))
                 .ticks(5));
         
         rightXAxis.remove();
         rightXAxis = rightSvg.append("g")
             .attr("transform", "translate(0," + rightHeight + ")")
             .call(d3.axisBottom(rightXScale)
-                .tickFormat(d3.formatPrefix(".2", 1e6))
+                .tickFormat(d3.formatPrefix(".0", 1e6))
                 .ticks(5));
 
     }
@@ -629,7 +649,7 @@ $(document).ready(function() {
                 }
             } else {
                 return {
-                    color: '#ff0000',
+                    color: '#e38d13',
                     weight: 10
                 }
             }
@@ -672,7 +692,7 @@ $(document).ready(function() {
                 }
             } else {
                 return {
-                    color: '#0000ff',
+                    color: '#663399',
                     weight: 10
                 }
             }
