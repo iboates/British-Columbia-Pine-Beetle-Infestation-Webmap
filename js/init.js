@@ -399,6 +399,7 @@ $(document).ready(function() {
     // irrelevant if these are from the left or right container since they are the same.
     var containerWidth = $("#right-pyramid-container").width();
     var containerHeight = $("#right-pyramid-container").height();
+    var centreContainerWidth =$("#centre-pyramid-container").width();
 
     leftData = [
         {"year": "_yr1999", "pine_vol": 0},
@@ -437,6 +438,75 @@ $(document).ready(function() {
         {"year": "_yr2013", "pine_vol": 0},
         {"year": "_yr2014", "pine_vol": 0}
     ];
+    
+    centreData = [
+        {"year": "1999", "pine_vol": 1},
+        {"year": "2000", "pine_vol": 1},
+        {"year": "2001", "pine_vol": 1},
+        {"year": "2002", "pine_vol": 1},
+        {"year": "2003", "pine_vol": 1},
+        {"year": "2004", "pine_vol": 1},
+        {"year": "2005", "pine_vol": 1},
+        {"year": "2006", "pine_vol": 1},
+        {"year": "2007", "pine_vol": 1},
+        {"year": "2008", "pine_vol": 1},
+        {"year": "2009", "pine_vol": 1},
+        {"year": "2010", "pine_vol": 1},
+        {"year": "2011", "pine_vol": 1},
+        {"year": "2012", "pine_vol": 1},
+        {"year": "2013", "pine_vol": 1},
+        {"year": "2014", "pine_vol": 1}
+    ];
+
+    // y axis
+
+    // set the dimensions and margins of the graph
+    var centreMargin = {top: 5, right: 0, bottom: 35, left: 0},
+        centreWidth = containerWidth - centreMargin.left - centreMargin.right,
+        centreHeight = containerHeight - centreMargin.top - centreMargin.bottom;
+
+    // set the ranges
+    var centreYScale = d3.scaleBand()
+        .range([centreHeight, 0])
+        .padding(0.1);
+
+    var centreXScale = d3.scaleLinear()
+        .range([centreWidth, 0]);
+
+    var centreSvg = d3.select("#centre-pyramid-container").append("svg")
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", "0, 0 " + centreContainerWidth + ", " + containerHeight)
+        .append("g")
+        .attr("transform",
+            "translate(" + centreMargin.left + "," + centreMargin.top + ")");
+
+    centreYScale.domain(centreData.map(function(d) { return d.year; }));
+
+    // append the rectangles for the bar chart
+    centreSvg.selectAll(".bar")
+        .data(centreData)
+        .enter().append("rect")
+        .attr("class", "bar")
+        .attr("fill", "#ffffff")
+        .attr("width", function(d) { return centreWidth - centreXScale(d.pine_vol) })
+        .attr("y", function(d) { return centreYScale(d.year) })
+        .attr("height", centreYScale.bandwidth());
+
+    // add the y Axis
+    var centreYAxis = centreSvg.append("g")
+        .attr("transform", "translate( " + 0 + ", 0 )");
+
+    centreSvg.selectAll("text")
+        .data(centreData)
+        .enter().append("text")
+        .text(function (d) { return d.year; })
+        .attr("text-anchor", "center")
+        .style("font-size", "1.3vh")
+        // .attr("x", function(d) { return centreXScale(d.year)/2 })
+        // .attr("width", function(d) { return centreXScale(d.year) })
+        .attr("x", 0)
+        .attr("y", function(d) { return centreYScale(d.year)+centreYScale.bandwidth() }) // 12 seems to be the magic number to make the labels appear in the right place... i really need to learn more about d3 because this is definitely an absurd solution...
+        .attr("height", centreYScale.bandwidth());
 
     // left graph
 
