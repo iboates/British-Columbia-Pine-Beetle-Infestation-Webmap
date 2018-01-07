@@ -63,12 +63,24 @@ body {
 }
 
 #left-pyramid-container {
+    float: left;
+    width: 48%;
     height: 30vh;
     border: 2px solid rgba(102, 51, 153, 0.75);
     background-color: rgba(113, 55, 168, 0.21);
 }
 
+#centre-pyramid-container {
+    float: left;
+    width: 4%;
+    height: 30vh;
+    border: 2px solid rgba(102, 51, 153, 0);
+    background-color: #ffffff
+}
+
 #right-pyramid-container {
+    float: left;
+    width: 48%;
     height: 30vh;
     border: 2px solid rgba(227, 141, 19, 0.77);
     background-color: rgba(227, 141, 19, 0.27);

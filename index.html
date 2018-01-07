@@ -54,6 +54,7 @@
             </div>
         </div>
 
+        <!-- SCROLL BAR -->
         <div class="container-fluid">
             <div class="row" id="legend-container">
                 <div class="container-fluid">
@@ -65,6 +66,14 @@
                         <div id="time-slider-bar"></div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- LEGEND -->
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- MARKERS -->
                 <div class="col-sm-6">
                     <!--<div class="container-fluid">-->
                         <div class="row item-container legend-item-container">
@@ -95,6 +104,8 @@
                         </div>
                     <!--</div>-->
                 </div>
+
+                <!-- THRESHOLDS -->
                 <div class="col-sm-6">
                     <!--<div class="container-fluid">-->
                         <div class="row item-container legend-item-container">
@@ -148,25 +159,29 @@
                         </div>
                     <!--</div>-->
                 </div>
+
             </div>
         </div>
+
+        <!-- PYRAMIDS -->
         <div class="container-fluid">
-            <div class="row " id="pyramid-container">
-                <div class="col-sm-6">
-                    <div class="container-fluid">
-                        <div class="row item-container" id="left-pyramid-container"></div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="container-fluid">
-                        <div class="row item-container" id="right-pyramid-container">
-                        </div>
-                    </div>
-                </div>
+            <div class="row">
+
+                <!-- LEFT PYRAMID -->
+                <div class="item-container" id="left-pyramid-container"></div>
+
+                <!-- CENTRE PYRAMID -->
+                <div class="item-container" id="centre-pyramid-container"></div>
+
+                <!-- RIGHT PYRAMID -->
+                <div class="item-container" id="right-pyramid-container"></div>
+
             </div>
         </div>
+
+        <!-- PYRAMID TRACKERS -->
         <div class="container-fluid">
-            <div class="row" id="pyramid-tracker-container">
+            <div class="row">
                 <div class="col-sm-6">
                     <div class="container-fluid">
                         <div class="row item-container" id="left-pyramid-tracker-container">
@@ -181,28 +196,32 @@
                 </div>
             </div>
         </div>
+
+        <!-- PYRAMID CONTROLS -->
         <div class="container-fluid">
             <div class="row item-container" id="pyramid-controls-container">
-                <div class="col-sm-2">
-                    <input class="pyramid-controls-container-left pyramid-replace-radio" name="pyramid" type="radio" value="replace-left-pyramid"/>
-                </div>
-                <div class="col-sm-2">
+                <div class="col-sm-3">
                     <input class="pyramid-controls-container-left pyramid-add-radio" name="pyramid" type="radio" value="add-left-pyramid"/>
                 </div>
                 <div class="col-sm-2">
+                    <input class="pyramid-controls-container-left pyramid-replace-radio" name="pyramid" type="radio" value="replace-left-pyramid"/>
+                </div>
+                <div class="col-sm-1">
                     <button class="pyramid-controls-container-left" id="clear-left-pyramid">Clear</button>
                 </div>
-                <div class="col-sm-2 pyramid-controls-container-right">
+                <div class="col-sm-1 pyramid-controls-container-right">
                     <button id="clear-right-pyramid">Clear</button>
-                </div>
-                <div class="col-sm-2 pyramid-controls-container-right">
-                    <input class = "pyramid-add-radio" name="pyramid" type="radio" value="add-right-pyramid"/>
                 </div>
                 <div class="col-sm-2 pyramid-controls-container-right">
                     <input class="pyramid-replace-radio" name="pyramid" type="radio" value="replace-right-pyramid"/>
                 </div>
+                <div class="col-sm-3 pyramid-controls-container-right">
+                    <input class = "pyramid-add-radio" name="pyramid" type="radio" value="add-right-pyramid"/>
+                </div>
             </div>
         </div>
+
+        <!-- SOURCES -->
         <div class="container-fluid">
             <div class="row item-container" id="sources-container">
                 Data Source: <b>Government of B.C.</b> <i>"Mountain Pine Beetle Projections - Summary of Kills".</i> Excel Spreadsheet. <a href="https://www2.gov.bc.ca/gov/content/industry/forestry/managing-our-forest-resources/forest-health/forest-pests/bark-beetles/mountain-pine-beetle/responding-to-the-1999-2015-outbreak">Website</a>. <a href="https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/forest-health/mountain-pine-beetle/bcmpbv12summaryofvolumekilledthlblumpedtflsfordistribution.xlsx">Direct Link</a>.
