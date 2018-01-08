@@ -45,97 +45,64 @@ $(document).ready(function() {
     // MARKERS
     // =================================================================================================================
 
-    function addPyramidData(e, layer, targetData, otherData, targetPolygonTracker, otherPolygonTracker) {
-
-        // get the name of the selected polygon
-        var polygonId = e.target.feature.properties.Id;
-
-        console.log(polygonId);
+    function addPyramidData(featureId, targetData, otherData, targetPolygonTracker, otherPolygonTracker) {
 
         // add the polygon to the target tracker array
-        targetPolygonTracker.push(polygonId);
-
-        // add the data to the target pyramid
-        for (var i = 0; i < targetData.length; i++) {
-            targetData[i].pine_vol = targetData[i].pine_vol + e.target.feature.properties["_yr" + (1999 + i)];
-        }
-
-        // check if the name is already in the other tracker array
-        if (otherPolygonTracker.indexOf(polygonId) !== -1) {
-
-            // remove the data from the other tracker array
-            otherPolygonTracker.splice(otherPolygonTracker.indexOf(polygonId), 1);
-
-            // remove the data from the other pyramid
-            for (var i = 0; i < otherData.length; i++) {
-                otherData[i].pine_vol = otherData[i].pine_vol - e.target.feature.properties["_yr" + (1999 + i)];
-            }
-
-        }
-
-        // colour the polygons
-        selectorLayer.setStyle(selectorLayerStyle);
-
-    }
-
-    function addPyramidDataFromMarker(markerId, targetData, otherData, targetPolygonTracker, otherPolygonTracker) {
-
-        console.log(markerId);
-
-        // add the polygon to the target tracker array
-        targetPolygonTracker.push(markerId);
+        targetPolygonTracker.push(featureId);
 
         // look up the data that the marker is referencing
         var polygonData = britishColumbiaPolys.features;
         for (var i = 0; i<polygonData.length; i++) {
 
-            if (polygonData[i].properties.Id == markerId) { // LEAVE THIS WITH '==' - one is a string and the other an int
+            if (polygonData[i].properties.Id == featureId) { // LEAVE THIS WITH '==' - one is a string and the other an int
 
                 // add the data to the pyramid
                 for (var j = 0; j < rightData.length; j++) {
                     targetData[j].pine_vol = targetData[j].pine_vol + polygonData[i].properties["_yr" + (1999 + j)];
                 }
+
+                // check if the id is already in the other tracker array
+                if (otherPolygonTracker.indexOf(featureId) !== -1) {
+
+                    // remove the data from the other tracker array
+                    otherPolygonTracker.splice(otherPolygonTracker.indexOf(featureId), 1);
+
+                    // remove the data from the other pyramid
+                    for (var j = 0; j < otherData.length; j++) {
+                        console.log(j + ": " + otherData[j].pine_vol + " - " + polygonData[i].properties["_yr" + (1999 + j)]);
+                        otherData[j].pine_vol = otherData[j].pine_vol - polygonData[i].properties["_yr" + (1999 + j)];
+                    }
+
+                }
+
                 break;
 
             }
 
         }
-
-        // check if the id is already in the other tracker array
-        if (otherPolygonTracker.indexOf(markerId) !== -1) {
-
-            // remove the data from the other tracker array
-            otherPolygonTracker.splice(otherPolygonTracker.indexOf(markerId), 1);
-
-            // remove the data from the other pyramid
-            for (var i = 0; i < otherData.length; i++) {
-                otherData[i].pine_vol = otherData[i].pine_vol - polygonData[i].properties["_yr" + (1999 + j)];
-            }
-
-        }
-
         // colour the polygons
         selectorLayer.setStyle(selectorLayerStyle);
 
     }
 
-    function removePyramidData(e, layer, targetData, targetPolygonTracker) {
-
-        // get the name of the selected polygon
-        var polygonId= e.target.feature.properties.Id;
+    function removePyramidData(featureId, targetData, targetPolygonTracker) {
 
         // remove the polygon from the right tracker array
-        targetPolygonTracker.splice(targetPolygonTracker.indexOf(polygonId), 1);
+        targetPolygonTracker.splice(targetPolygonTracker.indexOf(featureId), 1);
 
-        for (var i=0; i<rightData.length; i++) {
+        // look up the data that the marker is referencing
+        var polygonData = britishColumbiaPolys.features;
+        for (var i = 0; i<polygonData.length; i++) {
 
-            // remove the data from the pyramid
-            targetData[i].pine_vol = targetData[i].pine_vol - e.target.feature.properties["_yr"+(1999+i)];
+            if (polygonData[i].properties.Id == featureId) { // LEAVE THIS WITH '==' - one is a string and the other an int
 
+                // remove the data from the pyramid
+                for (var j = 0; j < rightData.length; j++) {
+                    targetData[j].pine_vol = targetData[j].pine_vol - polygonData[i].properties["_yr" + (1999 + j)];
+                }
+                
+            }
         }
-
-        // colour the polygons
-        selectorLayer.setStyle(selectorLayerStyle);
 
     }
 
@@ -170,9 +137,6 @@ $(document).ready(function() {
 
         }
 
-        // colour the polygons
-        selectorLayer.setStyle(selectorLayerStyle);
-
     }
 
     function removePyramidDataFromBadge(badgeId, layer, targetData, targetPolygonTracker) {
@@ -204,8 +168,6 @@ $(document).ready(function() {
             }
 
         }
-
-        selectorLayer.setStyle(selectorLayerStyle);
 
     }
 
@@ -290,7 +252,7 @@ $(document).ready(function() {
                 if (leftPyramidPolys.indexOf(polygonId) === -1) {
 
                     // add the pyramid data
-                    addPyramidData(e, layer, leftData, rightData, leftPyramidPolys, rightPyramidPolys);
+                    addPyramidData(polygonId, leftData, rightData, leftPyramidPolys, rightPyramidPolys);
 
                     // add badge to left pyramid tracker container & remove from right tracker
                     $("#left-pyramid-tracker-container").append('<span class="badge badge-default badge-left" id="badge-left-' + polygonId + '">' + polygonName + '</span>');
@@ -300,7 +262,7 @@ $(document).ready(function() {
                 } else {
 
                     // remove the pyramid data
-                    removePyramidData(e, layer, leftData, leftPyramidPolys);
+                    removePyramidData(polygonId, leftData, leftPyramidPolys);
 
                     // remove the badge from the left pyramid tracker container
                     $('#badge-left-' + polygonId).remove();
@@ -314,7 +276,7 @@ $(document).ready(function() {
                 if (rightPyramidPolys.indexOf(polygonId) === -1) {
 
                     // add the pyramid data
-                    addPyramidData(e, layer, rightData, leftData, rightPyramidPolys, leftPyramidPolys);
+                    addPyramidData(polygonId, rightData, leftData, rightPyramidPolys, leftPyramidPolys);
 
                     // add badge to right pyramid tracker container & remove from left tracker
                     $("#right-pyramid-tracker-container").append('<span class="badge badge-default badge-right" id="badge-right-' + polygonId + '">' + polygonName + '</span>');
@@ -324,7 +286,7 @@ $(document).ready(function() {
                 } else {
 
                     //remove the pyramid data
-                    removePyramidData(e, layer, rightData, rightPyramidPolys);
+                    removePyramidData(polygonId, rightData, rightPyramidPolys);
 
                     // remove the badge from the right pyramid tracker container
                     $('#badge-right-' + polygonId).remove();
@@ -356,6 +318,9 @@ $(document).ready(function() {
 
             // update the bar charts accordingly
             update(leftData, rightData);
+
+            // colour the polygons
+            selectorLayer.setStyle(selectorLayerStyle);
 
         });
 
@@ -392,19 +357,41 @@ $(document).ready(function() {
                 if (leftPyramidPolys.indexOf(markerId) === -1) {
 
                     // add the pyramid data
-                    addPyramidDataFromMarker(markerId, leftData, rightData, leftPyramidPolys, rightPyramidPolys);
+                    addPyramidData(markerId, leftData, rightData, leftPyramidPolys, rightPyramidPolys);
 
                     // add badge to left pyramid tracker container & remove from right tracker
                     $("#left-pyramid-tracker-container").append('<span class="badge badge-default badge-left" id="badge-left-' + markerId + '">' + markerName + '</span>');
                     $('#badge-right-' + markerId).remove();
 
                     // otherwise...
+
+
+
                 }
+
+            // if the user has selected a polygon to add to the right pyramid...
+            } else if (pyramidActionCode === "add-right-pyramid") {
+
+                // // if the polygon is not already in the left tracker array...
+                // if (righttPyramidPolys.indexOf(markerId) === -1) {
+                //
+                //     // add the pyramid data
+                //     addPyramidDataFromMarker(markerId, rightData, leftData, rightPyramidPolys, leftPyramidPolys);
+                //
+                //     // add badge to left pyramid tracker container & remove from right tracker
+                //     $("#right-pyramid-tracker-container").append('<span class="badge badge-default badge-right" id="badge-right-' + markerId + '">' + markerName + '</span>');
+                //     $('#badge-left-' + markerId).remove();
+                //
+                //     // otherwise...
+                // }
 
             }
 
             // update the bar charts accordingly
             update(leftData, rightData);
+
+            // colour the polygons
+            selectorLayer.setStyle(selectorLayerStyle);
 
         });
 
