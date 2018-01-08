@@ -37,15 +37,17 @@ $(document).ready(function() {
         maxBoundsViscosity: 1.0
     }).fitBounds([[47.197765, -139.514677], [61.746849, -114.952647]]).setView([55.033333, -124.966667], 2);
 
+
+    // Add a scale bar to the map.
     L.control.scale({
         imperial: false
     }).addTo(map);
 
     // =================================================================================================================
-    // MARKERS
+    // LAYER INTERACTIONS
     // =================================================================================================================
 
-    function addPyramidData(featureId, targetData, otherData, targetPolygonTracker, otherPolygonTracker) {
+    addPyramidData = function (featureId, targetData, otherData, targetPolygonTracker, otherPolygonTracker) {
 
         // add the polygon to the target tracker array
         targetPolygonTracker.push(featureId);
@@ -83,9 +85,9 @@ $(document).ready(function() {
         // colour the polygons
         selectorLayer.setStyle(selectorLayerStyle);
 
-    }
+    };
 
-    function removePyramidData(featureId, targetData, targetPolygonTracker) {
+    removePyramidData = function (featureId, targetData, targetPolygonTracker) {
 
         // remove the polygon from the right tracker array
         targetPolygonTracker.splice(targetPolygonTracker.indexOf(featureId), 1);
@@ -100,135 +102,55 @@ $(document).ready(function() {
                 for (var j = 0; j < rightData.length; j++) {
                     targetData[j].pine_vol = targetData[j].pine_vol - polygonData[i].properties["_yr" + (1999 + j)];
                 }
-                
+
             }
         }
 
-    }
+    };
 
-    function replacePyramidData(e, layer, targetData, otherData, targetPolygonTracker, otherPolygonTracker) {
-
-        // get the name of the selected polygon
-        var polygonId = e.target.feature.properties.Id;
+    replacePyramidData = function (featureId, targetData, otherData, otherPolygonTracker) {
 
         // add the polygon to the target tracker array
         if ($("input[name=pyramid]:checked").val() === "replace-left-pyramid") {
-            leftPyramidPolys = [polygonId];
+            leftPyramidPolys = [featureId];
         } else if ($("input[name=pyramid]:checked").val() === "replace-right-pyramid") {
-            rightPyramidPolys = [polygonId];
+            rightPyramidPolys = [featureId];
         }
 
-
-        // add the data to the target pyramid
-        for (var i = 0; i < targetData.length; i++) {
-            targetData[i].pine_vol = e.target.feature.properties["_yr" + (1999 + i)];
-        }
-
-        // check if the name is already in the other tracker array
-        if (otherPolygonTracker.indexOf(polygonId) !== -1) {
-
-            // remove the data from the other tracker array
-            otherPolygonTracker.splice(otherPolygonTracker.indexOf(polygonId), 1);
-
-            // remove the data from the other pyramid
-            for (var i = 0; i < otherData.length; i++) {
-                otherData[i].pine_vol = otherData[i].pine_vol - e.target.feature.properties["_yr" + (1999 + i)];
-            }
-
-        }
-
-    }
-
-    function removePyramidDataFromBadge(badgeId, layer, targetData, targetPolygonTracker) {
-
-        // reset the polygon back to white
-        layer.setStyle({
-            stroke: true,
-            weight: 0.5,
-            color: '#ffffff',
-            fillOpacity: 0
-        });
-
-        // remove the polygon from the target tracker array
-        targetPolygonTracker.splice(targetPolygonTracker.indexOf(badgeId), 1);
-
-        // look up the data that the badge is referencing
-        var featureId = badgeId.split("-")[2];
+        // look up the data that the marker is referencing
         var polygonData = britishColumbiaPolys.features;
         for (var i = 0; i<polygonData.length; i++) {
 
             if (polygonData[i].properties.Id == featureId) { // LEAVE THIS WITH '==' - one is a string and the other an int
 
-                // remove the data from the pyramid
-                for (var j = 0; j < rightData.length; j++) {
-                    targetData[j].pine_vol = targetData[j].pine_vol - polygonData[i].properties["_yr" + (1999 + j)];
+                // replace pyramid data
+                for (var j = 0; j < targetData.length; j++) {
+                    targetData[j].pine_vol = polygonData[i].properties["_yr" + (1999 + j)];
                 }
+
+                // check if the id is already in the other tracker array
+                if (otherPolygonTracker.indexOf(featureId) !== -1) {
+
+                    // remove the data from the other tracker array
+                    otherPolygonTracker.splice(otherPolygonTracker.indexOf(featureId), 1);
+
+                    // remove the data from the other pyramid
+                    for (var j = 0; j < otherData.length; j++) {
+                        console.log(j + ": " + otherData[j].pine_vol + " - " + polygonData[i].properties["_yr" + (1999 + j)]);
+                        otherData[j].pine_vol = otherData[j].pine_vol - polygonData[i].properties["_yr" + (1999 + j)];
+                    }
+
+                }
+
                 break;
 
             }
 
         }
 
-    }
+    };
 
-    $(document).on('click', '.badge', function(e) {
-
-        var badgeId = $(e.target).attr('id');
-        var badgeSide = $(e.target).attr('class').split(' ')[2];
-
-        if (badgeSide === 'badge-left') {
-            removePyramidDataFromBadge(badgeId, selectorLayer, leftData, leftPyramidPolys);
-        } else {
-            removePyramidDataFromBadge(badgeId, selectorLayer, rightData, rightPyramidPolys);
-        }
-
-        this.remove();
-        update(leftData, rightData);
-
-    });
-
-    // Poylgon Layer
-    markerPolygonLayer = L.geoJSON(britishColumbiaPolys, {
-
-        fillColor: "#ffffff",
-        stroke: true,
-        color: "#000000",
-        weight: 1,
-        fillOpacity: 1,
-        riseOnHover: true,
-
-        onEachFeature: function (feature, layer) {}
-
-    });
-
-    // selector layer
-    function selectorLayerStyle(feature, layer) {
-        var featureId = feature.properties.Id;
-        if (leftPyramidPolys.indexOf(featureId) !== -1) {
-            return {
-                color: '#663399',
-                stroke: true,
-                weight: 10,
-                fillOpacity: 0
-            };
-        } else if (rightPyramidPolys.indexOf(featureId) !== -1) {
-            return {
-                color: '#e38d13',
-                stroke: true,
-                weight: 10,
-                fillOpacity: 0
-            };
-        } else {
-            return {
-                color: '#ffffff',
-                stroke: true,
-                weight: 0.1,
-                fillOpacity: 0
-            };
-        }
-    }
-
-    selectorLayerOnEach = function (feature, layer) {
+    mapInteraction = function (feature, layer) {
 
         layer.bindTooltip(feature.properties.name, {
             sticky: true
@@ -297,7 +219,7 @@ $(document).ready(function() {
             } else if (pyramidActionCode === "replace-left-pyramid") {
 
                 // replace the left data with the new data
-                replacePyramidData(e, layer, leftData, rightData, leftPyramidPolys, rightPyramidPolys);
+                replacePyramidData(polygonId, leftData, rightData, rightPyramidPolys);
 
                 // remove all badges from the left pyramid tracker container, add the new one & remove it from the right tracker
                 $('.badge-left').remove();
@@ -307,7 +229,7 @@ $(document).ready(function() {
             } else if (pyramidActionCode === "replace-right-pyramid") {
 
                 // replace the right data with the new data
-                replacePyramidData(e, layer, rightData, leftData, rightPyramidPolys, leftPyramidPolys);
+                replacePyramidData(polygonId, rightData, leftData, leftPyramidPolys);
 
                 // remove all badges from the right pyramid tracker container, add the new one & remove it from the left tracker
                 $('.badge-right').remove();
@@ -324,83 +246,66 @@ $(document).ready(function() {
 
         });
 
-    }
+    };
 
-    selectorLayer = L.geoJSON(britishColumbiaSelectors, {
+    // =================================================================================================================
+    // LAYERS
+    // =================================================================================================================
 
-        style: selectorLayerStyle,
-        onEachFeature: selectorLayerOnEach
+    // Basemap for under markers.
+    markerPolygonLayer = L.geoJSON(britishColumbiaPolys, {
+
+        fillColor: "#ffffff",
+        stroke: true,
+        color: "#000000",
+        weight: 1,
+        fillOpacity: 1,
+        riseOnHover: true,
+
+        onEachFeature: function (feature, layer) {}
 
     });
 
-    function markerLayerOnEach(feature, layer) {
+    // Style to be applied to the Selector Layer Every time there is a change.
+    selectorLayerStyle = function (feature) {
 
-        layer.bindTooltip(feature.properties.name, {
-            sticky: true
-        });
-
-        layer.on('click', function (e) {
-
-            // get the currently selected radio button from the pyramid control panel
-            var pyramidActionCode = $("input[name=pyramid]:checked").val();
-
-            // get the name & id of the selected polygon
-            var markerName = e.target.feature.properties.name;
-            var markerId = e.target.feature.properties.Id;
-
-            // grab the data to replace or add to the selected bar chart
-
-            // if the user has selected a polygon to add to the left pyramid...
-            if (pyramidActionCode === "add-left-pyramid") {
-
-                // if the polygon is not already in the left tracker array...
-                if (leftPyramidPolys.indexOf(markerId) === -1) {
-
-                    // add the pyramid data
-                    addPyramidData(markerId, leftData, rightData, leftPyramidPolys, rightPyramidPolys);
-
-                    // add badge to left pyramid tracker container & remove from right tracker
-                    $("#left-pyramid-tracker-container").append('<span class="badge badge-default badge-left" id="badge-left-' + markerId + '">' + markerName + '</span>');
-                    $('#badge-right-' + markerId).remove();
-
-                    // otherwise...
-
-
-
-                }
-
-            // if the user has selected a polygon to add to the right pyramid...
-            } else if (pyramidActionCode === "add-right-pyramid") {
-
-                // // if the polygon is not already in the left tracker array...
-                // if (righttPyramidPolys.indexOf(markerId) === -1) {
-                //
-                //     // add the pyramid data
-                //     addPyramidDataFromMarker(markerId, rightData, leftData, rightPyramidPolys, leftPyramidPolys);
-                //
-                //     // add badge to left pyramid tracker container & remove from right tracker
-                //     $("#right-pyramid-tracker-container").append('<span class="badge badge-default badge-right" id="badge-right-' + markerId + '">' + markerName + '</span>');
-                //     $('#badge-left-' + markerId).remove();
-                //
-                //     // otherwise...
-                // }
-
-            }
-
-            // update the bar charts accordingly
-            update(leftData, rightData);
-
-            // colour the polygons
-            selectorLayer.setStyle(selectorLayerStyle);
-
-        });
-
+        var featureId = feature.properties.Id;
+        if (leftPyramidPolys.indexOf(featureId) !== -1) {
+            return {
+                color: '#663399',
+                stroke: true,
+                weight: 10,
+                fillOpacity: 0
+            };
+        } else if (rightPyramidPolys.indexOf(featureId) !== -1) {
+            return {
+                color: '#e38d13',
+                stroke: true,
+                weight: 10,
+                fillOpacity: 0
+            };
+        } else {
+            return {
+                color: '#ffffff',
+                stroke: true,
+                weight: 0.1,
+                fillOpacity: 0
+            };
+        }
     }
 
-    // add marker layer to map
+    // Selector Layer.
+    selectorLayer = L.geoJSON(britishColumbiaSelectors, {
+
+        style: selectorLayerStyle,
+        onEachFeature: mapInteraction
+
+    });
+
+    // Marker Layer.
     markerLayer = L.geoJSON(britishColumbiaPoints, {
 
-        onEachFeature: markerLayerOnEach,
+        onEachFeature: mapInteraction,
 
         pointToLayer: function (feature, latlng) {
             iconScaleFactor = zoomScales[3] / zoomScales[map.getZoom()];
@@ -417,10 +322,7 @@ $(document).ready(function() {
 
     });
 
-    // =================================================================================================================
-    // THRESHOLDS
-    // =================================================================================================================
-
+    // Threshold Layer.
     thresholdLayer = L.geoJSON(britishColumbiaPolys, {
 
         fillColor: "#ffffff",
@@ -432,12 +334,11 @@ $(document).ready(function() {
 
     });
 
-    // Pack the layers into arrays to toggle them en masse
+    // Packing the layers into arrays to toggle them en masse
     markerLayerArray = [markerPolygonLayer, selectorLayer, markerLayer];
     for (var i = 0; i < markerLayerArray.length; i++) {
         map.addLayer(markerLayerArray[i]);
     }
-
     thresholdLayerArray = [thresholdLayer, selectorLayer];
 
     // =================================================================================================================
