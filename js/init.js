@@ -114,7 +114,8 @@ $(document).ready(function() {
 
         }
 
-
+        // colour the polygons
+        selectorLayer.setStyle(selectorLayerStyle);
 
     }
 
