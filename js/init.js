@@ -50,22 +50,7 @@ $(document).ready(function() {
         // get the name of the selected polygon
         var polygonId = e.target.feature.properties.Id;
 
-        // colour the polygon
-        if (targetData === leftData) {
-            e.target.bringToFront();
-            layer.setStyle({
-                //fillColor: '#9999dd',
-                color: '#663399',
-                weight: 10
-            });
-        } else {
-            e.target.bringToFront();
-            layer.setStyle({
-                //fillColor: '#dd9999',
-                color: '#e38d13',
-                weight: 10
-            });
-        }
+        console.log(polygonId);
 
         // add the polygon to the target tracker array
         targetPolygonTracker.push(polygonId);
@@ -87,20 +72,42 @@ $(document).ready(function() {
             }
 
         }
+
+        // colour the polygons
+        selectorLayer.setStyle(selectorLayerStyle);
+
+    }
+
+    function addPyramidDataFromMarker(markerId, targetData, otherData, targetPolygonTracker, otherPolygonTracker) {
+
+        console.log(markerId);
+
+        // add the polygon to the target tracker array
+        targetPolygonTracker.push(markerId);
+
+        // look up the data that the marker is referencing
+        //var featureId = markerId.split("-")[2];
+        var polygonData = britishColumbiaPolys.features;
+        for (var i = 0; i<polygonData.length; i++) {
+
+            if (polygonData[i].properties.Id == markerId) { // LEAVE THIS WITH '==' - one is a string and the other an int
+
+                // add the data to the pyramid
+                for (var j = 0; j < rightData.length; j++) {
+                    targetData[j].pine_vol = targetData[j].pine_vol + polygonData[i].properties["_yr" + (1999 + j)];
+                }
+                break;
+
+            }
+
+        }
+
     }
 
     function removePyramidData(e, layer, targetData, targetPolygonTracker) {
 
         // get the name of the selected polygon
         var polygonId= e.target.feature.properties.Id;
-
-        // reset the polygon back to white
-        layer.setStyle({
-            stroke: true,
-            weight: 0.5,
-            color: '#ffffff',
-            fillOpacity: 0
-        });
 
         // remove the polygon from the right tracker array
         targetPolygonTracker.splice(targetPolygonTracker.indexOf(polygonId), 1);
@@ -111,6 +118,9 @@ $(document).ready(function() {
             targetData[i].pine_vol = targetData[i].pine_vol - e.target.feature.properties["_yr"+(1999+i)];
 
         }
+
+        // colour the polygons
+        selectorLayer.setStyle(selectorLayerStyle);
 
     }
 
@@ -165,14 +175,14 @@ $(document).ready(function() {
 
         // look up the data that the badge is referencing
         var featureId = badgeId.split("-")[2];
-        var badgeData = britishColumbiaPolys.features;
-        for (var i = 0; i<badgeData.length; i++) {
+        var polygonData = britishColumbiaPolys.features;
+        for (var i = 0; i<polygonData.length; i++) {
 
-            if (badgeData[i].properties.Id == featureId) { // LEAVE THIS WITH '==' - one is a string and the other an int
+            if (polygonData[i].properties.Id == featureId) { // LEAVE THIS WITH '==' - one is a string and the other an int
 
                 // remove the data from the pyramid
                 for (var j = 0; j < rightData.length; j++) {
-                    targetData[j].pine_vol = targetData[j].pine_vol - badgeData[i].properties["_yr" + (1999 + j)];
+                    targetData[j].pine_vol = targetData[j].pine_vol - polygonData[i].properties["_yr" + (1999 + j)];
                 }
                 break;
 
@@ -241,118 +251,154 @@ $(document).ready(function() {
         }
     }
 
-    selectorLayer = L.geoJSON(britishColumbiaSelectors, {
+    selectorLayerOnEach = function (feature, layer) {
 
-        style: selectorLayerStyle,
+        layer.bindTooltip(feature.properties.name, {
+            sticky: true
+        });
 
-        onEachFeature: function (feature, layer) {
+        layer.on('click', function (e) {
 
-            layer.bindTooltip(feature.properties.name, {
-                sticky: true
-            });
+            // get the currently selected radio button from the pyramid control panel
+            var pyramidActionCode = $("input[name=pyramid]:checked").val();
 
-            layer.on('click', function (e) {
+            // get the name & id of the selected polygon
+            var polygonName = e.target.feature.properties.name;
+            var polygonId = e.target.feature.properties.Id;
 
-                // get the currently selected radio button from the pyramid control panel
-                var pyramidActionCode = $("input[name=pyramid]:checked").val();
+            // grab the data to replace or add to the selected bar chart
 
-                // get the name & id of the selected polygon
-                var polygonName = e.target.feature.properties.name;
-                var polygonId = e.target.feature.properties.Id;
+            // if the user has selected a polygon to add to the left pyramid...
+            if (pyramidActionCode === "add-left-pyramid") {
 
-                // grab the data to replace or add to the selected bar chart
+                // if the polygon is not already in the left tracker array...
+                if (leftPyramidPolys.indexOf(polygonId) === -1) {
 
-                // if the user has selected a polygon to add to the left pyramid...
-                if (pyramidActionCode === "add-left-pyramid") {
+                    // add the pyramid data
+                    addPyramidData(e, layer, leftData, rightData, leftPyramidPolys, rightPyramidPolys);
 
-                    // if the polygon is not already in the left tracker array...
-                    if (leftPyramidPolys.indexOf(polygonId) === -1) {
-
-                        // add the pyramid data
-                        addPyramidData(e, layer, leftData, rightData, leftPyramidPolys, rightPyramidPolys);
-
-                        // add badge to left pyramid tracker container & remove from right tracker
-                        $("#left-pyramid-tracker-container").append('<span class="badge badge-default badge-left" id="badge-left-' + polygonId + '">' + polygonName + '</span>');
-                        $('#badge-right-' + polygonId).remove();
-
-                        // otherwise...
-                    } else {
-
-                        // remove the pyramid data
-                        removePyramidData(e, layer, leftData, leftPyramidPolys);
-
-                        // remove the badge from the left pyramid tracker container
-                        $('#badge-left-' + polygonId).remove();
-
-                    }
-
-                // if the user has selected a polygon to add to the right pyramid...
-                } else if (pyramidActionCode === "add-right-pyramid") {
-
-                    // if the polygon is not already in the right tracker array...
-                    if (rightPyramidPolys.indexOf(polygonId) === -1) {
-
-                        // add the pyramid data
-                        addPyramidData(e, layer, rightData, leftData, rightPyramidPolys, leftPyramidPolys);
-
-                        // add badge to right pyramid tracker container & remove from left tracker
-                        $("#right-pyramid-tracker-container").append('<span class="badge badge-default badge-right" id="badge-right-' + polygonId + '">' + polygonName + '</span>');
-                        $('#badge-left-' + polygonId).remove();
-
-                        // otherwise...
-                    } else {
-
-                        //remove the pyramid data
-                        removePyramidData(e, layer, rightData, rightPyramidPolys);
-
-                        // remove the badge from the right pyramid tracker container
-                        $('#badge-right-' + polygonId).remove();
-
-                    }
-
-                // if the user has selected a polygon to replace the left pyramid...
-                } else if (pyramidActionCode === "replace-left-pyramid") {
-
-                    // replace the left data with the new data
-                    replacePyramidData(e, layer, leftData, rightData, leftPyramidPolys, rightPyramidPolys);
-
-                    // remove all badges from the left pyramid tracker container, add the new one & remove it from the right tracker
-                    $('.badge-left').remove();
+                    // add badge to left pyramid tracker container & remove from right tracker
                     $("#left-pyramid-tracker-container").append('<span class="badge badge-default badge-left" id="badge-left-' + polygonId + '">' + polygonName + '</span>');
                     $('#badge-right-' + polygonId).remove();
 
-                } else if (pyramidActionCode === "replace-right-pyramid") {
+                    // otherwise...
+                } else {
 
-                    // replace the right data with the new data
-                    replacePyramidData(e, layer, rightData, leftData, rightPyramidPolys, leftPyramidPolys);
+                    // remove the pyramid data
+                    removePyramidData(e, layer, leftData, leftPyramidPolys);
 
-                    // remove all badges from the right pyramid tracker container, add the new one & remove it from the left tracker
-                    $('.badge-right').remove();
-                    $("#right-pyramid-tracker-container").append('<span class="badge badge-default badge-right" id="badge-right-' + polygonId + '">' + polygonName + '</span>');
+                    // remove the badge from the left pyramid tracker container
                     $('#badge-left-' + polygonId).remove();
 
                 }
 
+                // if the user has selected a polygon to add to the right pyramid...
+            } else if (pyramidActionCode === "add-right-pyramid") {
 
-                // update the bar charts accordingly
-                update(leftData, rightData);
+                // if the polygon is not already in the right tracker array...
+                if (rightPyramidPolys.indexOf(polygonId) === -1) {
 
-            });
+                    // add the pyramid data
+                    addPyramidData(e, layer, rightData, leftData, rightPyramidPolys, leftPyramidPolys);
 
-        }
+                    // add badge to right pyramid tracker container & remove from left tracker
+                    $("#right-pyramid-tracker-container").append('<span class="badge badge-default badge-right" id="badge-right-' + polygonId + '">' + polygonName + '</span>');
+                    $('#badge-left-' + polygonId).remove();
+
+                    // otherwise...
+                } else {
+
+                    //remove the pyramid data
+                    removePyramidData(e, layer, rightData, rightPyramidPolys);
+
+                    // remove the badge from the right pyramid tracker container
+                    $('#badge-right-' + polygonId).remove();
+
+                }
+
+                // if the user has selected a polygon to replace the left pyramid...
+            } else if (pyramidActionCode === "replace-left-pyramid") {
+
+                // replace the left data with the new data
+                replacePyramidData(e, layer, leftData, rightData, leftPyramidPolys, rightPyramidPolys);
+
+                // remove all badges from the left pyramid tracker container, add the new one & remove it from the right tracker
+                $('.badge-left').remove();
+                $("#left-pyramid-tracker-container").append('<span class="badge badge-default badge-left" id="badge-left-' + polygonId + '">' + polygonName + '</span>');
+                $('#badge-right-' + polygonId).remove();
+
+            } else if (pyramidActionCode === "replace-right-pyramid") {
+
+                // replace the right data with the new data
+                replacePyramidData(e, layer, rightData, leftData, rightPyramidPolys, leftPyramidPolys);
+
+                // remove all badges from the right pyramid tracker container, add the new one & remove it from the left tracker
+                $('.badge-right').remove();
+                $("#right-pyramid-tracker-container").append('<span class="badge badge-default badge-right" id="badge-right-' + polygonId + '">' + polygonName + '</span>');
+                $('#badge-left-' + polygonId).remove();
+
+            }
+
+            // update the bar charts accordingly
+            update(leftData, rightData);
+
+        });
+
+    }
+
+    selectorLayer = L.geoJSON(britishColumbiaSelectors, {
+
+        style: selectorLayerStyle,
+        onEachFeature: selectorLayerOnEach
 
     });
+
+    function markerLayerOnEach(feature, layer) {
+
+        layer.bindTooltip(feature.properties.name, {
+            sticky: true
+        });
+
+        layer.on('click', function (e) {
+
+            // get the currently selected radio button from the pyramid control panel
+            var pyramidActionCode = $("input[name=pyramid]:checked").val();
+
+            // get the name & id of the selected polygon
+            var markerName = e.target.feature.properties.name;
+            var markerId = e.target.feature.properties.Id;
+
+            // grab the data to replace or add to the selected bar chart
+
+            // if the user has selected a polygon to add to the left pyramid...
+            if (pyramidActionCode === "add-left-pyramid") {
+
+                // if the polygon is not already in the left tracker array...
+                if (leftPyramidPolys.indexOf(markerId) === -1) {
+
+                    // add the pyramid data
+                    addPyramidDataFromMarker(markerId, leftData, rightData, leftPyramidPolys, rightPyramidPolys);
+
+                    // add badge to left pyramid tracker container & remove from right tracker
+                    $("#left-pyramid-tracker-container").append('<span class="badge badge-default badge-left" id="badge-left-' + markerId + '">' + markerName + '</span>');
+                    $('#badge-right-' + markerId).remove();
+
+                    // otherwise...
+                }
+
+            }
+
+            // update the bar charts accordingly
+            update(leftData, rightData);
+
+        });
+
+    }
 
     // add marker layer to map
     markerLayer = L.geoJSON(britishColumbiaPoints, {
 
-        onEachFeature: function (feature, layer) {
-
-            layer.bindTooltip(feature.properties.name, {
-                sticky: true
-            });
-
-        },
+        onEachFeature: markerLayerOnEach,
 
         pointToLayer: function (feature, latlng) {
             iconScaleFactor = zoomScales[3] / zoomScales[map.getZoom()];
@@ -438,7 +484,7 @@ $(document).ready(function() {
         {"year": "_yr2013", "pine_vol": 0},
         {"year": "_yr2014", "pine_vol": 0}
     ];
-    
+
     centreData = [
         {"year": "1999", "pine_vol": 1},
         {"year": "2000", "pine_vol": 1},
