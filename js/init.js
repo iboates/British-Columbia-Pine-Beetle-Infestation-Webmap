@@ -86,7 +86,6 @@ $(document).ready(function() {
         targetPolygonTracker.push(markerId);
 
         // look up the data that the marker is referencing
-        //var featureId = markerId.split("-")[2];
         var polygonData = britishColumbiaPolys.features;
         for (var i = 0; i<polygonData.length; i++) {
 
@@ -101,6 +100,21 @@ $(document).ready(function() {
             }
 
         }
+
+        // check if the id is already in the other tracker array
+        if (otherPolygonTracker.indexOf(markerId) !== -1) {
+
+            // remove the data from the other tracker array
+            otherPolygonTracker.splice(otherPolygonTracker.indexOf(markerId), 1);
+
+            // remove the data from the other pyramid
+            for (var i = 0; i < otherData.length; i++) {
+                otherData[i].pine_vol = otherData[i].pine_vol - polygonData[i].properties["_yr" + (1999 + j)];
+            }
+
+        }
+
+
 
     }
 
