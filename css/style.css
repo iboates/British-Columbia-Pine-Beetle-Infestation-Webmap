@@ -3,8 +3,13 @@ body {
 }
 
 #map {
-    height: 100vh;
+    height: 99vh;
     width: 100%;
+    background-color: #ffffff;
+    border: solid 4px #305185;
+    border-radius: 15px;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
 }
 
 .item-container {
@@ -156,8 +161,8 @@ body {
 }
 
 #threshold-patch-0 {
-    color: #ffffff;
-    background-color: #ffffff;
+    color: #eeeeee;
+    background-color: #eeeeee;
 }
 
 #threshold-patch-1 {
