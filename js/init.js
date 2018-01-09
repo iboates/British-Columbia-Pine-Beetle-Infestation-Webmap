@@ -2,13 +2,70 @@
  * Created by isaac on 02/01/18.
  */
 
+var leftData = [
+    {"year": "_yr1999", "pine_vol": 0},
+    {"year": "_yr2000", "pine_vol": 0},
+    {"year": "_yr2001", "pine_vol": 0},
+    {"year": "_yr2002", "pine_vol": 0},
+    {"year": "_yr2003", "pine_vol": 0},
+    {"year": "_yr2004", "pine_vol": 0},
+    {"year": "_yr2005", "pine_vol": 0},
+    {"year": "_yr2006", "pine_vol": 0},
+    {"year": "_yr2007", "pine_vol": 0},
+    {"year": "_yr2008", "pine_vol": 0},
+    {"year": "_yr2009", "pine_vol": 0},
+    {"year": "_yr2010", "pine_vol": 0},
+    {"year": "_yr2011", "pine_vol": 0},
+    {"year": "_yr2012", "pine_vol": 0},
+    {"year": "_yr2013", "pine_vol": 0},
+    {"year": "_yr2014", "pine_vol": 0}
+];
+
+var rightData = [
+    {"year": "_yr1999", "pine_vol": 0},
+    {"year": "_yr2000", "pine_vol": 0},
+    {"year": "_yr2001", "pine_vol": 0},
+    {"year": "_yr2002", "pine_vol": 0},
+    {"year": "_yr2003", "pine_vol": 0},
+    {"year": "_yr2004", "pine_vol": 0},
+    {"year": "_yr2005", "pine_vol": 0},
+    {"year": "_yr2006", "pine_vol": 0},
+    {"year": "_yr2007", "pine_vol": 0},
+    {"year": "_yr2008", "pine_vol": 0},
+    {"year": "_yr2009", "pine_vol": 0},
+    {"year": "_yr2010", "pine_vol": 0},
+    {"year": "_yr2011", "pine_vol": 0},
+    {"year": "_yr2012", "pine_vol": 0},
+    {"year": "_yr2013", "pine_vol": 0},
+    {"year": "_yr2014", "pine_vol": 0}
+];
+
+var centreData = [
+    {"year": "1999", "pine_vol": 1},
+    {"year": "2000", "pine_vol": 1},
+    {"year": "2001", "pine_vol": 1},
+    {"year": "2002", "pine_vol": 1},
+    {"year": "2003", "pine_vol": 1},
+    {"year": "2004", "pine_vol": 1},
+    {"year": "2005", "pine_vol": 1},
+    {"year": "2006", "pine_vol": 1},
+    {"year": "2007", "pine_vol": 1},
+    {"year": "2008", "pine_vol": 1},
+    {"year": "2009", "pine_vol": 1},
+    {"year": "2010", "pine_vol": 1},
+    {"year": "2011", "pine_vol": 1},
+    {"year": "2012", "pine_vol": 1},
+    {"year": "2013", "pine_vol": 1},
+    {"year": "2014", "pine_vol": 1}
+];
+
+var leftPyramidPolys = [];
+var rightPyramidPolys = [];
+
 $(document).ready(function() {
 
     autoplay = true;
     ticks = [1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014];
-
-    leftPyramidPolys = [];
-    rightPyramidPolys = [];
 
     // =================================================================================================================
     // MAP
@@ -44,113 +101,39 @@ $(document).ready(function() {
     }).addTo(map);
 
     // =================================================================================================================
-    // LAYER INTERACTIONS
+    // LAYERS
     // =================================================================================================================
 
-    addPyramidData = function (featureId, targetData, otherData, targetPolygonTracker, otherPolygonTracker) {
+    // Style to be applied to the Selector Layer Every time there is a change.
+    selectorLayerStyle = function (feature) {
 
-        // add the polygon to the target tracker array
-        targetPolygonTracker.push(featureId);
-
-        // look up the data that the marker is referencing
-        var polygonData = britishColumbiaPolys.features;
-        for (var i = 0; i<polygonData.length; i++) {
-
-            if (polygonData[i].properties.Id == featureId) { // LEAVE THIS WITH '==' - one is a string and the other an int
-
-                // add the data to the pyramid
-                for (var j = 0; j < rightData.length; j++) {
-                    targetData[j].pine_vol = targetData[j].pine_vol + polygonData[i].properties["_yr" + (1999 + j)];
-                }
-
-                // check if the id is already in the other tracker array
-                if (otherPolygonTracker.indexOf(featureId) !== -1) {
-
-                    // remove the data from the other tracker array
-                    otherPolygonTracker.splice(otherPolygonTracker.indexOf(featureId), 1);
-
-                    // remove the data from the other pyramid
-                    for (var j = 0; j < otherData.length; j++) {
-                        console.log(j + ": " + otherData[j].pine_vol + " - " + polygonData[i].properties["_yr" + (1999 + j)]);
-                        otherData[j].pine_vol = otherData[j].pine_vol - polygonData[i].properties["_yr" + (1999 + j)];
-                    }
-
-                }
-
-                break;
-
-            }
-
+        var featureId = feature.properties.Id;
+        if (leftPyramidPolys.indexOf(featureId) !== -1) {
+            return {
+                color: '#663399',
+                stroke: true,
+                weight: 10,
+                fillOpacity: 0
+            };
+        } else if (rightPyramidPolys.indexOf(featureId) !== -1) {
+            return {
+                color: '#e38d13',
+                stroke: true,
+                weight: 10,
+                fillOpacity: 0
+            };
+        } else {
+            return {
+                color: '#eeeeee',
+                stroke: true,
+                weight: 0.1,
+                fillOpacity: 0
+            };
         }
-        // colour the polygons
-        selectorLayer.setStyle(selectorLayerStyle);
-
     };
 
-    removePyramidData = function (featureId, targetData, targetPolygonTracker) {
-
-        // remove the polygon from the right tracker array
-        targetPolygonTracker.splice(targetPolygonTracker.indexOf(featureId), 1);
-
-        // look up the data that the marker is referencing
-        var polygonData = britishColumbiaPolys.features;
-        for (var i = 0; i<polygonData.length; i++) {
-
-            if (polygonData[i].properties.Id == featureId) { // LEAVE THIS WITH '==' - one is a string and the other an int
-
-                // remove the data from the pyramid
-                for (var j = 0; j < rightData.length; j++) {
-                    targetData[j].pine_vol = targetData[j].pine_vol - polygonData[i].properties["_yr" + (1999 + j)];
-                }
-
-            }
-        }
-
-    };
-
-    replacePyramidData = function (featureId, targetData, otherData, otherPolygonTracker) {
-
-        // add the polygon to the target tracker array
-        if ($("input[name=pyramid]:checked").val() === "replace-left-pyramid") {
-            leftPyramidPolys = [featureId];
-        } else if ($("input[name=pyramid]:checked").val() === "replace-right-pyramid") {
-            rightPyramidPolys = [featureId];
-        }
-
-        // look up the data that the marker is referencing
-        var polygonData = britishColumbiaPolys.features;
-        for (var i = 0; i<polygonData.length; i++) {
-
-            if (polygonData[i].properties.Id == featureId) { // LEAVE THIS WITH '==' - one is a string and the other an int
-
-                // replace pyramid data
-                for (var j = 0; j < targetData.length; j++) {
-                    targetData[j].pine_vol = polygonData[i].properties["_yr" + (1999 + j)];
-                }
-
-                // check if the id is already in the other tracker array
-                if (otherPolygonTracker.indexOf(featureId) !== -1) {
-
-                    // remove the data from the other tracker array
-                    otherPolygonTracker.splice(otherPolygonTracker.indexOf(featureId), 1);
-
-                    // remove the data from the other pyramid
-                    for (var j = 0; j < otherData.length; j++) {
-                        console.log(j + ": " + otherData[j].pine_vol + " - " + polygonData[i].properties["_yr" + (1999 + j)]);
-                        otherData[j].pine_vol = otherData[j].pine_vol - polygonData[i].properties["_yr" + (1999 + j)];
-                    }
-
-                }
-
-                break;
-
-            }
-
-        }
-
-    };
-
-    mapInteraction = function (feature, layer) {
+    // Called whenever the user clicks on a polygon or a marker.
+    layerClickHandler = function (feature, layer) {
 
         layer.bindTooltip(feature.properties.name, {
             sticky: true
@@ -248,64 +231,30 @@ $(document).ready(function() {
 
     };
 
-    // =================================================================================================================
-    // LAYERS
-    // =================================================================================================================
-
     // Basemap for under markers.
     markerPolygonLayer = L.geoJSON(britishColumbiaPolys, {
 
-        fillColor: "#ffffff",
+        fillColor: '#eeeeee',
         stroke: true,
         color: "#000000",
         weight: 1,
         fillOpacity: 1,
-        riseOnHover: true,
-
-        onEachFeature: function (feature, layer) {}
+        riseOnHover: true
 
     });
-
-    // Style to be applied to the Selector Layer Every time there is a change.
-    selectorLayerStyle = function (feature) {
-
-        var featureId = feature.properties.Id;
-        if (leftPyramidPolys.indexOf(featureId) !== -1) {
-            return {
-                color: '#663399',
-                stroke: true,
-                weight: 10,
-                fillOpacity: 0
-            };
-        } else if (rightPyramidPolys.indexOf(featureId) !== -1) {
-            return {
-                color: '#e38d13',
-                stroke: true,
-                weight: 10,
-                fillOpacity: 0
-            };
-        } else {
-            return {
-                color: '#ffffff',
-                stroke: true,
-                weight: 0.1,
-                fillOpacity: 0
-            };
-        }
-    }
 
     // Selector Layer.
     selectorLayer = L.geoJSON(britishColumbiaSelectors, {
 
         style: selectorLayerStyle,
-        onEachFeature: mapInteraction
+        onEachFeature: layerClickHandler
 
     });
 
     // Marker Layer.
     markerLayer = L.geoJSON(britishColumbiaPoints, {
 
-        onEachFeature: mapInteraction,
+        onEachFeature: layerClickHandler,
 
         pointToLayer: function (feature, latlng) {
             iconScaleFactor = zoomScales[3] / zoomScales[map.getZoom()];
@@ -325,7 +274,7 @@ $(document).ready(function() {
     // Threshold Layer.
     thresholdLayer = L.geoJSON(britishColumbiaPolys, {
 
-        fillColor: "#ffffff",
+        fillColor: "#eeeeee",
         fillOpacity: 1,
         stroke: true,
         color: "#000000",
@@ -345,382 +294,292 @@ $(document).ready(function() {
     // PYRAMIDS
     // =================================================================================================================
 
-    // irrelevant if these are from the left or right container since they are the same.
-    var containerWidth = $("#right-pyramid-container").width();
-    var containerHeight = $("#right-pyramid-container").height();
-    var centreContainerWidth =$("#centre-pyramid-container").width();
+    // leftData = [
+    //     {"year": "_yr1999", "pine_vol": 0},
+    //     {"year": "_yr2000", "pine_vol": 0},
+    //     {"year": "_yr2001", "pine_vol": 0},
+    //     {"year": "_yr2002", "pine_vol": 0},
+    //     {"year": "_yr2003", "pine_vol": 0},
+    //     {"year": "_yr2004", "pine_vol": 0},
+    //     {"year": "_yr2005", "pine_vol": 0},
+    //     {"year": "_yr2006", "pine_vol": 0},
+    //     {"year": "_yr2007", "pine_vol": 0},
+    //     {"year": "_yr2008", "pine_vol": 0},
+    //     {"year": "_yr2009", "pine_vol": 0},
+    //     {"year": "_yr2010", "pine_vol": 0},
+    //     {"year": "_yr2011", "pine_vol": 0},
+    //     {"year": "_yr2012", "pine_vol": 0},
+    //     {"year": "_yr2013", "pine_vol": 0},
+    //     {"year": "_yr2014", "pine_vol": 0}
+    // ];
+    //
+    // rightData = [
+    //     {"year": "_yr1999", "pine_vol": 0},
+    //     {"year": "_yr2000", "pine_vol": 0},
+    //     {"year": "_yr2001", "pine_vol": 0},
+    //     {"year": "_yr2002", "pine_vol": 0},
+    //     {"year": "_yr2003", "pine_vol": 0},
+    //     {"year": "_yr2004", "pine_vol": 0},
+    //     {"year": "_yr2005", "pine_vol": 0},
+    //     {"year": "_yr2006", "pine_vol": 0},
+    //     {"year": "_yr2007", "pine_vol": 0},
+    //     {"year": "_yr2008", "pine_vol": 0},
+    //     {"year": "_yr2009", "pine_vol": 0},
+    //     {"year": "_yr2010", "pine_vol": 0},
+    //     {"year": "_yr2011", "pine_vol": 0},
+    //     {"year": "_yr2012", "pine_vol": 0},
+    //     {"year": "_yr2013", "pine_vol": 0},
+    //     {"year": "_yr2014", "pine_vol": 0}
+    // ];
+    //
+    // centreData = [
+    //     {"year": "1999", "pine_vol": 1},
+    //     {"year": "2000", "pine_vol": 1},
+    //     {"year": "2001", "pine_vol": 1},
+    //     {"year": "2002", "pine_vol": 1},
+    //     {"year": "2003", "pine_vol": 1},
+    //     {"year": "2004", "pine_vol": 1},
+    //     {"year": "2005", "pine_vol": 1},
+    //     {"year": "2006", "pine_vol": 1},
+    //     {"year": "2007", "pine_vol": 1},
+    //     {"year": "2008", "pine_vol": 1},
+    //     {"year": "2009", "pine_vol": 1},
+    //     {"year": "2010", "pine_vol": 1},
+    //     {"year": "2011", "pine_vol": 1},
+    //     {"year": "2012", "pine_vol": 1},
+    //     {"year": "2013", "pine_vol": 1},
+    //     {"year": "2014", "pine_vol": 1}
+    // ];
 
-    leftData = [
-        {"year": "_yr1999", "pine_vol": 0},
-        {"year": "_yr2000", "pine_vol": 0},
-        {"year": "_yr2001", "pine_vol": 0},
-        {"year": "_yr2002", "pine_vol": 0},
-        {"year": "_yr2003", "pine_vol": 0},
-        {"year": "_yr2004", "pine_vol": 0},
-        {"year": "_yr2005", "pine_vol": 0},
-        {"year": "_yr2006", "pine_vol": 0},
-        {"year": "_yr2007", "pine_vol": 0},
-        {"year": "_yr2008", "pine_vol": 0},
-        {"year": "_yr2009", "pine_vol": 0},
-        {"year": "_yr2010", "pine_vol": 0},
-        {"year": "_yr2011", "pine_vol": 0},
-        {"year": "_yr2012", "pine_vol": 0},
-        {"year": "_yr2013", "pine_vol": 0},
-        {"year": "_yr2014", "pine_vol": 0}
-    ];
-
-    rightData = [
-        {"year": "_yr1999", "pine_vol": 0},
-        {"year": "_yr2000", "pine_vol": 0},
-        {"year": "_yr2001", "pine_vol": 0},
-        {"year": "_yr2002", "pine_vol": 0},
-        {"year": "_yr2003", "pine_vol": 0},
-        {"year": "_yr2004", "pine_vol": 0},
-        {"year": "_yr2005", "pine_vol": 0},
-        {"year": "_yr2006", "pine_vol": 0},
-        {"year": "_yr2007", "pine_vol": 0},
-        {"year": "_yr2008", "pine_vol": 0},
-        {"year": "_yr2009", "pine_vol": 0},
-        {"year": "_yr2010", "pine_vol": 0},
-        {"year": "_yr2011", "pine_vol": 0},
-        {"year": "_yr2012", "pine_vol": 0},
-        {"year": "_yr2013", "pine_vol": 0},
-        {"year": "_yr2014", "pine_vol": 0}
-    ];
-
-    centreData = [
-        {"year": "1999", "pine_vol": 1},
-        {"year": "2000", "pine_vol": 1},
-        {"year": "2001", "pine_vol": 1},
-        {"year": "2002", "pine_vol": 1},
-        {"year": "2003", "pine_vol": 1},
-        {"year": "2004", "pine_vol": 1},
-        {"year": "2005", "pine_vol": 1},
-        {"year": "2006", "pine_vol": 1},
-        {"year": "2007", "pine_vol": 1},
-        {"year": "2008", "pine_vol": 1},
-        {"year": "2009", "pine_vol": 1},
-        {"year": "2010", "pine_vol": 1},
-        {"year": "2011", "pine_vol": 1},
-        {"year": "2012", "pine_vol": 1},
-        {"year": "2013", "pine_vol": 1},
-        {"year": "2014", "pine_vol": 1}
-    ];
-
-    // y axis
-
-    // set the dimensions and margins of the graph
-    var centreMargin = {top: 5, right: 0, bottom: 35, left: 0},
-        centreWidth = containerWidth - centreMargin.left - centreMargin.right,
-        centreHeight = containerHeight - centreMargin.top - centreMargin.bottom;
-
-    // set the ranges
-    var centreYScale = d3.scaleBand()
-        .range([centreHeight, 0])
-        .padding(0.1);
-
-    var centreXScale = d3.scaleLinear()
-        .range([centreWidth, 0]);
-
-    var centreSvg = d3.select("#centre-pyramid-container").append("svg")
-        .attr("preserveAspectRatio", "xMinYMin meet")
-        .attr("viewBox", "0, 0 " + centreContainerWidth + ", " + containerHeight)
-        .append("g")
-        .attr("transform",
-            "translate(" + centreMargin.left + "," + centreMargin.top + ")");
-
-    centreYScale.domain(centreData.map(function(d) { return d.year; }));
-
-    // append the rectangles for the bar chart
-    centreSvg.selectAll(".bar")
-        .data(centreData)
-        .enter().append("rect")
-        .attr("class", "bar")
-        .attr("fill", "#ffffff")
-        .attr("width", function(d) { return centreWidth - centreXScale(d.pine_vol) })
-        .attr("y", function(d) { return centreYScale(d.year) })
-        .attr("height", centreYScale.bandwidth());
-
-    // add the y Axis
-    var centreYAxis = centreSvg.append("g")
-        .attr("transform", "translate( " + 0 + ", 0 )");
-
-    centreSvg.selectAll("text")
-        .data(centreData)
-        .enter().append("text")
-        .text(function (d) { return d.year; })
-        .attr("text-anchor", "center")
-        .style("font-size", "1.3vh")
-        // .attr("x", function(d) { return centreXScale(d.year)/2 })
-        // .attr("width", function(d) { return centreXScale(d.year) })
-        .attr("x", 0)
-        .attr("y", function(d) { return centreYScale(d.year)+centreYScale.bandwidth() }) // 12 seems to be the magic number to make the labels appear in the right place... i really need to learn more about d3 because this is definitely an absurd solution...
-        .attr("height", centreYScale.bandwidth());
-
-    // left graph
-
-    // set the dimensions and margins of the graph
-    var leftMargin = {top: 5, right: 12, bottom: 35, left: 10},
-        leftWidth = containerWidth - leftMargin.left - leftMargin.right,
-        leftHeight = containerHeight - leftMargin.top - leftMargin.bottom;
-
-    // set the ranges
-    var leftYScale = d3.scaleBand()
-        .range([leftHeight, 0])
-        .padding(0.1);
-
-    var leftXScale = d3.scaleLinear()
-        .range([leftWidth, 0]);
-
-    // TODO: COMMENT
-    var leftSvg = d3.select("#left-pyramid-container").append("svg")
-        .attr("preserveAspectRatio", "xMinYMin meet")
-        .attr("viewBox", "0, 0 " + containerWidth + ", " + containerHeight)
-        .append("g")
-        .attr("transform",
-            "translate(" + leftMargin.left + "," + leftMargin.top + ")");
-
-    // Scale the range of the leftData in the domains
-    leftXScale.domain([0, d3.max(leftData, function(d){ return d.pine_vol; })]);
-    leftYScale.domain(leftData.map(function(d) { return d.year; }));
-
-    // append the rectangles for the bar chart
-    leftSvg.selectAll(".bar")
-        .data(leftData)
-        .enter().append("rect")
-        .attr("class", "bar")
-        .attr("fill", "#4B9B4B")
-        .attr("x", function(d) { return leftXScale(d.pine_vol) } )
-        .attr("width", function(d) { return leftWidth - leftXScale(d.pine_vol) })
-        .attr("y", function(d) { return leftYScale(d.year) })
-        .attr("height", leftYScale.bandwidth());
-
-    // add the x Axis
-    var leftXAxis = leftSvg.append("g")
-        .attr("transform", "translate(0," + leftHeight + ")")
-        .call(d3.axisBottom(leftXScale)
-            .tickFormat(d3.formatPrefix(".0", 1e6))
-            .ticks(5));
-
-    // add the y Axis
-    var leftYAxis = leftSvg.append("g")
-        .attr("transform", "translate( " + 0 + ", 0 )");
-
-    // add x axis label
-    leftSvg.append("text")
-        .attr("transform",
-            "translate(" + (leftWidth/2) + " ," +
-            (leftHeight + leftMargin.top + 25) + ")")
-        .style("text-anchor", "middle")
-        .text("Productive Pine Forest (cubic meters)");
-
-    // right graph
-
-    // set the dimensions and margins of the graph
-    var rightMargin = {top: 5, right: 10, bottom: 35, left: 12},
-        rightWidth = containerWidth - rightMargin.left - rightMargin.right,
-        rightHeight = containerHeight - rightMargin.top - rightMargin.bottom;
-
-    // set the ranges
-    var rightYScale = d3.scaleBand()
-        .range([rightHeight, 0])
-        .padding(0.1);
-
-    var rightXScale = d3.scaleLinear()
-        .range([0, rightWidth]);
-
-    // TODO: COMMENT
-    var rightSvg = d3.select("#right-pyramid-container").append("svg")
-        .attr("preserveAspectRatio", "xMinYMin meet")
-        .attr("viewBox", "0, 0 " + containerWidth + ", " + containerHeight)
-        .append("g")
-        .attr("transform",
-            "translate(" + rightMargin.left + "," + rightMargin.top + ")");
-
-    // Scale the range of the rightData in the domains
-    rightXScale.domain([0, d3.max(rightData, function(d){ return d.pine_vol; })]);
-    rightYScale.domain(rightData.map(function(d) { return d.year; }));
-
-    // append the rectangles for the bar chart
-    rightSvg.selectAll(".bar")
-        .data(rightData)
-        .enter().append("rect")
-        .attr("class", "bar")
-        .attr("fill", "#4B9B4B")
-        .attr("width", function(d) { return rightXScale(d.pine_vol); } )
-        .attr("y", function(d) { return rightYScale(d.year); })
-        .attr("height", rightYScale.bandwidth());
-
-    // add the x Axis
-    var rightXAxis = rightSvg.append("g")
-        .attr("transform", "translate(0," + rightHeight + ")")
-        .call(d3.axisBottom(rightXScale)
-            .tickFormat(d3.formatPrefix(".0", 1e6))
-            .ticks(5));
-
-    // add the y Axis
-    var rightYAxis = rightSvg.append("g")
-        .attr("transform", "translate( " + 0 + ", 0 )");
-
-    // add x axis label
-    rightSvg.append("text")
-        .attr("transform",
-            "translate(" + (rightWidth/2) + " ," +
-            (rightHeight + rightMargin.top + 25) + ")")
-        .style("text-anchor", "middle")
-        .text("Productive Pine Forest (cubic meters)");
-
-    // updating pyramids
-
-    function update(newLeftData, newRightData) {
-
-        // get the maximum of both sets of data to standardize both x-axes
-        var absoluteMax = Math.max(d3.max(newLeftData, function(d){ return d.pine_vol; }),
-                              d3.max(newRightData, function(d){ return (d.pine_vol); }));
-
-        leftXScale.domain([0, absoluteMax]);
-        leftYScale.domain(newLeftData.map(function(d) { return d.year; }));
-
-        rightXScale.domain([0, absoluteMax]);
-        rightYScale.domain(newRightData.map(function(d) { return d.year; }));
-
-        //console.log("domains defined, attempting to remove bars");
-
-        var leftBars = leftSvg.selectAll(".bar")
-            .remove()
-            .exit()
-            .data(newLeftData);
-        
-        var rightBars = rightSvg.selectAll(".bar")
-            .remove()
-            .exit()
-            .data(newRightData);
-
-        //console.log("bars removed, attempting to add new bars");
-
-        leftBars.enter()
-            .append("rect")
-            .attr("class", "bar")
-            .attr("fill", "#4B9B4B")
-            .attr("x", function(d) { return leftXScale(d.pine_vol) } )
-            .attr("width", function(d) { return leftWidth - leftXScale(d.pine_vol) })
-            .attr("y", function(d) { return leftYScale(d.year); })
-            .attr("height", leftYScale.bandwidth());
-        
-        rightBars.enter()
-            .append("rect")
-            .attr("class", "bar")
-            .attr("fill", "#4B9B4B")
-            .attr("width", function(d) { return rightXScale(d.pine_vol); })
-            .attr("y", function(d) { return rightYScale(d.year); })
-            .attr("height", rightYScale.bandwidth());
-
-        //console.log("new bars added, redrawing axes");
-
-        leftXAxis.remove();
-        leftXAxis = leftSvg.append("g")
-            .attr("transform", "translate(0," + leftHeight + ")")
-            .call(d3.axisBottom(leftXScale)
-                .tickFormat(d3.formatPrefix(".0", 1e6))
-                .ticks(5));
-        
-        rightXAxis.remove();
-        rightXAxis = rightSvg.append("g")
-            .attr("transform", "translate(0," + rightHeight + ")")
-            .call(d3.axisBottom(rightXScale)
-                .tickFormat(d3.formatPrefix(".0", 1e6))
-                .ticks(5));
-
-    }
-
-    // clearing pyramids
-
-    $('#clear-left-pyramid').click(function() {
-
-        // reset left pyramid data
-        leftData = [
-            {"year": "_yr1999", "pine_vol": 0},
-            {"year": "_yr2000", "pine_vol": 0},
-            {"year": "_yr2001", "pine_vol": 0},
-            {"year": "_yr2002", "pine_vol": 0},
-            {"year": "_yr2003", "pine_vol": 0},
-            {"year": "_yr2004", "pine_vol": 0},
-            {"year": "_yr2005", "pine_vol": 0},
-            {"year": "_yr2006", "pine_vol": 0},
-            {"year": "_yr2007", "pine_vol": 0},
-            {"year": "_yr2008", "pine_vol": 0},
-            {"year": "_yr2009", "pine_vol": 0},
-            {"year": "_yr2010", "pine_vol": 0},
-            {"year": "_yr2011", "pine_vol": 0},
-            {"year": "_yr2012", "pine_vol": 0},
-            {"year": "_yr2013", "pine_vol": 0},
-            {"year": "_yr2014", "pine_vol": 0}
-        ];
-
-        // reset styling except for currently selected red features
-        selectorLayer.setStyle(function(feature) {
-            if (rightPyramidPolys.indexOf(feature.properties.Id) === -1) {
-                return {
-                    stroke: true,
-                    weight: 0.5,
-                    color: '#ffffff',
-                    fillOpacity: 0
-                }
-            } else {
-                return {
-                    color: '#e38d13',
-                    weight: 10
-                }
-            }
-        });
-
-        // clear left tracking array
-        leftPyramidPolys = [];
-
-        // update data
-        update(leftData, rightData);
-
-    });
-
-    $('#clear-right-pyramid').click(function() {
-        rightData = [
-            {"year": "_yr1999", "pine_vol": 0},
-            {"year": "_yr2000", "pine_vol": 0},
-            {"year": "_yr2001", "pine_vol": 0},
-            {"year": "_yr2002", "pine_vol": 0},
-            {"year": "_yr2003", "pine_vol": 0},
-            {"year": "_yr2004", "pine_vol": 0},
-            {"year": "_yr2005", "pine_vol": 0},
-            {"year": "_yr2006", "pine_vol": 0},
-            {"year": "_yr2007", "pine_vol": 0},
-            {"year": "_yr2008", "pine_vol": 0},
-            {"year": "_yr2009", "pine_vol": 0},
-            {"year": "_yr2010", "pine_vol": 0},
-            {"year": "_yr2011", "pine_vol": 0},
-            {"year": "_yr2012", "pine_vol": 0},
-            {"year": "_yr2013", "pine_vol": 0},
-            {"year": "_yr2014", "pine_vol": 0}
-        ];
-        selectorLayer.setStyle(function(feature) {
-            if (leftPyramidPolys.indexOf(feature.properties.Id) === -1) {
-                return {
-                    stroke: true,
-                    weight: 0.5,
-                    color: '#ffffff',
-                    fillOpacity: 0,
-                }
-            } else {
-                return {
-                    color: '#663399',
-                    weight: 10
-                }
-            }
-        });
-
-        // clear left tracking array
-        rightPyramidPolys = [];
-
-        update(leftData, rightData);
-    });
+    // // irrelevant if these are from the left or right container since they are the same.
+    // var containerWidth = $("#right-pyramid-container").width();
+    // var containerHeight = $("#right-pyramid-container").height();
+    // var centreContainerWidth =$("#centre-pyramid-container").width();
+    //
+    // // y axis
+    //
+    // // set the dimensions and margins of the graph
+    // var centreMargin = {top: 5, right: 0, bottom: 35, left: 0},
+    //     centreWidth = containerWidth - centreMargin.left - centreMargin.right,
+    //     centreHeight = containerHeight - centreMargin.top - centreMargin.bottom;
+    //
+    // // set the ranges
+    // var centreYScale = d3.scaleBand()
+    //     .range([centreHeight, 0])
+    //     .padding(0.1);
+    //
+    // var centreXScale = d3.scaleLinear()
+    //     .range([centreWidth, 0]);
+    //
+    // var centreSvg = d3.select("#centre-pyramid-container").append("svg")
+    //     .attr("preserveAspectRatio", "xMinYMin meet")
+    //     .attr("viewBox", "0, 0 " + centreContainerWidth + ", " + containerHeight)
+    //     .append("g")
+    //     .attr("transform",
+    //         "translate(" + centreMargin.left + "," + centreMargin.top + ")");
+    //
+    // centreYScale.domain(centreData.map(function(d) { return d.year; }));
+    //
+    // // append the rectangles for the bar chart
+    // centreSvg.selectAll(".bar")
+    //     .data(centreData)
+    //     .enter().append("rect")
+    //     .attr("class", "bar")
+    //     .attr("fill", "#ffffff")
+    //     .attr("width", function(d) { return centreWidth - centreXScale(d.pine_vol) })
+    //     .attr("y", function(d) { return centreYScale(d.year) })
+    //     .attr("height", centreYScale.bandwidth());
+    //
+    // // add the y Axis
+    // var centreYAxis = centreSvg.append("g")
+    //     .attr("transform", "translate( " + 0 + ", 0 )");
+    //
+    // centreSvg.selectAll("text")
+    //     .data(centreData)
+    //     .enter().append("text")
+    //     .text(function (d) { return d.year; })
+    //     .attr("text-anchor", "center")
+    //     .style("font-size", "1.3vh")
+    //     // .attr("x", function(d) { return centreXScale(d.year)/2 })
+    //     // .attr("width", function(d) { return centreXScale(d.year) })
+    //     .attr("x", 0)
+    //     .attr("y", function(d) { return centreYScale(d.year)+centreYScale.bandwidth() }) // 12 seems to be the magic number to make the labels appear in the right place... i really need to learn more about d3 because this is definitely an absurd solution...
+    //     .attr("height", centreYScale.bandwidth());
+    //
+    // // left graph
+    //
+    // // set the dimensions and margins of the graph
+    // var leftMargin = {top: 5, right: 12, bottom: 35, left: 10},
+    //     leftWidth = containerWidth - leftMargin.left - leftMargin.right,
+    //     leftHeight = containerHeight - leftMargin.top - leftMargin.bottom;
+    //
+    // // set the ranges
+    // var leftYScale = d3.scaleBand()
+    //     .range([leftHeight, 0])
+    //     .padding(0.1);
+    //
+    // var leftXScale = d3.scaleLinear()
+    //     .range([leftWidth, 0]);
+    //
+    // // TODO: COMMENT
+    // var leftSvg = d3.select("#left-pyramid-container").append("svg")
+    //     .attr("preserveAspectRatio", "xMinYMin meet")
+    //     .attr("viewBox", "0, 0 " + containerWidth + ", " + containerHeight)
+    //     .append("g")
+    //     .attr("transform",
+    //         "translate(" + leftMargin.left + "," + leftMargin.top + ")");
+    //
+    // // Scale the range of the leftData in the domains
+    // leftXScale.domain([0, d3.max(leftData, function(d){ return d.pine_vol; })]);
+    // leftYScale.domain(leftData.map(function(d) { return d.year; }));
+    //
+    // // append the rectangles for the bar chart
+    // leftSvg.selectAll(".bar")
+    //     .data(leftData)
+    //     .enter().append("rect")
+    //     .attr("class", "bar")
+    //     .attr("fill", "#4B9B4B")
+    //     .attr("x", function(d) { return leftXScale(d.pine_vol) } )
+    //     .attr("width", function(d) { return leftWidth - leftXScale(d.pine_vol) })
+    //     .attr("y", function(d) { return leftYScale(d.year) })
+    //     .attr("height", leftYScale.bandwidth());
+    //
+    // // add the x Axis
+    // var leftXAxis = leftSvg.append("g")
+    //     .attr("transform", "translate(0," + leftHeight + ")")
+    //     .call(d3.axisBottom(leftXScale)
+    //         .tickFormat(d3.formatPrefix(".0", 1e6))
+    //         .ticks(5));
+    //
+    // // add the y Axis
+    // var leftYAxis = leftSvg.append("g")
+    //     .attr("transform", "translate( " + 0 + ", 0 )");
+    //
+    // // add x axis label
+    // leftSvg.append("text")
+    //     .attr("transform",
+    //         "translate(" + (leftWidth/2) + " ," +
+    //         (leftHeight + leftMargin.top + 25) + ")")
+    //     .style("text-anchor", "middle")
+    //     .text("Productive Pine Forest (cubic meters)");
+    //
+    // // right graph
+    //
+    // // set the dimensions and margins of the graph
+    // var rightMargin = {top: 5, right: 10, bottom: 35, left: 12},
+    //     rightWidth = containerWidth - rightMargin.left - rightMargin.right,
+    //     rightHeight = containerHeight - rightMargin.top - rightMargin.bottom;
+    //
+    // // set the ranges
+    // var rightYScale = d3.scaleBand()
+    //     .range([rightHeight, 0])
+    //     .padding(0.1);
+    //
+    // var rightXScale = d3.scaleLinear()
+    //     .range([0, rightWidth]);
+    //
+    // // TODO: COMMENT
+    // var rightSvg = d3.select("#right-pyramid-container").append("svg")
+    //     .attr("preserveAspectRatio", "xMinYMin meet")
+    //     .attr("viewBox", "0, 0 " + containerWidth + ", " + containerHeight)
+    //     .append("g")
+    //     .attr("transform",
+    //         "translate(" + rightMargin.left + "," + rightMargin.top + ")");
+    //
+    // // Scale the range of the rightData in the domains
+    // rightXScale.domain([0, d3.max(rightData, function(d){ return d.pine_vol; })]);
+    // rightYScale.domain(rightData.map(function(d) { return d.year; }));
+    //
+    // // append the rectangles for the bar chart
+    // rightSvg.selectAll(".bar")
+    //     .data(rightData)
+    //     .enter().append("rect")
+    //     .attr("class", "bar")
+    //     .attr("fill", "#4B9B4B")
+    //     .attr("width", function(d) { return rightXScale(d.pine_vol); } )
+    //     .attr("y", function(d) { return rightYScale(d.year); })
+    //     .attr("height", rightYScale.bandwidth());
+    //
+    // // add the x Axis
+    // var rightXAxis = rightSvg.append("g")
+    //     .attr("transform", "translate(0," + rightHeight + ")")
+    //     .call(d3.axisBottom(rightXScale)
+    //         .tickFormat(d3.formatPrefix(".0", 1e6))
+    //         .ticks(5));
+    //
+    // // add the y Axis
+    // var rightYAxis = rightSvg.append("g")
+    //     .attr("transform", "translate( " + 0 + ", 0 )");
+    //
+    // // add x axis label
+    // rightSvg.append("text")
+    //     .attr("transform",
+    //         "translate(" + (rightWidth/2) + " ," +
+    //         (rightHeight + rightMargin.top + 25) + ")")
+    //     .style("text-anchor", "middle")
+    //     .text("Productive Pine Forest (cubic meters)");
+    //
+    // // updating pyramids
+    //
+    // function update(newLeftData, newRightData) {
+    //
+    //     // get the maximum of both sets of data to standardize both x-axes
+    //     var absoluteMax = Math.max(d3.max(newLeftData, function(d){ return d.pine_vol; }),
+    //                           d3.max(newRightData, function(d){ return (d.pine_vol); }));
+    //
+    //     leftXScale.domain([0, absoluteMax]);
+    //     leftYScale.domain(newLeftData.map(function(d) { return d.year; }));
+    //
+    //     rightXScale.domain([0, absoluteMax]);
+    //     rightYScale.domain(newRightData.map(function(d) { return d.year; }));
+    //
+    //     //console.log("domains defined, attempting to remove bars");
+    //
+    //     var leftBars = leftSvg.selectAll(".bar")
+    //         .remove()
+    //         .exit()
+    //         .data(newLeftData);
+    //
+    //     var rightBars = rightSvg.selectAll(".bar")
+    //         .remove()
+    //         .exit()
+    //         .data(newRightData);
+    //
+    //     //console.log("bars removed, attempting to add new bars");
+    //
+    //     leftBars.enter()
+    //         .append("rect")
+    //         .attr("class", "bar")
+    //         .attr("fill", "#4B9B4B")
+    //         .attr("x", function(d) { return leftXScale(d.pine_vol) } )
+    //         .attr("width", function(d) { return leftWidth - leftXScale(d.pine_vol) })
+    //         .attr("y", function(d) { return leftYScale(d.year); })
+    //         .attr("height", leftYScale.bandwidth());
+    //
+    //     rightBars.enter()
+    //         .append("rect")
+    //         .attr("class", "bar")
+    //         .attr("fill", "#4B9B4B")
+    //         .attr("width", function(d) { return rightXScale(d.pine_vol); })
+    //         .attr("y", function(d) { return rightYScale(d.year); })
+    //         .attr("height", rightYScale.bandwidth());
+    //
+    //     //console.log("new bars added, redrawing axes");
+    //
+    //     leftXAxis.remove();
+    //     leftXAxis = leftSvg.append("g")
+    //         .attr("transform", "translate(0," + leftHeight + ")")
+    //         .call(d3.axisBottom(leftXScale)
+    //             .tickFormat(d3.formatPrefix(".0", 1e6))
+    //             .ticks(5));
+    //
+    //     rightXAxis.remove();
+    //     rightXAxis = rightSvg.append("g")
+    //         .attr("transform", "translate(0," + rightHeight + ")")
+    //         .call(d3.axisBottom(rightXScale)
+    //             .tickFormat(d3.formatPrefix(".0", 1e6))
+    //             .ticks(5));
+    //
+    // }
 
 });
