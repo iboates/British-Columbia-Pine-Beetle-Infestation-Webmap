@@ -31,13 +31,13 @@ body {
 #autoplay-button {
     width: 4vw;
     float:left;
-    margin-top: 5px;
+    margin-top: 7px;
 }
 
 #stop-button {
     width: 4vw;
     float:left;
-    margin-top: 5px;
+    margin-top: 7px;
 }
 
 #time-slider-bar {
@@ -48,12 +48,12 @@ body {
 }
 
 #title-container {
-    height: 7vh;
+    height: 5vh;
     text-align: center;
 }
 
 #title-text {
-    font-size: 1.8vw;
+    font-size: 1.6vw;
     font-weight: bold;
     height: 100%;
 
@@ -69,10 +69,10 @@ body {
 
 #left-pyramid-container {
     float: left;
-    width: 48%;
+    margin-left: 1%;
+    width: 47%;
     height: 30vh;
     border: 2px solid rgba(102, 51, 153, 0.75);
-    background-color: rgba(113, 55, 168, 0.21);
 }
 
 #centre-pyramid-container {
@@ -80,15 +80,14 @@ body {
     width: 4%;
     height: 30vh;
     border: 2px solid rgba(102, 51, 153, 0);
-    background-color: #ffffff
 }
 
 #right-pyramid-container {
     float: left;
-    width: 48%;
+    margin-right: 1%;
+    width: 47%;
     height: 30vh;
     border: 2px solid rgba(227, 141, 19, 0.77);
-    background-color: rgba(227, 141, 19, 0.27);
 }
 
 #sources-container {
@@ -99,22 +98,26 @@ body {
 
 #legend-marker-checkbox {
     float: left;
+    margin-top: 10px;
     margin-left: 10px;
 }
 
 #legend-threshold-checkbox {
     float: left;
+    margin-top: 10px;
     margin-left: 10px;
 }
 
 #legend-marker-title-text {
     float: left;
+    margin-top: 5px;
     margin-left: 10px;
     font-size: 2.5vh;
 }
 
 #legend-threshold-title-text {
     float: left;
+    margin-top: 5px;
     margin-left: 10px;
     font-size: 2.5vh;
 }
@@ -244,9 +247,10 @@ body {
 
 #left-pyramid-tracker-container {
     border: 2px solid rgba(102, 51, 153, 0.75);
-    background-color: rgba(113, 55, 168, 0.21);
     float: left;
-    width: 48%;
+    margin-left: 1%;
+    margin-bottom: 0.5vh;
+    width: 47%;
     height: 8vh;
     overflow-y: auto;
 }
@@ -257,22 +261,22 @@ body {
     height: 8vh;
     overflow-y: auto;
     border: 2px solid rgba(102, 51, 153, 0);
-    background-color: #ffffff
 }
 
 #right-pyramid-tracker-container {
     float: left;
-    width: 48%;
+    width: 47%;
+    margin-right: 1%;
     height: 8vh;
     overflow-y: auto;
     border: 2px solid rgba(227, 141, 19, 0.77);
-    background-color: rgba(227, 141, 19, 0.27);
+    margin-bottom: 0.5vh;
 }
 
-.pyramid-controls-container-left {
-    float: right;
-}
-
-.pyramid-controls-container-right {
+#clear-left-pyramid {
     float: left;
+}
+
+#clear-left-pyramid {
+    float: right;
 }

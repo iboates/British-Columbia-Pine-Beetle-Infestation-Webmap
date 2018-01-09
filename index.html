@@ -166,7 +166,7 @@
 
         <!-- PYRAMIDS -->
         <div class="container-fluid">
-            <div class="row">
+            <div class="row item-container">
 
                 <!-- LEFT PYRAMID -->
                 <div class="item-container" id="left-pyramid-container"></div>
@@ -177,38 +177,46 @@
                 <!-- RIGHT PYRAMID -->
                 <div class="item-container" id="right-pyramid-container"></div>
 
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="item-container" id="left-pyramid-tracker-container"></div>
+                        <div class="item-container" id="centre-pyramid-tracker-container"></div>
+                        <div class="item-container" id="right-pyramid-tracker-container"></div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
         <!-- PYRAMID TRACKERS -->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="item-container" id="left-pyramid-tracker-container"></div>
-                <div class="item-container" id="centre-pyramid-tracker-container"></div>
-                <div class="item-container" id="right-pyramid-tracker-container"></div>
-            </div>
-        </div>
+        <!--<div class="container-fluid">-->
+            <!--<div class="row">-->
+                <!--<div class="item-container" id="left-pyramid-tracker-container"></div>-->
+                <!--<div class="item-container" id="centre-pyramid-tracker-container"></div>-->
+                <!--<div class="item-container" id="right-pyramid-tracker-container"></div>-->
+            <!--</div>-->
+        <!--</div>-->
 
         <!-- PYRAMID CONTROLS -->
         <div class="container-fluid">
             <div class="row item-container" id="pyramid-controls-container">
                 <div class="col-sm-3">
-                    <input class="pyramid-controls-container-left pyramid-add-radio" name="pyramid" type="radio" value="add-left-pyramid"/>
+                    <input title="Add data to the left graph" class="pyramid-controls-container-left pyramid-add-radio" name="pyramid" type="radio" value="add-left-pyramid"/>
                 </div>
                 <div class="col-sm-2">
-                    <input class="pyramid-controls-container-left pyramid-replace-radio" name="pyramid" type="radio" value="replace-left-pyramid"/>
+                    <input title="Replace the current data in the left graph" class="pyramid-controls-container-left pyramid-replace-radio" name="pyramid" type="radio" value="replace-left-pyramid"/>
                 </div>
                 <div class="col-sm-1">
-                    <button class="pyramid-controls-container-left" id="clear-left-pyramid">Clear</button>
+                    <button title="Clear the left graph" class="pyramid-controls-container-left" id="clear-left-pyramid">Clear</button>
                 </div>
                 <div class="col-sm-1 pyramid-controls-container-right">
-                    <button id="clear-right-pyramid">Clear</button>
+                    <button title="Clear the right graph" id="clear-right-pyramid">Clear</button>
                 </div>
                 <div class="col-sm-2 pyramid-controls-container-right">
-                    <input class="pyramid-replace-radio" name="pyramid" type="radio" value="replace-right-pyramid"/>
+                    <input title="Replace the current data in the right graph" class="pyramid-replace-radio" name="pyramid" type="radio" value="replace-right-pyramid"/>
                 </div>
                 <div class="col-sm-3 pyramid-controls-container-right">
-                    <input class = "pyramid-add-radio" name="pyramid" type="radio" value="add-right-pyramid"/>
+                    <input title="Add data to the right graph" class = "pyramid-add-radio" name="pyramid" type="radio" value="add-right-pyramid"/>
                 </div>
             </div>
         </div>

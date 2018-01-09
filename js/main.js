@@ -323,7 +323,7 @@ $(document).ready(function() {
         .data(centreData)
         .enter().append("rect")
         .attr("class", "bar")
-        .attr("fill", "#ffffff")
+        .attr("fill", "#d9f1ff")
         .attr("width", function(d) { return centreWidth - centreXScale(d.pine_vol) })
         .attr("y", function(d) { return centreYScale(d.year) })
         .attr("height", centreYScale.bandwidth());
@@ -386,7 +386,7 @@ $(document).ready(function() {
     var leftXAxis = leftSvg.append("g")
         .attr("transform", "translate(0," + leftHeight + ")")
         .call(d3.axisBottom(leftXScale)
-            .tickFormat(d3.formatPrefix(".0", 1e6))
+            .tickFormat(function(d){return d/1000000 + " M"})
             .ticks(5));
 
     // add the y Axis
@@ -442,7 +442,7 @@ $(document).ready(function() {
     var rightXAxis = rightSvg.append("g")
         .attr("transform", "translate(0," + rightHeight + ")")
         .call(d3.axisBottom(rightXScale)
-            .tickFormat(d3.formatPrefix(".0", 1e6))
+            .tickFormat(function(d){return d/1000000 + " M"})
             .ticks(5));
 
     // add the y Axis
@@ -502,14 +502,14 @@ $(document).ready(function() {
         leftXAxis = leftSvg.append("g")
             .attr("transform", "translate(0," + leftHeight + ")")
             .call(d3.axisBottom(leftXScale)
-                .tickFormat(d3.formatPrefix(".0", 1e6))
+                .tickFormat(function(d){return d/1000000 + " M"})
                 .ticks(5));
 
         rightXAxis.remove();
         rightXAxis = rightSvg.append("g")
             .attr("transform", "translate(0," + rightHeight + ")")
             .call(d3.axisBottom(rightXScale)
-                .tickFormat(d3.formatPrefix(".0", 1e6))
+                .tickFormat(function(d){return d/1000000 + " M"})
                 .ticks(5));
 
     };

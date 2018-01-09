@@ -33,7 +33,7 @@ Original Author: https://codepen.io/msisto/#
     background: #9faab7;
 }
 .pyramid-add-radio:checked {
-    background: #40e0d0;
+    background: #4a8ae0;
 }
 
 .pyramid-add-radio:checked::before {
@@ -51,7 +51,7 @@ Original Author: https://codepen.io/msisto/#
     -webkit-animation: click-wave 0.65s;
     -moz-animation: click-wave 0.65s;
     animation: click-wave 0.65s;
-    background: #40e0d0;
+    background: #4a8ae0;
     content: '';
     display: block;
     position: relative;
@@ -108,7 +108,7 @@ Original Author: https://codepen.io/msisto/#
     background: #9faab7;
 }
 .pyramid-replace-radio:checked {
-    background: #40e0d0;
+    background: #4a8ae0;
 }
 
 .pyramid-replace-radio:checked::before {
@@ -127,7 +127,7 @@ Original Author: https://codepen.io/msisto/#
     -webkit-animation: click-wave 0.65s;
     -moz-animation: click-wave 0.65s;
     animation: click-wave 0.65s;
-    background: #40e0d0;
+    background: #4a8ae0;
     content: '';
     display: block;
     position: relative;
