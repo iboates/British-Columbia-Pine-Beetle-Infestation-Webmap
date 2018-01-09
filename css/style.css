@@ -238,13 +238,30 @@ body {
 }
 
 #left-pyramid-tracker-container {
+    border: 2px solid rgba(102, 51, 153, 0.75);
+    background-color: rgba(113, 55, 168, 0.21);
+    float: left;
+    width: 48%;
     height: 8vh;
     overflow-y: auto;
 }
 
-#right-pyramid-tracker-container {
+#centre-pyramid-tracker-container {
+    float: left;
+    width: 4%;
     height: 8vh;
     overflow-y: auto;
+    border: 2px solid rgba(102, 51, 153, 0);
+    background-color: #ffffff
+}
+
+#right-pyramid-tracker-container {
+    float: left;
+    width: 48%;
+    height: 8vh;
+    overflow-y: auto;
+    border: 2px solid rgba(227, 141, 19, 0.77);
+    background-color: rgba(227, 141, 19, 0.27);
 }
 
 .pyramid-controls-container-left {
