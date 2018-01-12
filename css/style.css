@@ -48,16 +48,20 @@ body {
 }
 
 #title-container {
-    height: 5vh;
+    height: 7vh;
     text-align: center;
 }
 
 #title-text {
-    font-size: 1.6vw;
+    font-size: 1.1vw;
     font-weight: bold;
-    height: 100%;
-
+    /*line-height: 13pt;*/
 }
+
+#title-subtext {
+    line-height: 10pt;
+}
+
 
 #controls-container {
     height: 6vh;
@@ -67,18 +71,24 @@ body {
     height: 29vh;
 }
 
+#pyramid-title {
+    font-size: 1.5vh;
+    font-weight: bold;
+    text-align: center;
+}
+
 #left-pyramid-container {
     float: left;
     margin-left: 1%;
     width: 47%;
-    height: 30vh;
+    height: 24vh;
     border: 2px solid rgba(102, 51, 153, 0.75);
 }
 
 #centre-pyramid-container {
     float: left;
     width: 4%;
-    height: 30vh;
+    height: 24vh;
     border: 2px solid rgba(102, 51, 153, 0);
 }
 
@@ -86,7 +96,7 @@ body {
     float: left;
     margin-right: 1%;
     width: 47%;
-    height: 30vh;
+    height: 24vh;
     border: 2px solid rgba(227, 141, 19, 0.77);
 }
 
@@ -94,6 +104,7 @@ body {
     padding: 5px;
     font-size: 1.3vh;
     height: 10vh;
+    line-height: 2.2vh;
 }
 
 #legend-marker-checkbox {
