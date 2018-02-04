@@ -51,7 +51,7 @@
         <!-- TITLE -->
         <div class="container-fluid">
             <div class="row item-container" id="title-container">
-                <p id="title-text">Pine Beetle Infestation in Productive Forests in British Columbia, 1999-2015</p>
+                <p id="title-text">Pine Beetle Infestation in Productive Forests in British Columbia, 1999-2014</p>
                 <p id="title-subtext">By Timber Supply Area (TSA)</p>
             </div>
         </div>
@@ -74,93 +74,140 @@
         <!-- LEGEND -->
         <div class="container-fluid">
             <div class="row">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#legend-forest-proportions-tab">Forest Proportions</a></li>
+                    <li><a data-toggle="tab" href="#legend-percent-loss-tab">Percent Pine Forest Loss</a></li>
+                </ul>
+                <div class="tab-content item-container">
+                    <div id="legend-forest-proportions-tab" class="tab-pane fade in active">
+                        <h3>Menu 2</h3>
+                        <p>Some content in menu 2.</p>
+                    </div>
+                    <div id="legend-percent-loss-tab" class="tab-pane fade">
+                        <h3>Percent Loss By TSA</h3>
+                            <div class="grid-container">
+                                <div class="grid-item">
+                                    <div class="threshold-patch" id="threshold-patch-6">.</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-6">79.00% - 81.05%</div>
+                                </div>
+                                <div class="grid-item">
+                                    <div class="threshold-patch" id="threshold-patch-5">.</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-5">50.00% - 78.99%</div>
+                                </div>
+                                <div class="grid-item">
+                                    <div class="threshold-patch" id="threshold-patch-0">.</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-0">0.00% - 0.99%</div>
+                                </div>
+                                <div class="grid-item">
+                                    <div class="threshold-patch" id="threshold-patch-4">.</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-4">25.00% - 49.99%</div>
+                                </div>
+                                <div class="grid-item">
+                                    <div class="threshold-patch" id="threshold-patch-3">.</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-3">10.00% - 24.99%</div>
+                                </div>
+                                <div class="grid-item">
+                                </div>
+                                <div class="grid-item">
+                                    <div class="threshold-patch" id="threshold-patch-2">.</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-2">5.00% - 9.99%</div>
+                                </div>
+                                <div class="grid-item">
+                                    <div class="threshold-patch" id="threshold-patch-1">.</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-1">1.00% - 4.99%</div>
+                                </div>
+                                <div class="grid-item">
+                                </div>
+                            </div>
+                    </div>
+                </div>
 
                 <!-- MARKERS -->
-                <div class="col-sm-6">
-                    <!--<div class="container-fluid">-->
-                        <div class="row item-container legend-item-container">
-                            <div class="container-fluid">
-                                <div class="row" id="legend-marker-checkbox-container">
-                                    <input id="legend-marker-checkbox" name="display" type="radio" value="marker"/>
-                                    <p id="legend-marker-title-text">Forest Proportions</p>
-                                </div>
-                            </div>
-                            <div class="container-fluid">
-                                <div class="col-sm-6">
-                                    <div class="row" id="legend-marker-marker-container">
-                                        <div class="col-sm-6">
-                                            <p id="legend-marker-nonpine-text">Nonpine</p>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <p id="legend-marker-pine-text">Pine</p>
-                                        </div>
-                                        <img id="legend-marker-img" src="svg/meta/sizerbox_2.svg">
-                                    </div>
-                                    <p id="legend-marker-img-text">Red square = 25 million cubic metres</p>
-                                </div>
-                                <div class="col-sm-6" id="legend-marker-description-text-container">
-                                    <br><br>
-                                    <p id="legend-marker-description-text">The height of the pine bar indicates the remaining productive pine forest in the current year, in relation to the amount at the start of 1999.</p>
-                                </div>
-                            </div>
-                        </div>
-                    <!--</div>-->
-                </div>
+                <!--<div class="col-sm-6">-->
+                    <!--&lt;!&ndash;<div class="container-fluid">&ndash;&gt;-->
+                        <!--<div class="row item-container legend-item-container" id="marker-legend-container">-->
+                            <!--<div class="container-fluid">-->
+                                <!--<div class="row" id="legend-marker-checkbox-container">-->
+                                    <!--<input id="legend-marker-checkbox" name="display" type="radio" value="marker"/>-->
+                                    <!--<p id="legend-marker-title-text">Forest Proportions</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="container-fluid">-->
+                                <!--<div class="col-sm-6">-->
+                                    <!--<div class="row" id="legend-marker-marker-container">-->
+                                        <!--<div class="col-sm-6">-->
+                                            <!--<p id="legend-marker-nonpine-text">Nonpine</p>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-sm-6">-->
+                                            <!--<p id="legend-marker-pine-text">Pine</p>-->
+                                        <!--</div>-->
+                                        <!--<img id="legend-marker-img" src="svg/meta/sizerbox_2.svg">-->
+                                    <!--</div>-->
+                                    <!--<p id="legend-marker-img-text">Red square = 25 million cubic metres</p>-->
+                                <!--</div>-->
+                                <!--<div class="col-sm-6" id="legend-marker-description-text-container">-->
+                                    <!--<br><br>-->
+                                    <!--<p id="legend-marker-description-text">The height of the pine bar indicates the remaining productive pine forest in the current year, in relation to the amount at the start of 1999.</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--</div>-->
 
-                <!-- THRESHOLDS -->
-                <div class="col-sm-6">
+                <!--&lt;!&ndash; THRESHOLDS &ndash;&gt;-->
+                <!--<div class="col-sm-6">-->
                     <!--<div class="container-fluid">-->
-                        <div class="row item-container legend-item-container">
-                            <div class="container-fluid">
-                                <div class="row" id="legend-threshold-checkbox-container">
-                                    <input id="legend-threshold-checkbox" name="display" type="radio" value="threshold"/>
-                                    <p id="legend-threshold-title-text">Percent Forest Loss</p>
-                                </div>
-                            </div>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="row">
-                                            <div class="threshold-patch" id="threshold-patch-6">.</div>
-                                            <div class="threshold-patch-label" id="threshold-patch-label-6">79.00% - 81.05%</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="threshold-patch" id="threshold-patch-5">.</div>
-                                            <div class="threshold-patch-label" id="threshold-patch-label-5">50.00% - 78.99%</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="threshold-patch" id="threshold-patch-4">.</div>
-                                            <div class="threshold-patch-label" id="threshold-patch-label-4">25.00% - 49.99%</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="threshold-patch" id="threshold-patch-3">.</div>
-                                            <div class="threshold-patch-label" id="threshold-patch-label-3">10.00% - 24.99%</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="row">
-                                            <div class="threshold-patch" id="threshold-patch-2">.</div>
-                                            <div class="threshold-patch-label" id="threshold-patch-label-2">5.00% - 9.99%</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="threshold-patch" id="threshold-patch-1">.</div>
-                                            <div class="threshold-patch-label" id="threshold-patch-label-1">1.00% - 4.99%</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="threshold-patch" id="threshold-patch-0">.</div>
-                                            <div class="threshold-patch-label" id="threshold-patch-label-0">0.00% - 0.99%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <p id="legend-threshold-description-text"><br>The colour indicates the percentage of productive forest that have been lost up to and including the current year, in relation to the amount at the start of 1999.</p>
-                                </div>
-                            </div>
-                        </div>
+                        <!--<div class="row item-container legend-item-container" id="threshold-legend-container">-->
+                            <!--<div class="container-fluid">-->
+                                <!--<div class="row" id="legend-threshold-checkbox-container">-->
+                                    <!--<input id="legend-threshold-checkbox" name="display" type="radio" value="threshold"/>-->
+                                    <!--<p id="legend-threshold-title-text">Percent Forest Loss</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="container-fluid">-->
+                                <!--<div class="row">-->
+                                    <!--<div class="col-sm-6">-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="threshold-patch" id="threshold-patch-6">.</div>-->
+                                            <!--<div class="threshold-patch-label" id="threshold-patch-label-6">79.00% - 81.05%</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="threshold-patch" id="threshold-patch-5">.</div>-->
+                                            <!--<div class="threshold-patch-label" id="threshold-patch-label-5">50.00% - 78.99%</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="threshold-patch" id="threshold-patch-4">.</div>-->
+                                            <!--<div class="threshold-patch-label" id="threshold-patch-label-4">25.00% - 49.99%</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="threshold-patch" id="threshold-patch-3">.</div>-->
+                                            <!--<div class="threshold-patch-label" id="threshold-patch-label-3">10.00% - 24.99%</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-sm-6">-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="threshold-patch" id="threshold-patch-2">.</div>-->
+                                            <!--<div class="threshold-patch-label" id="threshold-patch-label-2">5.00% - 9.99%</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="threshold-patch" id="threshold-patch-1">.</div>-->
+                                            <!--<div class="threshold-patch-label" id="threshold-patch-label-1">1.00% - 4.99%</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="threshold-patch" id="threshold-patch-0">.</div>-->
+                                            <!--<div class="threshold-patch-label" id="threshold-patch-label-0">0.00% - 0.99%</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="container-fluid">-->
+                                <!--<div class="row">-->
+                                    <!--<p id="legend-threshold-description-text"><br>The colour indicates the percentage of productive forest that have been lost up to and including the current year, in relation to the amount at the start of 1999.</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
                     <!--</div>-->
-                </div>
+                <!--</div>-->
 
             </div>
         </div>
