@@ -8,11 +8,13 @@ $(document).ready(function() {
     // LAYER TOGGLING
     // =================================================================================================================
 
-    $("input[name=display]").on("click", function() {
+    // https://stackoverflow.com/questions/20705905/bootstrap-3-jquery-event-for-active-tab-change
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 
-        // forest proportions radio button
-        if ($("input[name=display]:checked").val() === "marker") {
+        var target = $(e.target).attr("href");
 
+        // User clicked on proportions tab, add marker layer & remove threshold layer
+        if (target === "#legend-forest-proportions-tab") {
 
             for (var i=0; i<thresholdLayerArray.length; i++) {
                 map.removeLayer(thresholdLayerArray[i]);
@@ -23,7 +25,7 @@ $(document).ready(function() {
             }
 
         // Otherwise, remove marker layers & add threshold layer.
-        } else {
+        } else if (target === "#legend-percent-loss-tab") {
 
             for (var i=0;i <markerLayerArray.length; i++) {
                 map.removeLayer(markerLayerArray[i]);
@@ -34,6 +36,7 @@ $(document).ready(function() {
             }
 
         }
+
     });
 
     // =================================================================================================================

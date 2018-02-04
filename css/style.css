@@ -50,8 +50,6 @@ body {
 
 #title-text {
     font-size: 1.1vw;
-    font-weight: bold;
-    /*line-height: 13pt;*/
 }
 
 #title-subtext {
@@ -103,68 +101,54 @@ body {
     line-height: 2.2vh;
 }
 
-#legend-marker-checkbox {
-    float: left;
-    margin-top: 10px;
+/* LEGEND */
+
+.tab-content h3 {
     margin-left: 10px;
 }
 
-#legend-threshold-checkbox {
-    float: left;
-    margin-top: 10px;
-    margin-left: 10px;
-}
+/* LEGEND - FOREST PROPORTIONS */
 
-#marker-legend-container {
-    margin-right: 0;
-}
-
-#threshold-legend-container {
-    margin-left: 0vw;
-}
-
-#legend-marker-title-text {
-    float: left;
-    margin-top: 5px;
-    margin-left: 10px;
-    font-size: 2.5vh;
-}
-
-#legend-threshold-title-text {
-    float: left;
-    margin-top: 5px;
-    margin-left: 10px;
-    font-size: 2.5vh;
+#legend-marker-img-container {
+    display: inline-block;
+    position: relative;
+    height: 120px;
+    width: 40%;
+    padding: 15px;
 }
 
 #legend-marker-img {
-    display: block;
-    margin: 0 auto;
+    position: absolute;
+    left: 75px;
 }
 
-#legend-marker-img-text {
-    font-size: 1.5vh;
+.legend-marker-img-text {
+    position: absolute;
+    width: 20px;
+    height: 94px; /* height of marker image - never changes! */
+    display: table;
+}
+
+#legend-marker-img-pine-text-container {
+    left: 177px;
+    width: 20px;
+}
+
+.legend-marker-img-text p {
+    display: table-cell;
+    vertical-align: middle;
     text-align: center;
-    margin-top: 5px;
 }
 
-#legend-marker-nonpine-text {
-    float: right;
-    font-size: 1.5vh;
+#legend-marker-description-container {
+    display: inline-block;
+    width: 58%; /* FIXME: popping this up to 50% breaks the styling, but for now it has no perceptible effect */
+    height: 120px;
+    overflow: hidden;
+    text-align: center;
 }
 
-#legend-marker-pine-text {
-    float: left;
-    font-size: 1.5vh;
-}
-
-#legend-marker-description-text-container {
-    height: 100%;
-}
-
-#legend-marker-description-text {
-    float: left;
-}
+/* LEGEND - PERCENT PINE FOREST LOSS */
 
 .threshold-patch {
     float: left;
@@ -183,6 +167,7 @@ body {
     display: grid;
     grid-template-columns: auto auto auto;
 }
+
 .grid-item {
     text-align: center;
     padding: 5px;
@@ -221,6 +206,11 @@ body {
 #threshold-patch-6 {
     color: #770000;
     background-color: #770000;
+}
+
+#legend-percent-loss-description {
+    margin-top: 10px;
+    text-align: center;
 }
 
 #time-slider-bar {
