@@ -2,6 +2,8 @@ body {
 
 }
 
+/* MAP */
+
 #map {
     height: 82vh;
     width: 100%;
@@ -12,8 +14,14 @@ body {
     margin-bottom: 0.5vh;
 }
 
+/* TITLE */
+
 #title-container {
     text-align: center;
+}
+
+#title-text {
+    font-weight: bold;
 }
 
 .item-container {
@@ -23,36 +31,40 @@ body {
     margin-top: 0.5vh;
 }
 
+/* TIME SLIDER */
+
+#time-slider-panel {
+    height: 6vh;
+    padding: 5px;
+}
+
 #time-slider-button-panel {
-    margin-left: 1%;
+    width: 20%;
     float: left;
+    margin-top: 5px
 }
 
 #autoplay-button {
-    width: 4vw;
-    float:left;
-    margin-top: 7px;
+    float: left;
+    width: 50%;
 }
 
 #stop-button {
-    width: 4vw;
-    float:left;
-    margin-top: 7px;
+    float: left;
+    width: 50%;
+}
+
+#time-slider-container {
+    float: left;
+    height: 100%;
+    width: 80%;
+    overflow: auto;
 }
 
 #time-slider-bar {
-    width: 37vw;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: 2%;
-}
-
-#controls-container {
-    height: 6vh;
-}
-
-.legend-item-container {
-    height: 29vh;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5px;
 }
 
 #pyramid-title {
