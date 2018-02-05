@@ -350,7 +350,7 @@ $(document).ready(function() {
     // left graph
 
     // set the dimensions and margins of the graph
-    var leftMargin = {top: 5, right: 12, bottom: 35, left: 10},
+    leftMargin = {top: 5, right: 12, bottom: 35, left: 10},
         leftWidth = containerWidth - leftMargin.left - leftMargin.right,
         leftHeight = containerHeight - leftMargin.top - leftMargin.bottom;
 
@@ -407,7 +407,7 @@ $(document).ready(function() {
     // right graph
 
     // set the dimensions and margins of the graph
-    var rightMargin = {top: 5, right: 10, bottom: 35, left: 12},
+    rightMargin = {top: 5, right: 10, bottom: 35, left: 12},
         rightWidth = containerWidth - rightMargin.left - rightMargin.right,
         rightHeight = containerHeight - rightMargin.top - rightMargin.bottom;
 
@@ -459,6 +459,132 @@ $(document).ready(function() {
             (rightHeight + rightMargin.top + 25) + ")")
         .style("text-anchor", "middle")
         .text("Productive Pine Forest (cubic meters)");
+
+    //RESPONSIVENESS
+    d3.select(window).on("resize", resize);
+
+    function resize() {
+
+        d3.select("#left-pyramid-container > svg").remove();
+        d3.select("#right-pyramid-container > svg").remove();
+
+        var containerWidth = $("#right-pyramid-container").width();
+        var containerHeight = $("#right-pyramid-container").height();
+
+        // LEFT GRAPH RESIZE
+
+        // set the dimensions and margins of the graph
+        leftMargin = {top: 5, right: 12, bottom: 35, left: 10},
+            leftWidth = containerWidth - leftMargin.left - leftMargin.right,
+            leftHeight = containerHeight - leftMargin.top - leftMargin.bottom;
+
+        // set the ranges
+        leftYScale = d3.scaleBand()
+            .range([leftHeight, 0])
+            .padding(0.1);
+
+        leftXScale = d3.scaleLinear()
+            .range([leftWidth, 0]);
+
+        // TODO: COMMENT
+        leftSvg = d3.select("#left-pyramid-container").append("svg")
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "0, 0 " + containerWidth + ", " + containerHeight)
+            .append("g")
+            .attr("transform",
+                "translate(" + leftMargin.left + "," + leftMargin.top + ")");
+
+        // Scale the range of the leftData in the domains
+        leftXScale.domain([0, d3.max(leftData, function(d){ return d.pine_vol; })]);
+        leftYScale.domain(leftData.map(function(d) { return d.year; }));
+
+        // append the rectangles for the bar chart
+        leftSvg.selectAll(".bar")
+            .data(leftData)
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("fill", "#4B9B4B")
+            .attr("x", function(d) { return leftXScale(d.pine_vol) } )
+            .attr("width", function(d) { return leftWidth - leftXScale(d.pine_vol) })
+            .attr("y", function(d) { return leftYScale(d.year) })
+            .attr("height", leftYScale.bandwidth());
+
+        // add the x Axis
+        leftXAxis = leftSvg.append("g")
+            .attr("transform", "translate(0," + leftHeight + ")")
+            .call(d3.axisBottom(leftXScale)
+                .tickFormat(function(d){return d/1000000 + " M"})
+                .ticks(5));
+
+        // add the y Axis
+        leftYAxis = leftSvg.append("g")
+            .attr("transform", "translate( " + 0 + ", 0 )");
+
+        // add x axis label
+        leftSvg.append("text")
+            .attr("transform",
+                "translate(" + (leftWidth/2) + " ," +
+                (leftHeight + leftMargin.top + 25) + ")")
+            .style("text-anchor", "middle")
+            .text("Productive Pine Forest (cubic meters)");
+
+        // RIGHT GRAPH RESIZE
+
+        // set the dimensions and margins of the graph
+        rightMargin = {top: 5, right: 10, bottom: 35, left: 12},
+            rightWidth = containerWidth - rightMargin.left - rightMargin.right,
+            rightHeight = containerHeight - rightMargin.top - rightMargin.bottom;
+
+        // set the ranges
+        rightYScale = d3.scaleBand()
+            .range([rightHeight, 0])
+            .padding(0.1);
+
+        rightXScale = d3.scaleLinear()
+            .range([0, rightWidth]);
+
+        // TODO: COMMENT
+        rightSvg = d3.select("#right-pyramid-container").append("svg")
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "0, 0 " + containerWidth + ", " + containerHeight)
+            .append("g")
+            .attr("transform",
+                "translate(" + rightMargin.left + "," + rightMargin.top + ")");
+
+        // Scale the range of the rightData in the domains
+        rightXScale.domain([0, d3.max(rightData, function(d){ return d.pine_vol; })]);
+        rightYScale.domain(rightData.map(function(d) { return d.year; }));
+
+        // append the rectangles for the bar chart
+        rightSvg.selectAll(".bar")
+            .data(rightData)
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("fill", "#4B9B4B")
+            .attr("width", function(d) { return rightXScale(d.pine_vol); } )
+            .attr("y", function(d) { return rightYScale(d.year); })
+            .attr("height", rightYScale.bandwidth());
+
+        // add the x Axis
+        rightXAxis = rightSvg.append("g")
+            .attr("transform", "translate(0," + rightHeight + ")")
+            .call(d3.axisBottom(rightXScale)
+                .tickFormat(function(d){return d/1000000 + " M"})
+                .ticks(5));
+
+        // add the y Axis
+        rightYAxis = rightSvg.append("g")
+            .attr("transform", "translate( " + 0 + ", 0 )");
+
+        // add x axis label
+        rightSvg.append("text")
+            .attr("transform",
+                "translate(" + (rightWidth/2) + " ," +
+                (rightHeight + rightMargin.top + 25) + ")")
+            .style("text-anchor", "middle")
+            .text("Productive Pine Forest (cubic meters)");
+
+    }
 
     // updating pyramids
 
