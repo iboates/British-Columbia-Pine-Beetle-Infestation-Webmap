@@ -67,35 +67,6 @@ body {
     margin-top: 5px;
 }
 
-#pyramid-title {
-    font-size: 1.5vh;
-    font-weight: bold;
-    text-align: center;
-}
-
-#left-pyramid-container {
-    float: left;
-    margin-left: 1%;
-    width: 47%;
-    height: 24vh;
-    border: 2px solid rgba(102, 51, 153, 0.75);
-}
-
-#centre-pyramid-container {
-    float: left;
-    width: 4%;
-    height: 24vh;
-    border: 2px solid rgba(102, 51, 153, 0);
-}
-
-#right-pyramid-container {
-    float: left;
-    margin-right: 1%;
-    width: 47%;
-    height: 24vh;
-    border: 2px solid rgba(227, 141, 19, 0.77);
-}
-
 #sources-container {
     padding: 5px;
     font-size: 1.3vh;
@@ -231,21 +202,46 @@ body {
     text-align: center;
 }
 
-.badge {
-    margin: 2px;
+/* PYRAMIDS */
+
+#pyramid-title {
+    font-weight: bold;
+    text-align: center;
 }
 
-.badge:hover {
-    cursor: pointer;
-    text-decoration: line-through;
+.pyramid-button-grid-container {
+    margin-left: 5px;
+    margin-right: 5px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
 }
 
-.badge-left {
-    background-color: rebeccapurple;
+.pyramid-button-grid-item {
+    width: 90%;
+    margin: 0 auto;
 }
 
-.badge-right {
-    background-color: #e38d13;
+#left-pyramid-container {
+    float: left;
+    margin-left: 1%;
+    width: 47%;
+    height: 24vh;
+    border: 2px solid rgba(102, 51, 153, 0.75);
+}
+
+#centre-pyramid-container {
+    float: left;
+    width: 4%;
+    height: 24vh;
+    border: 2px solid rgba(102, 51, 153, 0);
+}
+
+#right-pyramid-container {
+    float: left;
+    margin-right: 1%;
+    width: 47%;
+    height: 24vh;
+    border: 2px solid rgba(227, 141, 19, 0.77);
 }
 
 #left-pyramid-tracker-container {
@@ -276,10 +272,27 @@ body {
     margin-bottom: 0.5vh;
 }
 
-#clear-left-pyramid {
-    float: left;
+/*#clear-left-pyramid {*/
+    /*float: left;*/
+/*}*/
+
+/*#clear-left-pyramid {*/
+    /*float: right;*/
+/*}*/
+
+.badge {
+    margin: 2px;
 }
 
-#clear-left-pyramid {
-    float: right;
+.badge:hover {
+    cursor: pointer;
+    text-decoration: line-through;
+}
+
+.badge-left {
+    background-color: rebeccapurple;
+}
+
+.badge-right {
+    background-color: #e38d13;
 }

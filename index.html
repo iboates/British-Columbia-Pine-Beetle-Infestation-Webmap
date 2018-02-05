@@ -43,6 +43,7 @@
 </head>
 <body>
 
+    <!-- LEFT COLUMN -->
     <div class="col-sm-6">
 
         <!-- TITLE -->
@@ -58,6 +59,7 @@
 
     </div>
 
+    <!-- RIGHT COLUMN -->
     <div class="col-sm-6">
 
         <!-- SCROLL BAR -->
@@ -157,10 +159,29 @@
         </div>
 
         <!-- PYRAMIDS -->
-
         <div class="container-fluid">
             <div class="row item-container" id="pyramid-title">
-                Comparative Pyramids (choose a method from the buttons below and click on the map to select & aggregate TSAs)
+                Compare & Aggregate TSAs (Use buttons below, then select TSAs from the map)
+            <div class="pyramid-button-grid-container">
+                <div class="pyramid-button-grid-item">
+                    <input title="Add data to the left graph" class="pyramid-controls-container-left pyramid-add-radio" name="pyramid" type="radio" value="add-left-pyramid"/>
+                </div>
+                <div class="pyramid-button-grid-item">
+                    <input title="Replace the current data in the left graph" class="pyramid-controls-container-left pyramid-replace-radio" name="pyramid" type="radio" value="replace-left-pyramid"/>
+                </div>
+                <div class="pyramid-button-grid-item">
+                    <button title="Clear the left graph" class="pyramid-controls-container-left" id="clear-left-pyramid">Clear</button>
+                </div>
+                <div class="pyramid-button-grid-item">
+                    <button title="Clear the right graph" id="clear-right-pyramid">Clear</button>
+                </div>
+                <div class="pyramid-button-grid-item">
+                    <input title="Replace the current data in the right graph" class="pyramid-replace-radio" name="pyramid" type="radio" value="replace-right-pyramid"/>
+                </div>
+                <div class="pyramid-button-grid-item">
+                    <input title="Add data to the right graph" class = "pyramid-add-radio" name="pyramid" type="radio" value="add-right-pyramid"/>
+                </div>
+            </div>
             </div>
         </div>
 
@@ -189,26 +210,26 @@
 
         <!-- PYRAMID CONTROLS -->
         <div class="container-fluid">
-            <div class="row item-container" id="pyramid-controls-container">
-                <div class="col-sm-3">
-                    <input title="Add data to the left graph" class="pyramid-controls-container-left pyramid-add-radio" name="pyramid" type="radio" value="add-left-pyramid"/>
-                </div>
-                <div class="col-sm-2">
-                    <input title="Replace the current data in the left graph" class="pyramid-controls-container-left pyramid-replace-radio" name="pyramid" type="radio" value="replace-left-pyramid"/>
-                </div>
-                <div class="col-sm-1">
-                    <button title="Clear the left graph" class="pyramid-controls-container-left" id="clear-left-pyramid">Clear</button>
-                </div>
-                <div class="col-sm-1 pyramid-controls-container-right">
-                    <button title="Clear the right graph" id="clear-right-pyramid">Clear</button>
-                </div>
-                <div class="col-sm-2 pyramid-controls-container-right">
-                    <input title="Replace the current data in the right graph" class="pyramid-replace-radio" name="pyramid" type="radio" value="replace-right-pyramid"/>
-                </div>
-                <div class="col-sm-3 pyramid-controls-container-right">
-                    <input title="Add data to the right graph" class = "pyramid-add-radio" name="pyramid" type="radio" value="add-right-pyramid"/>
-                </div>
-            </div>
+            <!--<div class="row item-container" id="pyramid-controls-container">-->
+                <!--<div class="col-sm-3">-->
+                    <!--<input title="Add data to the left graph" class="pyramid-controls-container-left pyramid-add-radio" name="pyramid" type="radio" value="add-left-pyramid"/>-->
+                <!--</div>-->
+                <!--<div class="col-sm-2">-->
+                    <!--<input title="Replace the current data in the left graph" class="pyramid-controls-container-left pyramid-replace-radio" name="pyramid" type="radio" value="replace-left-pyramid"/>-->
+                <!--</div>-->
+                <!--<div class="col-sm-1">-->
+                    <!--<button title="Clear the left graph" class="pyramid-controls-container-left" id="clear-left-pyramid">Clear</button>-->
+                <!--</div>-->
+                <!--<div class="col-sm-1 pyramid-controls-container-right">-->
+                    <!--<button title="Clear the right graph" id="clear-right-pyramid">Clear</button>-->
+                <!--</div>-->
+                <!--<div class="col-sm-2 pyramid-controls-container-right">-->
+                    <!--<input title="Replace the current data in the right graph" class="pyramid-replace-radio" name="pyramid" type="radio" value="replace-right-pyramid"/>-->
+                <!--</div>-->
+                <!--<div class="col-sm-3 pyramid-controls-container-right">-->
+                    <!--<input title="Add data to the right graph" class = "pyramid-add-radio" name="pyramid" type="radio" value="add-right-pyramid"/>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
 
         <!-- SOURCES -->

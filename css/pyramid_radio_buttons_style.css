@@ -19,7 +19,7 @@ Original Author: https://codepen.io/msisto/#
     -webkit-transition: all 0.15s ease-out 0s;
     -moz-transition: all 0.15s ease-out 0s;
     transition: all 0.15s ease-out 0s;
-    background: #cbd1d8;
+    background: #a1a6ad;
     border: none;
     color: #fff;
     cursor: pointer;
@@ -30,7 +30,7 @@ Original Author: https://codepen.io/msisto/#
     z-index: 1000;
 }
 .pyramid-add-radio:hover {
-    background: #9faab7;
+    background: #93c2ff;
 }
 .pyramid-add-radio:checked {
     background: #3daee9;
@@ -94,7 +94,7 @@ Original Author: https://codepen.io/msisto/#
     -webkit-transition: all 0.15s ease-out 0s;
     -moz-transition: all 0.15s ease-out 0s;
     transition: all 0.15s ease-out 0s;
-    background: #cbd1d8;
+    background: #a1a6ad;
     border: none;
     color: #ffffff;
     cursor: pointer;
@@ -105,7 +105,7 @@ Original Author: https://codepen.io/msisto/#
     z-index: 1000;
 }
 .pyramid-replace-radio:hover {
-    background: #9faab7;
+    background: #93c2ff;
 }
 .pyramid-replace-radio:checked {
     background: #4a8ae0;
