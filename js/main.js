@@ -300,19 +300,19 @@ $(document).ready(function() {
     // y axis
 
     // set the dimensions and margins of the graph
-    var centreMargin = {top: 5, right: 0, bottom: 35, left: 0},
+    centreMargin = {top: 5, right: 0, bottom: 35, left: 0},
         centreWidth = containerWidth - centreMargin.left - centreMargin.right,
         centreHeight = containerHeight - centreMargin.top - centreMargin.bottom;
 
     // set the ranges
-    var centreYScale = d3.scaleBand()
+    centreYScale = d3.scaleBand()
         .range([centreHeight, 0])
         .padding(0.1);
 
-    var centreXScale = d3.scaleLinear()
+    centreXScale = d3.scaleLinear()
         .range([centreWidth, 0]);
 
-    var centreSvg = d3.select("#centre-pyramid-container").append("svg")
+    centreSvg = d3.select("#centre-pyramid-container").append("svg")
         .attr("preserveAspectRatio", "xMinYMin meet")
         .attr("viewBox", "0, 0 " + centreContainerWidth + ", " + containerHeight)
         .append("g")
@@ -332,7 +332,7 @@ $(document).ready(function() {
         .attr("height", centreYScale.bandwidth());
 
     // add the y Axis
-    var centreYAxis = centreSvg.append("g")
+    centreYAxis = centreSvg.append("g")
         .attr("transform", "translate( " + 0 + ", 0 )");
 
     centreSvg.selectAll("text")
@@ -350,20 +350,20 @@ $(document).ready(function() {
     // left graph
 
     // set the dimensions and margins of the graph
-    var leftMargin = {top: 5, right: 12, bottom: 35, left: 10},
+    leftMargin = {top: 5, right: 12, bottom: 35, left: 10},
         leftWidth = containerWidth - leftMargin.left - leftMargin.right,
         leftHeight = containerHeight - leftMargin.top - leftMargin.bottom;
 
     // set the ranges
-    var leftYScale = d3.scaleBand()
+    leftYScale = d3.scaleBand()
         .range([leftHeight, 0])
         .padding(0.1);
 
-    var leftXScale = d3.scaleLinear()
+    leftXScale = d3.scaleLinear()
         .range([leftWidth, 0]);
 
     // TODO: COMMENT
-    var leftSvg = d3.select("#left-pyramid-container").append("svg")
+    leftSvg = d3.select("#left-pyramid-container").append("svg")
         .attr("preserveAspectRatio", "xMinYMin meet")
         .attr("viewBox", "0, 0 " + containerWidth + ", " + containerHeight)
         .append("g")
@@ -386,14 +386,14 @@ $(document).ready(function() {
         .attr("height", leftYScale.bandwidth());
 
     // add the x Axis
-    var leftXAxis = leftSvg.append("g")
+    leftXAxis = leftSvg.append("g")
         .attr("transform", "translate(0," + leftHeight + ")")
         .call(d3.axisBottom(leftXScale)
             .tickFormat(function(d){return d/1000000 + " M"})
             .ticks(5));
 
     // add the y Axis
-    var leftYAxis = leftSvg.append("g")
+    leftYAxis = leftSvg.append("g")
         .attr("transform", "translate( " + 0 + ", 0 )");
 
     // add x axis label
@@ -407,20 +407,20 @@ $(document).ready(function() {
     // right graph
 
     // set the dimensions and margins of the graph
-    var rightMargin = {top: 5, right: 10, bottom: 35, left: 12},
+    rightMargin = {top: 5, right: 10, bottom: 35, left: 12},
         rightWidth = containerWidth - rightMargin.left - rightMargin.right,
         rightHeight = containerHeight - rightMargin.top - rightMargin.bottom;
 
     // set the ranges
-    var rightYScale = d3.scaleBand()
+    rightYScale = d3.scaleBand()
         .range([rightHeight, 0])
         .padding(0.1);
 
-    var rightXScale = d3.scaleLinear()
+    rightXScale = d3.scaleLinear()
         .range([0, rightWidth]);
 
     // TODO: COMMENT
-    var rightSvg = d3.select("#right-pyramid-container").append("svg")
+    rightSvg = d3.select("#right-pyramid-container").append("svg")
         .attr("preserveAspectRatio", "xMinYMin meet")
         .attr("viewBox", "0, 0 " + containerWidth + ", " + containerHeight)
         .append("g")
@@ -442,14 +442,14 @@ $(document).ready(function() {
         .attr("height", rightYScale.bandwidth());
 
     // add the x Axis
-    var rightXAxis = rightSvg.append("g")
+    rightXAxis = rightSvg.append("g")
         .attr("transform", "translate(0," + rightHeight + ")")
         .call(d3.axisBottom(rightXScale)
             .tickFormat(function(d){return d/1000000 + " M"})
             .ticks(5));
 
     // add the y Axis
-    var rightYAxis = rightSvg.append("g")
+    rightYAxis = rightSvg.append("g")
         .attr("transform", "translate( " + 0 + ", 0 )");
 
     // add x axis label
@@ -459,6 +459,198 @@ $(document).ready(function() {
             (rightHeight + rightMargin.top + 25) + ")")
         .style("text-anchor", "middle")
         .text("Productive Pine Forest (cubic meters)");
+
+    //RESPONSIVENESS
+    d3.select(window).on("resize", resize);
+
+    function resize() {
+
+        // get the maximum of both sets of data to standardize both x-axes
+        var absoluteMax = Math.max(d3.max(leftData, function(d){ return d.pine_vol; }),
+            d3.max(rightData, function(d){ return (d.pine_vol); }));
+
+        leftXScale.domain([0, absoluteMax]);
+        leftYScale.domain(leftData.map(function(d) { return d.year; }));
+
+        rightXScale.domain([0, absoluteMax]);
+        rightYScale.domain(rightData.map(function(d) { return d.year; }));
+
+        d3.select("#left-pyramid-container > svg").remove();
+        d3.select("#centre-pyramid-container > svg").remove();
+        d3.select("#right-pyramid-container > svg").remove();
+
+        var containerWidth = $("#right-pyramid-container").width();
+        var containerHeight = $("#right-pyramid-container").height();
+        var centreContainerWidth =$("#centre-pyramid-container").width();
+
+        // LEFT GRAPH RESIZE
+
+        // set the dimensions and margins of the graph
+        leftMargin = {top: 5, right: 12, bottom: 35, left: 10},
+            leftWidth = containerWidth - leftMargin.left - leftMargin.right,
+            leftHeight = containerHeight - leftMargin.top - leftMargin.bottom;
+
+        // set the ranges
+        leftYScale = d3.scaleBand()
+            .range([leftHeight, 0])
+            .padding(0.1);
+
+        leftXScale = d3.scaleLinear()
+            .range([leftWidth, 0]);
+
+        // TODO: COMMENT
+        leftSvg = d3.select("#left-pyramid-container").append("svg")
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "0, 0 " + containerWidth + ", " + containerHeight)
+            .append("g")
+            .attr("transform",
+                "translate(" + leftMargin.left + "," + leftMargin.top + ")");
+
+        // Scale the range of the leftData in the domains
+        //leftXScale.domain([0, d3.max(leftData, function(d){ return d.pine_vol; })]);
+        leftXScale.domain([0, absoluteMax]);
+        leftYScale.domain(leftData.map(function(d) { return d.year; }));
+
+        // append the rectangles for the bar chart
+        leftSvg.selectAll(".bar")
+            .data(leftData)
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("fill", "#4B9B4B")
+            .attr("x", function(d) { return leftXScale(d.pine_vol) } )
+            .attr("width", function(d) { return leftWidth - leftXScale(d.pine_vol) })
+            .attr("y", function(d) { return leftYScale(d.year) })
+            .attr("height", leftYScale.bandwidth());
+
+        // add the x Axis
+        leftXAxis = leftSvg.append("g")
+            .attr("transform", "translate(0," + leftHeight + ")")
+            .call(d3.axisBottom(leftXScale)
+                .tickFormat(function(d){return d/1000000 + " M"})
+                .ticks(5));
+
+        // add the y Axis
+        leftYAxis = leftSvg.append("g")
+            .attr("transform", "translate( " + 0 + ", 0 )");
+
+        // add x axis label
+        leftSvg.append("text")
+            .attr("transform",
+                "translate(" + (leftWidth/2) + " ," +
+                (leftHeight + leftMargin.top + 25) + ")")
+            .style("text-anchor", "middle")
+            .text("Productive Pine Forest (cubic meters)");
+
+        // CENTRE GRAPH RESIZE
+
+        var centreContainerWidth =$("#centre-pyramid-container").width();
+
+        // set the dimensions and margins of the graph
+        centreMargin = {top: 5, right: 0, bottom: 35, left: 0},
+            centreWidth = containerWidth - centreMargin.left - centreMargin.right,
+            centreHeight = containerHeight - centreMargin.top - centreMargin.bottom;
+
+        // set the ranges
+        centreYScale = d3.scaleBand()
+            .range([centreHeight, 0])
+            .padding(0.1);
+
+        centreXScale = d3.scaleLinear()
+            .range([centreWidth, 0]);
+
+        centreSvg = d3.select("#centre-pyramid-container").append("svg")
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "0, 0 " + centreContainerWidth + ", " + containerHeight)
+            .append("g")
+            .attr("transform",
+                "translate(" + centreMargin.left + "," + centreMargin.top + ")");
+
+        centreYScale.domain(centreData.map(function(d) { return d.year; }));
+
+        // append the rectangles for the bar chart
+        centreSvg.selectAll(".bar")
+            .data(centreData)
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("fill", "#d9f1ff")
+            .attr("width", function(d) { return centreWidth - centreXScale(d.pine_vol) })
+            .attr("y", function(d) { return centreYScale(d.year) })
+            .attr("height", centreYScale.bandwidth());
+
+        // add the y Axis
+        centreYAxis = centreSvg.append("g")
+            .attr("transform", "translate( " + 0 + ", 0 )");
+
+        centreSvg.selectAll("text")
+            .data(centreData)
+            .enter().append("text")
+            .text(function (d) { return d.year; })
+            .attr("text-anchor", "center")
+            .style("font-size", "1.3vh")
+            // .attr("x", function(d) { return centreXScale(d.year)/2 })
+            // .attr("width", function(d) { return centreXScale(d.year) })
+            .attr("x", 0)
+            .attr("y", function(d) { return centreYScale(d.year)+centreYScale.bandwidth() }) // 12 seems to be the magic number to make the labels appear in the right place... i really need to learn more about d3 because this is definitely an absurd solution...
+            .attr("height", centreYScale.bandwidth());
+
+        // RIGHT GRAPH RESIZE
+
+        // set the dimensions and margins of the graph
+        rightMargin = {top: 5, right: 10, bottom: 35, left: 12},
+            rightWidth = containerWidth - rightMargin.left - rightMargin.right,
+            rightHeight = containerHeight - rightMargin.top - rightMargin.bottom;
+
+        // set the ranges
+        rightYScale = d3.scaleBand()
+            .range([rightHeight, 0])
+            .padding(0.1);
+
+        rightXScale = d3.scaleLinear()
+            .range([0, rightWidth]);
+
+        // TODO: COMMENT
+        rightSvg = d3.select("#right-pyramid-container").append("svg")
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "0, 0 " + containerWidth + ", " + containerHeight)
+            .append("g")
+            .attr("transform",
+                "translate(" + rightMargin.left + "," + rightMargin.top + ")");
+
+        // Scale the range of the rightData in the domains
+        rightXScale.domain([0, absoluteMax]);
+        //rightXScale.domain([0, d3.max(rightData, function(d){ return d.pine_vol; })]);
+        rightYScale.domain(rightData.map(function(d) { return d.year; }));
+
+        // append the rectangles for the bar chart
+        rightSvg.selectAll(".bar")
+            .data(rightData)
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("fill", "#4B9B4B")
+            .attr("width", function(d) { return rightXScale(d.pine_vol); } )
+            .attr("y", function(d) { return rightYScale(d.year); })
+            .attr("height", rightYScale.bandwidth());
+
+        // add the x Axis
+        rightXAxis = rightSvg.append("g")
+            .attr("transform", "translate(0," + rightHeight + ")")
+            .call(d3.axisBottom(rightXScale)
+                .tickFormat(function(d){return d/1000000 + " M"})
+                .ticks(5));
+
+        // add the y Axis
+        rightYAxis = rightSvg.append("g")
+            .attr("transform", "translate( " + 0 + ", 0 )");
+
+        // add x axis label
+        rightSvg.append("text")
+            .attr("transform",
+                "translate(" + (rightWidth/2) + " ," +
+                (rightHeight + rightMargin.top + 25) + ")")
+            .style("text-anchor", "middle")
+            .text("Productive Pine Forest (cubic meters)");
+
+    }
 
     // updating pyramids
 
