@@ -19,7 +19,7 @@ Original Author: https://codepen.io/msisto/#
     -webkit-transition: all 0.15s ease-out 0s;
     -moz-transition: all 0.15s ease-out 0s;
     transition: all 0.15s ease-out 0s;
-    background: #cbd1d8;
+    background: #a1a6ad;
     border: none;
     color: #fff;
     cursor: pointer;
@@ -30,10 +30,10 @@ Original Author: https://codepen.io/msisto/#
     z-index: 1000;
 }
 .pyramid-add-radio:hover {
-    background: #9faab7;
+    background: #93c2ff;
 }
 .pyramid-add-radio:checked {
-    background: #40e0d0;
+    background: #3daee9;
 }
 
 .pyramid-add-radio:checked::before {
@@ -51,7 +51,7 @@ Original Author: https://codepen.io/msisto/#
     -webkit-animation: click-wave 0.65s;
     -moz-animation: click-wave 0.65s;
     animation: click-wave 0.65s;
-    background: #40e0d0;
+    background: #3daee9;
     content: '';
     display: block;
     position: relative;
@@ -94,7 +94,7 @@ Original Author: https://codepen.io/msisto/#
     -webkit-transition: all 0.15s ease-out 0s;
     -moz-transition: all 0.15s ease-out 0s;
     transition: all 0.15s ease-out 0s;
-    background: #cbd1d8;
+    background: #a1a6ad;
     border: none;
     color: #ffffff;
     cursor: pointer;
@@ -105,10 +105,10 @@ Original Author: https://codepen.io/msisto/#
     z-index: 1000;
 }
 .pyramid-replace-radio:hover {
-    background: #9faab7;
+    background: #93c2ff;
 }
 .pyramid-replace-radio:checked {
-    background: #40e0d0;
+    background: #4a8ae0;
 }
 
 .pyramid-replace-radio:checked::before {
@@ -127,7 +127,7 @@ Original Author: https://codepen.io/msisto/#
     -webkit-animation: click-wave 0.65s;
     -moz-animation: click-wave 0.65s;
     animation: click-wave 0.65s;
-    background: #40e0d0;
+    background: #4a8ae0;
     content: '';
     display: block;
     position: relative;

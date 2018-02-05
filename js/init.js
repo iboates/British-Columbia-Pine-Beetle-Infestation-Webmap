@@ -111,22 +111,27 @@ $(document).ready(function() {
         if (leftPyramidPolys.indexOf(featureId) !== -1) {
             return {
                 color: '#663399',
+                opacity: 1,
                 stroke: true,
-                weight: 10,
+                dashArray: "30 10",
+                weight: 3,
                 fillOpacity: 0
             };
         } else if (rightPyramidPolys.indexOf(featureId) !== -1) {
             return {
                 color: '#e38d13',
+                opacity: 1,
                 stroke: true,
-                weight: 10,
+                dashArray: "30 10",
+                weight: 3,
                 fillOpacity: 0
             };
         } else {
             return {
                 color: '#eeeeee',
+                opacity: 0,
                 stroke: true,
-                weight: 0.1,
+                weight: 3,
                 fillOpacity: 0
             };
         }
@@ -140,6 +145,9 @@ $(document).ready(function() {
         });
 
         layer.on('click', function (e) {
+
+            // stop the animation
+            $('#stop-button').trigger('click');
 
             // get the currently selected radio button from the pyramid control panel
             var pyramidActionCode = $("input[name=pyramid]:checked").val();

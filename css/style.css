@@ -2,14 +2,26 @@ body {
 
 }
 
+/* MAP */
+
 #map {
-    height: 99vh;
+    height: 82vh;
     width: 100%;
     background-color: #ffffff;
-    border: solid 4px #305185;
+    border: solid 4px #3daee9;
     border-radius: 15px;
     margin-top: 0.5vh;
     margin-bottom: 0.5vh;
+}
+
+/* TITLE */
+
+#title-container {
+    text-align: center;
+}
+
+#title-text {
+    font-weight: bold;
 }
 
 .item-container {
@@ -19,145 +31,119 @@ body {
     margin-top: 0.5vh;
 }
 
-/*.map-control-checkbox {*/
-    /*margin: 10px !important;*/
-/*}*/
+/* TIME SLIDER */
+
+#time-slider-panel {
+    height: 6vh;
+    padding: 5px;
+}
 
 #time-slider-button-panel {
-    margin-left: 1%;
+    width: 20%;
     float: left;
+    margin-top: 5px
 }
 
 #autoplay-button {
-    width: 4vw;
-    float:left;
-    margin-top: 5px;
+    float: left;
+    width: 50%;
 }
 
 #stop-button {
-    width: 4vw;
-    float:left;
-    margin-top: 5px;
+    float: left;
+    width: 50%;
+}
+
+#time-slider-container {
+    float: left;
+    height: 100%;
+    width: 80%;
+    overflow: auto;
 }
 
 #time-slider-bar {
-    width: 37vw;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: 2%;
-}
-
-#title-container {
-    height: 7vh;
-    text-align: center;
-}
-
-#title-text {
-    font-size: 1.8vw;
-    font-weight: bold;
-    height: 100%;
-
-}
-
-#controls-container {
-    height: 6vh;
-}
-
-.legend-item-container {
-    height: 29vh;
-}
-
-#left-pyramid-container {
-    float: left;
-    width: 48%;
-    height: 30vh;
-    border: 2px solid rgba(102, 51, 153, 0.75);
-    background-color: rgba(113, 55, 168, 0.21);
-}
-
-#centre-pyramid-container {
-    float: left;
-    width: 4%;
-    height: 30vh;
-    border: 2px solid rgba(102, 51, 153, 0);
-    background-color: #ffffff
-}
-
-#right-pyramid-container {
-    float: left;
-    width: 48%;
-    height: 30vh;
-    border: 2px solid rgba(227, 141, 19, 0.77);
-    background-color: rgba(227, 141, 19, 0.27);
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5px;
 }
 
 #sources-container {
     padding: 5px;
     font-size: 1.3vh;
     height: 10vh;
+    line-height: 2.2vh;
 }
 
-#legend-marker-checkbox {
-    float: left;
+/* LEGEND */
+
+.tab-content h3 {
     margin-left: 10px;
 }
 
-#legend-threshold-checkbox {
-    float: left;
-    margin-left: 10px;
-}
+/* LEGEND - FOREST PROPORTIONS */
 
-#legend-marker-title-text {
-    float: left;
-    margin-left: 10px;
-    font-size: 2.5vh;
-}
-
-#legend-threshold-title-text {
-    float: left;
-    margin-left: 10px;
-    font-size: 2.5vh;
+#legend-marker-img-container {
+    display: inline-block;
+    position: relative;
+    height: 120px;
+    width: 40%;
+    padding: 15px;
 }
 
 #legend-marker-img {
-    display: block;
-    margin: 0 auto;
+    position: absolute;
+    left: 75px;
 }
 
-#legend-marker-img-text {
-    font-size: 1.5vh;
+.legend-marker-img-text {
+    position: absolute;
+    width: 20px;
+    height: 94px; /* height of marker image - never changes! */
+    display: table;
+}
+
+#legend-marker-img-pine-text-container {
+    left: 177px;
+    width: 20px;
+}
+
+.legend-marker-img-text p {
+    display: table-cell;
+    vertical-align: middle;
     text-align: center;
-    margin-top: 5px;
 }
 
-#legend-marker-nonpine-text {
-    float: right;
-    font-size: 1.5vh;
+#legend-marker-description-container {
+    display: inline-block;
+    width: 58%; /* FIXME: popping this up to 50% breaks the styling, but for now it has no perceptible effect */
+    height: 120px;
+    overflow: hidden;
+    text-align: center;
 }
 
-#legend-marker-pine-text {
-    float: left;
-    font-size: 1.5vh;
-}
-
-#legend-marker-description-text-container {
-    height: 100%;
-}
-
-#legend-marker-description-text {
-    float: left;
-    font-size: 1.5vh;
-}
+/* LEGEND - PERCENT PINE FOREST LOSS */
 
 .threshold-patch {
     float: left;
-    font-size: 8.85pt;
-    margin-left: 10%;
-    margin-right: 5%;
-    margin-top: 12px;
-    height: 1.5vh;
-    width: 20%;
+    margin-left: 5px;
+    height: 20px;
+    width: 25px;
     border: 1px solid black;
+}
+
+.threshold-patch-label {
+    float: left;
+    margin-left: 5px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.grid-item {
+    text-align: center;
+    padding: 5px;
 }
 
 #threshold-patch-0 {
@@ -195,18 +181,9 @@ body {
     background-color: #770000;
 }
 
-.threshold-patch-label {
-    font-size: 1.5vh;
-    margin-left: 10px;
-    margin-top: 12px;
-    height: 100%;
-}
-
-#legend-threshold-description-text {
-    font-size: 1.5vh;
+#legend-percent-loss-description {
+    margin-top: 10px;
     text-align: center;
-    width: 90%;
-    margin-left: 4%;
 }
 
 #time-slider-bar {
@@ -225,6 +202,84 @@ body {
     text-align: center;
 }
 
+/* PYRAMIDS */
+
+#pyramid-title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.pyramid-button-grid-container {
+    margin-left: 5px;
+    margin-right: 5px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.pyramid-button-grid-item {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#left-pyramid-container {
+    float: left;
+    margin-left: 1%;
+    width: 47%;
+    height: 24vh;
+    border: 2px solid rgba(102, 51, 153, 0.75);
+}
+
+#centre-pyramid-container {
+    float: left;
+    width: 4%;
+    height: 24vh;
+    border: 2px solid rgba(102, 51, 153, 0);
+}
+
+#right-pyramid-container {
+    float: left;
+    margin-right: 1%;
+    width: 47%;
+    height: 24vh;
+    border: 2px solid rgba(227, 141, 19, 0.77);
+}
+
+#left-pyramid-tracker-container {
+    border: 2px solid rgba(102, 51, 153, 0.75);
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 0.5vh;
+    width: 47%;
+    height: 8vh;
+    overflow-y: auto;
+}
+
+#centre-pyramid-tracker-container {
+    float: left;
+    width: 4%;
+    height: 8vh;
+    overflow-y: auto;
+    border: 2px solid rgba(102, 51, 153, 0);
+}
+
+#right-pyramid-tracker-container {
+    float: left;
+    width: 47%;
+    margin-right: 1%;
+    height: 8vh;
+    overflow-y: auto;
+    border: 2px solid rgba(227, 141, 19, 0.77);
+    margin-bottom: 0.5vh;
+}
+
+/*#clear-left-pyramid {*/
+    /*float: left;*/
+/*}*/
+
+/*#clear-left-pyramid {*/
+    /*float: right;*/
+/*}*/
+
 .badge {
     margin: 2px;
 }
@@ -240,39 +295,4 @@ body {
 
 .badge-right {
     background-color: #e38d13;
-}
-
-#left-pyramid-tracker-container {
-    border: 2px solid rgba(102, 51, 153, 0.75);
-    background-color: rgba(113, 55, 168, 0.21);
-    float: left;
-    width: 48%;
-    height: 8vh;
-    overflow-y: auto;
-}
-
-#centre-pyramid-tracker-container {
-    float: left;
-    width: 4%;
-    height: 8vh;
-    overflow-y: auto;
-    border: 2px solid rgba(102, 51, 153, 0);
-    background-color: #ffffff
-}
-
-#right-pyramid-tracker-container {
-    float: left;
-    width: 48%;
-    height: 8vh;
-    overflow-y: auto;
-    border: 2px solid rgba(227, 141, 19, 0.77);
-    background-color: rgba(227, 141, 19, 0.27);
-}
-
-.pyramid-controls-container-left {
-    float: right;
-}
-
-.pyramid-controls-container-right {
-    float: left;
 }

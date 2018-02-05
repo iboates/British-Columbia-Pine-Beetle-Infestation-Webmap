@@ -31,6 +31,7 @@
     <!-- resources -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pyramid_radio_buttons_style.css">
+    <link rel="stylesheet" href="css/bootstrap_overrides.css">
     <script src="data/british_columbia_polys.js"></script>
     <script src="data/british_columbia_polys_selectors.js"></script>
     <script src="data/british_columbia_points.js"></script>
@@ -42,29 +43,37 @@
 </head>
 <body>
 
-    <div class="col-sm-6">
-        <div id="map"></div>
-    </div>
-
+    <!-- LEFT COLUMN -->
     <div class="col-sm-6">
 
         <!-- TITLE -->
         <div class="container-fluid">
             <div class="row item-container" id="title-container">
-                <p id="title-text">Pine Beetle Infestation in British Columbia, 1999-2015</p>
+                <h3 id="title-text">Pine Beetle Infestation in Productive Forests in British Columbia, 1999-2014</h3>
+                <p id="title-subtext">By Timber Supply Area (TSA)</p>
             </div>
         </div>
+
+        <!-- MAP -->
+        <div id="map"></div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-sm-6">
 
         <!-- SCROLL BAR -->
         <div class="container-fluid">
             <div class="row" id="legend-container">
                 <div class="container-fluid">
-                    <div class="row item-container" id="controls-container">
+                    <div class="row item-container" id="time-slider-panel">
                         <div id="time-slider-button-panel">
                             <button id="autoplay-button">Play</button>
                             <button id="stop-button">Stop</button>
                         </div>
-                        <div id="time-slider-bar"></div>
+                        <div id="time-slider-container">
+                            <div id="time-slider-bar"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -74,91 +83,76 @@
         <div class="container-fluid">
             <div class="row">
 
-                <!-- MARKERS -->
-                <div class="col-sm-6">
-                    <!--<div class="container-fluid">-->
-                        <div class="row item-container legend-item-container">
-                            <div class="container-fluid">
-                                <div class="row" id="legend-marker-checkbox-container">
-                                    <input id="legend-marker-checkbox" name="display" type="radio" value="marker"/>
-                                    <p id="legend-marker-title-text">Forest Proportions</p>
-                                </div>
-                            </div>
-                            <div class="container-fluid">
-                                <div class="col-sm-6">
-                                    <div class="row" id="legend-marker-marker-container">
-                                        <div class="col-sm-6">
-                                            <p id="legend-marker-nonpine-text">Nonpine</p>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <p id="legend-marker-pine-text">Pine</p>
-                                        </div>
-                                        <img id="legend-marker-img" src="svg/meta/sizerbox_2.svg">
-                                    </div>
-                                    <p id="legend-marker-img-text">Red square = 25 million cubic metres</p>
-                                </div>
-                                <div class="col-sm-6" id="legend-marker-description-text-container">
-                                    <br><br>
-                                    <p id="legend-marker-description-text">The height of the pine bar indicates the remaining productive pine forest in the current year, in relation to the amount at the start of 1999.</p>
-                                </div>
-                            </div>
-                        </div>
-                    <!--</div>-->
-                </div>
+                <!-- LEGEND TABS -->
+                <div class="item-container">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#legend-forest-proportions-tab">Forest Proportions</a></li>
+                        <li><a data-toggle="tab" href="#legend-percent-loss-tab">Percent Pine Forest Loss</a></li>
+                    </ul>
 
-                <!-- THRESHOLDS -->
-                <div class="col-sm-6">
-                    <!--<div class="container-fluid">-->
-                        <div class="row item-container legend-item-container">
-                            <div class="container-fluid">
-                                <div class="row" id="legend-threshold-checkbox-container">
-                                    <input id="legend-threshold-checkbox" name="display" type="radio" value="threshold"/>
-                                    <p id="legend-threshold-title-text">Percent Forest Loss</p>
+                    <div class="tab-content">
+
+                        <!-- FOREST PROPORTIONS TAB CONTENTS -->
+                        <div id="legend-forest-proportions-tab" class="tab-pane fade in active">
+                            <h3>Forest Proportions</h3>
+                            <div id="legend-marker-img-container">
+                                <div id="legend-marker-img-nonpine-text-container" class="legend-marker-img-text">
+                                    <p>Nonpine Forest</p>
+                                </div>
+                                <img id="legend-marker-img" src="svg/meta/sizerbox_2.svg">
+                                <div id="legend-marker-img-pine-text-container" class="legend-marker-img-text">
+                                    <p>Pine Forest</p>
                                 </div>
                             </div>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="row">
-                                            <div class="threshold-patch" id="threshold-patch-0">.</div>
-                                            <div class="threshold-patch-label" id="threshold-patch-label-0">0.00% - 0.99%</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="threshold-patch" id="threshold-patch-1">.</div>
-                                            <div class="threshold-patch-label" id="threshold-patch-label-1">1.00% - 4.99%</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="threshold-patch" id="threshold-patch-2">.</div>
-                                            <div class="threshold-patch-label" id="threshold-patch-label-2">5.00% - 9.99%</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="threshold-patch" id="threshold-patch-3">.</div>
-                                            <div class="threshold-patch-label" id="threshold-patch-label-3">10.00% - 24.99%</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="row">
-                                            <div class="threshold-patch" id="threshold-patch-4">.</div>
-                                            <div class="threshold-patch-label" id="threshold-patch-label-4">25.00% - 49.99%</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="threshold-patch" id="threshold-patch-5">.</div>
-                                            <div class="threshold-patch-label" id="threshold-patch-label-5">50.00% - 78.99%</div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="threshold-patch" id="threshold-patch-6">.</div>
-                                            <div class="threshold-patch-label" id="threshold-patch-label-6">79.00% - 81.05%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <p id="legend-threshold-description-text"><br>The colour indicates the percentage of productive forest still remaining in the current year, in relation to the amount at the start of 1999.</p>
-                                </div>
+                            <div id="legend-marker-description-container">
+                                <p>The height of the pine forest bar indicates the remaining productive pine forest in the current year, in relation to the amount at the start of 1999.<br><br>The red square represents 25 million cubic metres of forest volume.</p>
                             </div>
                         </div>
-                    <!--</div>-->
+
+                        <!-- PERCENT LOSS TAB CONTENTS -->
+                        <div id="legend-percent-loss-tab" class="tab-pane fade">
+                            <h3>Percent Loss By TSA</h3>
+                            <div class="grid-container">
+                                <div class="grid-item">
+                                    <div class="threshold-patch" id="threshold-patch-6">.</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-6">79.00% - 81.05%</div>
+                                </div>
+                                <div class="grid-item">
+                                    <div class="threshold-patch" id="threshold-patch-3">.</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-3">10.00% - 24.99%</div>
+                                </div>
+                                <div class="grid-item">
+                                </div>
+                                <div class="grid-item">
+                                    <div class="threshold-patch" id="threshold-patch-5">.</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-5">50.00% - 78.99%</div>
+                                </div>
+                                <div class="grid-item">
+                                    <div class="threshold-patch" id="threshold-patch-2">.</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-2">5.00% - 9.99%</div>
+                                </div>
+                                <div class="grid-item">
+                                    <div class="threshold-patch" id="threshold-patch-0">.</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-0">0.00% - 0.99%</div>
+                                </div>
+                                <div class="grid-item">
+                                    <div class="threshold-patch" id="threshold-patch-4">.</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-4">25.00% - 49.99%</div>
+                                </div>
+                                <div class="grid-item">
+                                    <div class="threshold-patch" id="threshold-patch-1">.</div>
+                                    <div class="threshold-patch-label" id="threshold-patch-label-1">1.00% - 4.99%</div>
+                                </div>
+                                <div class="grid-item">
+                                </div>
+                            </div>
+                            <div>
+                                <p id="legend-percent-loss-description">The colour indicates the percentage of productive forest that have been lost up to and including the current year, in relation to the amount at the start of 1999.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -166,7 +160,33 @@
 
         <!-- PYRAMIDS -->
         <div class="container-fluid">
-            <div class="row">
+            <div class="row item-container" id="pyramid-title">
+                Compare & Aggregate TSAs (Use buttons below, then select TSAs from the map)
+            <div class="pyramid-button-grid-container">
+                <div class="pyramid-button-grid-item">
+                    <input title="Add data to the left graph" class="pyramid-controls-container-left pyramid-add-radio" name="pyramid" type="radio" value="add-left-pyramid"/>
+                </div>
+                <div class="pyramid-button-grid-item">
+                    <input title="Replace the current data in the left graph" class="pyramid-controls-container-left pyramid-replace-radio" name="pyramid" type="radio" value="replace-left-pyramid"/>
+                </div>
+                <div class="pyramid-button-grid-item">
+                    <button title="Clear the left graph" class="pyramid-controls-container-left" id="clear-left-pyramid">Clear</button>
+                </div>
+                <div class="pyramid-button-grid-item">
+                    <button title="Clear the right graph" id="clear-right-pyramid">Clear</button>
+                </div>
+                <div class="pyramid-button-grid-item">
+                    <input title="Replace the current data in the right graph" class="pyramid-replace-radio" name="pyramid" type="radio" value="replace-right-pyramid"/>
+                </div>
+                <div class="pyramid-button-grid-item">
+                    <input title="Add data to the right graph" class = "pyramid-add-radio" name="pyramid" type="radio" value="add-right-pyramid"/>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row item-container">
 
                 <!-- LEFT PYRAMID -->
                 <div class="item-container" id="left-pyramid-container"></div>
@@ -177,40 +197,39 @@
                 <!-- RIGHT PYRAMID -->
                 <div class="item-container" id="right-pyramid-container"></div>
 
-            </div>
-        </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="item-container" id="left-pyramid-tracker-container"></div>
+                        <div class="item-container" id="centre-pyramid-tracker-container"></div>
+                        <div class="item-container" id="right-pyramid-tracker-container"></div>
+                    </div>
+                </div>
 
-        <!-- PYRAMID TRACKERS -->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="item-container" id="left-pyramid-tracker-container"></div>
-                <div class="item-container" id="centre-pyramid-tracker-container"></div>
-                <div class="item-container" id="right-pyramid-tracker-container"></div>
             </div>
         </div>
 
         <!-- PYRAMID CONTROLS -->
         <div class="container-fluid">
-            <div class="row item-container" id="pyramid-controls-container">
-                <div class="col-sm-3">
-                    <input class="pyramid-controls-container-left pyramid-add-radio" name="pyramid" type="radio" value="add-left-pyramid"/>
-                </div>
-                <div class="col-sm-2">
-                    <input class="pyramid-controls-container-left pyramid-replace-radio" name="pyramid" type="radio" value="replace-left-pyramid"/>
-                </div>
-                <div class="col-sm-1">
-                    <button class="pyramid-controls-container-left" id="clear-left-pyramid">Clear</button>
-                </div>
-                <div class="col-sm-1 pyramid-controls-container-right">
-                    <button id="clear-right-pyramid">Clear</button>
-                </div>
-                <div class="col-sm-2 pyramid-controls-container-right">
-                    <input class="pyramid-replace-radio" name="pyramid" type="radio" value="replace-right-pyramid"/>
-                </div>
-                <div class="col-sm-3 pyramid-controls-container-right">
-                    <input class = "pyramid-add-radio" name="pyramid" type="radio" value="add-right-pyramid"/>
-                </div>
-            </div>
+            <!--<div class="row item-container" id="pyramid-controls-container">-->
+                <!--<div class="col-sm-3">-->
+                    <!--<input title="Add data to the left graph" class="pyramid-controls-container-left pyramid-add-radio" name="pyramid" type="radio" value="add-left-pyramid"/>-->
+                <!--</div>-->
+                <!--<div class="col-sm-2">-->
+                    <!--<input title="Replace the current data in the left graph" class="pyramid-controls-container-left pyramid-replace-radio" name="pyramid" type="radio" value="replace-left-pyramid"/>-->
+                <!--</div>-->
+                <!--<div class="col-sm-1">-->
+                    <!--<button title="Clear the left graph" class="pyramid-controls-container-left" id="clear-left-pyramid">Clear</button>-->
+                <!--</div>-->
+                <!--<div class="col-sm-1 pyramid-controls-container-right">-->
+                    <!--<button title="Clear the right graph" id="clear-right-pyramid">Clear</button>-->
+                <!--</div>-->
+                <!--<div class="col-sm-2 pyramid-controls-container-right">-->
+                    <!--<input title="Replace the current data in the right graph" class="pyramid-replace-radio" name="pyramid" type="radio" value="replace-right-pyramid"/>-->
+                <!--</div>-->
+                <!--<div class="col-sm-3 pyramid-controls-container-right">-->
+                    <!--<input title="Add data to the right graph" class = "pyramid-add-radio" name="pyramid" type="radio" value="add-right-pyramid"/>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
 
         <!-- SOURCES -->
@@ -219,8 +238,10 @@
                 Data Source: <b>Government of B.C.</b> <i>"Mountain Pine Beetle Projections - Summary of Kills".</i> Excel Spreadsheet. <a href="https://www2.gov.bc.ca/gov/content/industry/forestry/managing-our-forest-resources/forest-health/forest-pests/bark-beetles/mountain-pine-beetle/responding-to-the-1999-2015-outbreak">Website</a>. <a href="https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/forest-health/mountain-pine-beetle/bcmpbv12summaryofvolumekilledthlblumpedtflsfordistribution.xlsx">Direct Link</a>.
                 <br>
                 Timber Supply Areas Boundary Source: TSA Boundaries ca. 1999 received from Mr. Adrian Walton in ESRI Shapefile format.
-                <br><br>
+                <br>
                 <b>Note:</b> "Ft. St. James Forest District", "Prince George Forest District" & "Vanderhoof Forest District" are a breakdown of "Prince George Timber Supply Area".
+                <br>
+                Map by Isaac Boates
             </div>
         </div>
 

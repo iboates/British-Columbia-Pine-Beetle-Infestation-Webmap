@@ -8,11 +8,13 @@ $(document).ready(function() {
     // LAYER TOGGLING
     // =================================================================================================================
 
-    $("input[name=display]").on("click", function() {
+    // https://stackoverflow.com/questions/20705905/bootstrap-3-jquery-event-for-active-tab-change
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 
-        // forest proportions radio button
-        if ($("input[name=display]:checked").val() === "marker") {
+        var target = $(e.target).attr("href");
 
+        // User clicked on proportions tab, add marker layer & remove threshold layer
+        if (target === "#legend-forest-proportions-tab") {
 
             for (var i=0; i<thresholdLayerArray.length; i++) {
                 map.removeLayer(thresholdLayerArray[i]);
@@ -23,7 +25,7 @@ $(document).ready(function() {
             }
 
         // Otherwise, remove marker layers & add threshold layer.
-        } else {
+        } else if (target === "#legend-percent-loss-tab") {
 
             for (var i=0;i <markerLayerArray.length; i++) {
                 map.removeLayer(markerLayerArray[i]);
@@ -34,6 +36,7 @@ $(document).ready(function() {
             }
 
         }
+
     });
 
     // =================================================================================================================
@@ -323,7 +326,7 @@ $(document).ready(function() {
         .data(centreData)
         .enter().append("rect")
         .attr("class", "bar")
-        .attr("fill", "#ffffff")
+        .attr("fill", "#d9f1ff")
         .attr("width", function(d) { return centreWidth - centreXScale(d.pine_vol) })
         .attr("y", function(d) { return centreYScale(d.year) })
         .attr("height", centreYScale.bandwidth());
@@ -386,7 +389,7 @@ $(document).ready(function() {
     var leftXAxis = leftSvg.append("g")
         .attr("transform", "translate(0," + leftHeight + ")")
         .call(d3.axisBottom(leftXScale)
-            .tickFormat(d3.formatPrefix(".0", 1e6))
+            .tickFormat(function(d){return d/1000000 + " M"})
             .ticks(5));
 
     // add the y Axis
@@ -442,7 +445,7 @@ $(document).ready(function() {
     var rightXAxis = rightSvg.append("g")
         .attr("transform", "translate(0," + rightHeight + ")")
         .call(d3.axisBottom(rightXScale)
-            .tickFormat(d3.formatPrefix(".0", 1e6))
+            .tickFormat(function(d){return d/1000000 + " M"})
             .ticks(5));
 
     // add the y Axis
@@ -502,14 +505,14 @@ $(document).ready(function() {
         leftXAxis = leftSvg.append("g")
             .attr("transform", "translate(0," + leftHeight + ")")
             .call(d3.axisBottom(leftXScale)
-                .tickFormat(d3.formatPrefix(".0", 1e6))
+                .tickFormat(function(d){return d/1000000 + " M"})
                 .ticks(5));
 
         rightXAxis.remove();
         rightXAxis = rightSvg.append("g")
             .attr("transform", "translate(0," + rightHeight + ")")
             .call(d3.axisBottom(rightXScale)
-                .tickFormat(d3.formatPrefix(".0", 1e6))
+                .tickFormat(function(d){return d/1000000 + " M"})
                 .ticks(5));
 
     };
