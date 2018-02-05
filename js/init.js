@@ -22,22 +22,22 @@ var leftData = [
 ];
 
 var rightData = [
-    {"year": "_yr1999", "pine_vol": 1000000},
-    {"year": "_yr2000", "pine_vol": 1000000},
-    {"year": "_yr2001", "pine_vol": 1000000},
-    {"year": "_yr2002", "pine_vol": 1000000},
-    {"year": "_yr2003", "pine_vol": 1000000},
-    {"year": "_yr2004", "pine_vol": 1000000},
-    {"year": "_yr2005", "pine_vol": 1000000},
-    {"year": "_yr2006", "pine_vol": 1000000},
-    {"year": "_yr2007", "pine_vol": 1000000},
-    {"year": "_yr2008", "pine_vol": 1000000},
-    {"year": "_yr2009", "pine_vol": 1000000},
-    {"year": "_yr2010", "pine_vol": 1000000},
-    {"year": "_yr2011", "pine_vol": 1000000},
-    {"year": "_yr2012", "pine_vol": 1000000},
-    {"year": "_yr2013", "pine_vol": 1000000},
-    {"year": "_yr2014", "pine_vol": 1000000}
+    {"year": "_yr1999", "pine_vol": 0},
+    {"year": "_yr2000", "pine_vol": 0},
+    {"year": "_yr2001", "pine_vol": 0},
+    {"year": "_yr2002", "pine_vol": 0},
+    {"year": "_yr2003", "pine_vol": 0},
+    {"year": "_yr2004", "pine_vol": 0},
+    {"year": "_yr2005", "pine_vol": 0},
+    {"year": "_yr2006", "pine_vol": 0},
+    {"year": "_yr2007", "pine_vol": 0},
+    {"year": "_yr2008", "pine_vol": 0},
+    {"year": "_yr2009", "pine_vol": 0},
+    {"year": "_yr2010", "pine_vol": 0},
+    {"year": "_yr2011", "pine_vol": 0},
+    {"year": "_yr2012", "pine_vol": 0},
+    {"year": "_yr2013", "pine_vol": 0},
+    {"year": "_yr2014", "pine_vol": 0}
 ];
 
 var centreData = [
