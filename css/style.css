@@ -3,13 +3,17 @@ body {
 }
 
 #map {
-    height: 99vh;
+    height: 82vh;
     width: 100%;
     background-color: #ffffff;
     border: solid 4px #3daee9;
     border-radius: 15px;
     margin-top: 0.5vh;
     margin-bottom: 0.5vh;
+}
+
+#title-container {
+    text-align: center;
 }
 
 .item-container {
@@ -42,20 +46,6 @@ body {
     margin-left: auto;
     margin-right: 2%;
 }
-
-#title-container {
-    height: 7vh;
-    text-align: center;
-}
-
-#title-text {
-    font-size: 1.1vw;
-}
-
-#title-subtext {
-    line-height: 10pt;
-}
-
 
 #controls-container {
     height: 6vh;
