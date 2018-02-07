@@ -1,8 +1,4 @@
-body {
-
-}
-
-/* MAP */
+/* ===== MAP =====*/
 
 #map {
     height: 82vh;
@@ -14,7 +10,7 @@ body {
     margin-bottom: 0.5vh;
 }
 
-/* TITLE */
+/* ===== TITLE ===== */
 
 #title-container {
     text-align: center;
@@ -31,7 +27,7 @@ body {
     margin-top: 0.5vh;
 }
 
-/* TIME SLIDER */
+/* ===== TIME SLIDER ===== */
 
 #time-slider-panel {
     height: 6vh;
@@ -67,20 +63,13 @@ body {
     margin-top: 5px;
 }
 
-#sources-container {
-    padding: 5px;
-    font-size: 1.3vh;
-    height: 10vh;
-    line-height: 2.2vh;
-}
-
-/* LEGEND */
+/* ===== LEGEND ===== */
 
 .tab-content h3 {
     margin-left: 10px;
 }
 
-/* LEGEND - FOREST PROPORTIONS */
+/* ===== LEGEND - FOREST PROPORTIONS ===== */
 
 #legend-marker-img-container {
     display: inline-block;
@@ -121,7 +110,7 @@ body {
     text-align: center;
 }
 
-/* LEGEND - PERCENT PINE FOREST LOSS */
+/* ===== LEGEND - PERCENT PINE FOREST LOSS ===== */
 
 .threshold-patch {
     float: left;
@@ -202,7 +191,7 @@ body {
     text-align: center;
 }
 
-/* PYRAMIDS */
+/* ===== PYRAMIDS ===== */
 
 #pyramid-title {
     font-weight: bold;
@@ -272,14 +261,6 @@ body {
     margin-bottom: 0.5vh;
 }
 
-/*#clear-left-pyramid {*/
-    /*float: left;*/
-/*}*/
-
-/*#clear-left-pyramid {*/
-    /*float: right;*/
-/*}*/
-
 .badge {
     margin: 2px;
 }
@@ -295,4 +276,11 @@ body {
 
 .badge-right {
     background-color: #e38d13;
+}
+
+/* ===== SOURCES ===== */
+
+#sources-container {
+    font-size: 9pt;
+    padding: 5px;
 }
