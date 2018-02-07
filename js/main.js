@@ -272,7 +272,7 @@ $(document).ready(function() {
                     slideValue = -1;
                 }
                 $("#time-slider-bar").slider("value", slideValue + 1);
-                autoplay = setTimeout(scrollSlider, 500);
+                autoplay = setTimeout(scrollSlider, 1000);
             }
         }
     }
