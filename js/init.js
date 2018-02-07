@@ -303,7 +303,7 @@ $(document).ready(function() {
     // PYRAMIDS
     // =================================================================================================================
 
-    updatePyramids();
-    d3.select(window).on("resize", updatePyramids);
+    // updatePyramids();
+    // d3.select(window).on("resize", updatePyramids);
 
 });
