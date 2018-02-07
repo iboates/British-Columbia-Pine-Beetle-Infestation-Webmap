@@ -230,7 +230,8 @@ $(document).ready(function() {
             }
 
             // update the bar charts accordingly
-            update(leftData, rightData);
+            //update(leftData, rightData);
+            updatePyramids();
 
             // colour the polygons
             selectorLayer.setStyle(selectorLayerStyle);
@@ -301,5 +302,8 @@ $(document).ready(function() {
     // =================================================================================================================
     // PYRAMIDS
     // =================================================================================================================
+
+    updatePyramids();
+    d3.select(window).on("resize", updatePyramids);
 
 });
